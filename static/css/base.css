@@ -1,0 +1,99 @@
+html {
+    font-size:62.5%;
+}
+
+header {
+    padding: 0;
+}
+
+.navbar {
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #336857;
+    height: 8rem;
+    margin: 0;
+}
+
+.navbar-brand {
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.nav-item .nav-link {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.navbar-icon-container,
+.navbar-icon-container-profile {
+    flex-direction: column;
+    justify-content: center;    
+    text-align: center;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navbar-icon-container-profile {
+    display: none;
+}
+
+.navbar-icon {    
+    justify-content: center;
+    display: flex;
+    padding: 0;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    font-size: 2.4rem;
+}
+
+.navbar-icon-label {    
+    white-space: nowrap;
+    font-size: 1.4rem;
+    justify-content: center;
+    display: flex;
+    color: #ffffff;
+}
+
+
+nav.navbar div.flex {
+   justify-content: flex-end;
+}
+
+.flex {
+    display: flex;
+}
+
+.navbar-right-side {
+    position: absolute;
+    display: flex;
+    right: 1.5rem;
+    width: auto;
+}
+
+.navbar-toggler {
+    position: absolute;
+    left: 1.5rem;
+    width: auto;
+    color: #ffffff;
+    font-size: 2.4rem;
+}
+
+nav.navbar div.navbar-collapse {
+    background-color: #336857;
+    padding: 1rem;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        text-align: left;
+        margin-left: 1.5rem;
+    }
+
+    .navbar-icon-container-profile {
+        display: flex;
+    }
+}
