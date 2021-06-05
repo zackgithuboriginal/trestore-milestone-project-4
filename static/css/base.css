@@ -6,6 +6,14 @@ header {
     padding: 0;
 }
 
+.bg-dark-green {
+    background-color: #1A342C;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .navbar {
     justify-content: space-between;
     flex-direction: row;
@@ -87,6 +95,81 @@ nav.navbar div.navbar-collapse {
     margin: 0;
 }
 
+/* Home Page Styling */
+
+.home-content {
+    padding-top: 8rem;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.home-page-banner {
+    z-index: 100;
+    background-color: rgba(51,104,87);
+    position: relative;
+    margin-top: 12rem;
+    height: 45rem;
+    width: 100vw;
+    padding: 4rem 3rem;
+	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    font-family: 'Josefin Slab', sans-serif;
+}
+
+.home-page-banner h1 {
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 3.5rem;
+}
+
+.home-page-banner p {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.tree-graphic {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.tree-graphic svg {
+    position: absolute;
+    bottom: -10%;
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 5rem;
+}
+
+.cta-container a {
+    display: flex;
+    background-color: #1A342C;
+    color: #ffffff;
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+}
+
+.cta-sponsor {
+    margin-left: 2rem;
+}
+
+@media (min-width: 550px) {
+    .home-page-banner {
+        width: 52.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }   
+}
+
 @media (min-width: 768px) {
     .navbar-brand {
         text-align: left;
@@ -95,5 +178,40 @@ nav.navbar div.navbar-collapse {
 
     .navbar-icon-container-profile {
         display: flex;
+    }
+
+    .home-page-banner {
+        width: 66rem;
+        margin-left: auto;
+        margin-right: auto;
+    }   
+
+    .tree-graphic {
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+    }
+
+    .tree-graphic svg {
+        position: absolute;
+        right: -10rem;
+    }
+
+    .home-page-banner {
+        padding: 6rem 5rem;
+    }   
+
+}
+
+@media (min-width: 1200px) {
+    .home-page-banner {
+        margin-left: 10%;
+    }   
+
+    .tree-graphic svg {
+        position: absolute;
+        right: -10rem;
     }
 }
