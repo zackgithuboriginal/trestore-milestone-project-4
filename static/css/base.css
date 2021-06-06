@@ -20,6 +20,7 @@ body {
     background-color: #336857;
     height: 8rem;
     margin: 0;
+	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
 
 .navbar-brand {
@@ -31,6 +32,7 @@ body {
 .nav-item .nav-link {
     font-size: 2rem;
     color: #ffffff;
+    white-space: nowrap;
 }
 
 .navbar-icon-container,
@@ -93,6 +95,7 @@ nav.navbar div.navbar-collapse {
     background-color: #336857;
     padding: 1rem;
     margin: 0;
+	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
 
 /* Home Page Styling */
@@ -171,6 +174,16 @@ nav.navbar div.navbar-collapse {
 }
 
 @media (min-width: 768px) {
+    nav.navbar div.navbar-collapse {
+        box-shadow: none;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .navbar-brand {
         text-align: left;
         margin-left: 1.5rem;
@@ -206,6 +219,7 @@ nav.navbar div.navbar-collapse {
 }
 
 @media (min-width: 1200px) {
+
     .home-page-banner {
         margin-left: 10%;
     }   
