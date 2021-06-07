@@ -65,8 +65,12 @@ body {
     justify-content: center;
     display: flex;
     color: #ffffff;
+    padding:0;
 }
 
+.dropdown-toggle:after {
+    border: none;
+}
 
 nav.navbar div.flex {
    justify-content: flex-end;
