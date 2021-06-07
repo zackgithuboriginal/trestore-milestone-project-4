@@ -93,7 +93,13 @@
                 </div>
                 <div class="navbar-icon-container">
                     <i class="fab fa-pagelines navbar-icon"></i>
-                    <div class="navbar-icon-label">Basket</div>
+                    <p class="navbar-icon-label">
+                        {% if grand_total %}
+                            €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                            €0.00
+                        {% endif %}
+                    </p>
                 </div>
             </div>
         </nav>
