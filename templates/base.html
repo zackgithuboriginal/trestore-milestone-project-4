@@ -73,9 +73,23 @@
                 </ul>
             </div>
             <div class="flex col-md-4 navbar-right-side">
-                <div class="navbar-icon-container-profile">
-                    <i class="fas fa-user navbar-icon"></i>
-                    <div class="navbar-icon-label">Profile</div>
+                <div class="dropdown">
+                    <a class="navbar-icon-container-profile dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user navbar-icon"></i>
+                        <div class="navbar-icon-label">Profile</div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="profile-options">
+                        {% if request.superuser.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <a class="dropdown-item" href="">Product Management</a>
+                            {% endif %}
+                            <a class="dropdown-item" href="">My Profile</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="navbar-icon-container">
                     <i class="fab fa-pagelines navbar-icon"></i>
