@@ -79,7 +79,7 @@
                         <div class="navbar-icon-label">Profile</div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="profile-options">
-                        {% if request.superuser.is_authenticated %}
+                        {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                                 <a class="dropdown-item" href="">Product Management</a>
                             {% endif %}
