@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="store-content container-flex bg-dark-green">
+    <div class="store-row row">
+        <h2 class="font-color-light col-12 col-md-1">Store</h2>
+    </div>
+    <div class="store-row row">
+        <div class="products-container">
+        {% for product in products %}
+            <div class="product-card row no-gutters">
+                <div class="card-title col-12">
+                    <p class="product-name">{{ product.product_name }}</p>
+                    <p class="product-price">{{ product.price }}</p>
+                </div>
+                {% if product.image %}
+                    <a class="product-card-image col-12" href="">
+                        <img src="{{ product.image.url }}" alt="">
+                    </a>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
