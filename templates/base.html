@@ -55,17 +55,17 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTarget" aria-controls="navbarTarget" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="col col-md-4 navbar-brand">TreStore</div>
+            <div class="col col-md-4 navbar-brand"><a href="/">TreStore</a></div>
             <div class="col col-md-4  collapse navbar-collapse" id="navbarTarget">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link">Home</a>
+                        <a href="/" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Store</a>
+                        <a href="{% url 'products' %}" class="nav-link">Store</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">Sponsor</a>
