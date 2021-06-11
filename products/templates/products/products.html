@@ -20,7 +20,7 @@
         <div class="display-options col-12 row">
             <form method="GET" action="{% url 'products' %}">
                 <label for="product-filter">Filter By:</label>
-                <select class="product-filter-select" name="product-filter" id="product-filter">
+                <select onchange="this.form.submit()" class="product-filter-select" name="product-filter" id="product-filter">
                     <option value="all" selected>All Products</option>
                     <option value="seeds">Seeds</option>
                     <option value="sapling_2_litre_pot">Saplings 2L Pot</option>
@@ -28,9 +28,10 @@
                     <option value="sapling_10_litre_pot">Saplings 10L Pot</option>
                 </select>
                 <label for="product-sort">Sort By:</label>
-                <select class="product-sort-select" name="product-sort" id="product-sort">
+                <select onchange="this.form.submit()" class="product-sort-select" name="product-sort" id="product-sort">
                     <option value="price_asc" selected>Price Ascending</option>
                     <option value="price_desc">Price Descending</option>
+                    <option value="category">Category</option>
                 </select>
                 <input type="text" placeholder="Search Keyword" name="q">
                 <button type='submit'>Search</button>
