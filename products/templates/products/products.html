@@ -14,25 +14,55 @@
 {% block content %}
 <div class="store-content container-flex bg-dark-green">
     <div class="store-row row">
-        <h2 class="font-color-light col-12 col-md-1">Store</h2>
+        <h2 class="page-title font-color-dark col-12">Native Trees and Seeds</h2>
     </div>
     <div class="store-row row">
-        <div class="products-container">
-        {% for product in products %}
-            <div class="product-card row no-gutters">
-                <div class="card-title col-12">
-                    <p class="product-name">{{ product.product_name }}</p>
-                    <p class="product-price">{{ product.price }}</p>
-                </div>
-                {% if product.image %}
-                    <a class="product-card-image col-12" href="">
-                        <img src="{{ product.image.url }}" alt="">
-                    </a>
-                {% endif %}
-
-            </div>
-        {% endfor %}
+        <div class="display-options col-12 row">
+            <form method="GET" action="{% url 'products' %}">
+                <label for="product-filter">Filter By:</label>
+                <select class="product-filter-select" name="product-filter" id="product-filter">
+                    <option value="all" selected>All Products</option>
+                    <option value="seeds">Seeds</option>
+                    <option value="sapling_2_litre_pot">Saplings 2L Pot</option>
+                    <option value="sapling_4_litre_pot">Saplings 4L Pot</option>
+                    <option value="sapling_10_litre_pot">Saplings 10L Pot</option>
+                </select>
+                <label for="product-sort">Sort By:</label>
+                <select class="product-sort-select" name="product-sort" id="product-sort">
+                    <option value="price_asc" selected>Price Ascending</option>
+                    <option value="price_desc">Price Descending</option>
+                </select>
+                <input type="text" placeholder="Search Keyword" name="q">
+                <button type='submit'>Search</button>
+            </form>
         </div>
+        <p class="results-found font-color-dark col-12">{{ products|length }} Items Found <a href="{% url 'products' %}">Clear Search</a></p>
+    <div class="store-row">
+    <div class="products-container">
+        {% if products|length >= 1 %}
+            {% for product in products %}
+                <div class="product-card row no-gutters">
+                    {% if product.image %}
+                        <a class="product-card-image col-12" href="">
+                            <img src="{{ product.image.url }}" alt="">
+                        </a>
+                    {% endif %}
+                    <div class="card-title col-12 row">
+                        <div class="col-12 row">
+                            <p class="product-name col-8">{{ product.product_name }}</p>
+                            <p class="product-price col-4">€{{ product.price }}</p>
+                        </div>
+                        <div class="product-card-options col-12 row">
+                            <button class="col-6">Add to Basket</button>
+                            <button class="col-6">View Product</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+    </div>
     </div>
 </div>
 {% endblock %}
