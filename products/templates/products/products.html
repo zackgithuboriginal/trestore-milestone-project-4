@@ -21,23 +21,27 @@
             <form method="GET" action="{% url 'products' %}">
                 <label for="product-filter">Filter By:</label>
                 <select onchange="this.form.submit()" class="product-filter-select" name="product-filter" id="product-filter">
-                    <option value="all" selected>All Products</option>
-                    <option value="seeds">Seeds</option>
-                    <option value="sapling_2_litre_pot">Saplings 2L Pot</option>
-                    <option value="sapling_4_litre_pot">Saplings 4L Pot</option>
-                    <option value="sapling_10_litre_pot">Saplings 10L Pot</option>
+                    <option value="all" {% if current_category == None %} selected {% endif %}>All Products</option>
+                    <option value="seeds" {% if current_category == 'seeds' %} selected {% endif %}>Seeds</option>
+                    <option value="sapling_2_litre_pot" {% if current_category == 'sapling_2_litre_pot' %} selected {% endif %}>Saplings 2L Pot</option>
+                    <option value="sapling_4_litre_pot" {% if current_category == 'sapling_4_litre_pot' %} selected {% endif %}>Saplings 4L Pot</option>
+                    <option value="sapling_10_litre_pot" {% if current_category == 'sapling_10_litre_pot' %} selected {% endif %}>Saplings 10L Pot</option>
                 </select>
                 <label for="product-sort">Sort By:</label>
                 <select onchange="this.form.submit()" class="product-sort-select" name="product-sort" id="product-sort">
-                    <option value="price_asc" selected>Price Ascending</option>
-                    <option value="price_desc">Price Descending</option>
-                    <option value="category">Category</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %} selected {% endif %}>Price Ascending</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %} selected {% endif %}>Price Descending</option>
+                    {% if current_category == 'All Categories' %} 
+                        <option value="category" {% if current_sorting == 'category' %} selected {% endif %}>Category</option>
+                    {% endif %}
                 </select>
-                <input type="text" placeholder="Search Keyword" name="q">
+                <input type="text" placeholder="Search Keyword" name="q" {% if search_term %}value="{{ search_term }}"{% endif %}>
                 <button type='submit'>Search</button>
             </form>
         </div>
-        <p class="results-found font-color-dark col-12">{{ products|length }} Items Found <a href="{% url 'products' %}">Clear Search</a></p>
+        <div class="results-found col-12">
+            <p class="font-color-dark">{% if search_term %}{{ search_term }} - {% endif %}{% if current_category == None %}All Categories{% else %}{{ category_friendly.friendly_name }}{% endif %} - {{ current_sorting }} | {{ products|length }} Items Found <a href="{% url 'products' %}">Clear Search</a></p>
+        </div>
     <div class="store-row">
     <div class="products-container">
         {% if products|length >= 1 %}
