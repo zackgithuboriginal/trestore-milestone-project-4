@@ -29,9 +29,9 @@
                 </select>
                 <label for="product-sort">Sort By:</label>
                 <select onchange="this.form.submit()" class="product-sort-select" name="product-sort" id="product-sort">
-                    <option value="price_asc" {% if current_sorting == 'price_asc' %} selected {% endif %}>Price Ascending</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' or current_sorting == None %} selected {% endif %}>Price Ascending</option>
                     <option value="price_desc" {% if current_sorting == 'price_desc' %} selected {% endif %}>Price Descending</option>
-                    {% if current_category == 'All Categories' %} 
+                    {% if current_category == None %} 
                         <option value="category" {% if current_sorting == 'category' %} selected {% endif %}>Category</option>
                     {% endif %}
                 </select>
@@ -40,7 +40,7 @@
             </form>
         </div>
         <div class="results-found col-12">
-            <p class="font-color-dark">{% if search_term %}{{ search_term }} - {% endif %}{% if current_category == None %}All Categories{% else %}{{ category_friendly.friendly_name }}{% endif %} - {{ current_sorting }} | {{ products|length }} Items Found <a href="{% url 'products' %}">Clear Search</a></p>
+            <p class="font-color-dark">{% if search_term %}{{ search_term }} - {% endif %}{% if current_category == None %}All Categories{% else %}{{ category_friendly.friendly_name }}{% endif %} - {{ sort_friendly }} | {{ products|length }} Items Found <a href="{% url 'products' %}">Clear Search</a></p>
         </div>
     <div class="store-row">
     <div class="products-container">

@@ -9,6 +9,7 @@ def all_products(request):
     """ This view will display all products """
 
     products = Product.objects.all()
+    sortkey = None
     query = None
     category_friendly = 'All Categories'
     current_category = None
@@ -34,14 +35,13 @@ def all_products(request):
 
         if 'product-sort' in request.GET:
             sortkey = request.GET['product-sort']
-            print(sortkey)
             if sortkey == 'price_asc':
                 products = products.order_by('price')
-                current_sorting = 'Price Ascending'
+                sort_friendly = 'Price Ascending'
             elif sortkey == 'price_desc':
                 sort_direction = '-price'
                 products = products.order_by(sort_direction)
-                current_sorting = 'Price Descending'
+                sort_friendly = 'Price Descending'
             else:
                 products = products.order_by('category')
                 current_sorting = 'Category'
@@ -51,7 +51,8 @@ def all_products(request):
         'search_term': query,
         'category_friendly': category_friendly,
         'current_category': current_category,
-        'current_sorting': current_sorting,
+        'sort_friendly': current_sorting,
+        'current_sorting': sortkey,
 
     }
 
