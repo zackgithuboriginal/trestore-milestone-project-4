@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="basket-content">
+    <div class="page-title"></div>
+    <div class="col-6">
+        <h2>Basket Items</h2>
+        <hr>
+        <div class="product-container">
+            {% if basket_items %}
+            {% else %}
+                <p>You have 0 items in your basket.</p>
+                <p><a href="">Click here to return to the store.</a></p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-6"></div>
+</div>
+{% endblock %}
