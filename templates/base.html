@@ -92,14 +92,16 @@
                     </div>
                 </div>
                 <div class="navbar-icon-container">
-                    <i class="fab fa-pagelines navbar-icon"></i>
-                    <p class="navbar-icon-label">
-                        {% if grand_total %}
-                            €{{ grand_total|floatformat:2 }}
-                        {% else %}
-                            €0.00
-                        {% endif %}
-                    </p>
+                    <a class="navbar-icon-container-basket" href="{% url 'view_basket' %}">
+                        <i class="fab fa-pagelines navbar-icon"></i>
+                        <p class="navbar-icon-label">
+                            {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                            {% else %}
+                                €0.00
+                            {% endif %}
+                        </p>
+                    </a>
                 </div>
             </div>
         </nav>
