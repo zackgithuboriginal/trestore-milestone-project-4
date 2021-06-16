@@ -14,14 +14,17 @@
 
 {% block content %}
 <div class="basket-content">
-    <div class="page-title"><h2>Your Basket</h2>
+    <div class="page-title font-color-green">
+        <h2>Your Basket
+            <i class="fab fa-pagelines font-color-green"></i>
+        </h2>
         <hr></div>
     <div class="col-12 col-lg-6">
         <div class="product-container">
             {% if basket_items %}
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="table-head-row">
                         <th scope="col">Image</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
@@ -55,7 +58,12 @@
                             </tr>
                         {% endfor %}
                     </tbody>
-                    </table>
+                    <tfoot>
+                        <tr>
+                            <td class="font-color-dark" colspan="5">Basket Total: €{{ total }}</td>
+                        </tr>
+                    </tfoot>
+                </table>
             {% else %}
                 <p>You have 0 items in your basket.</p>
                 <p><a href="">Click here to return to the store.</a></p>

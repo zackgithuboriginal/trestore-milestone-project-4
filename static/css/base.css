@@ -18,6 +18,10 @@ header {
     color: #1A342C;
 }
 
+.font-color-green {
+    color: #336857;
+}
+
 .page-title {
     font-size: 2.4rem;
 }
@@ -319,6 +323,23 @@ nav.navbar div.navbar-collapse {
 
 /* Basket Styling */
 
+tbody,
+td, 
+tfoot, 
+th, 
+thead, 
+tr {
+    border-color: rgba(51, 104, 87, .5)
+}
+
+.basket-content tfoot td {
+    border: none;
+}
+
+.basket-content tbody {
+    border-bottom: none;
+}
+
 .basket-content {
     padding: 12rem 2rem;
     min-height: 100vh;
@@ -339,9 +360,13 @@ nav.navbar div.navbar-collapse {
 }
 
 thead {
-    background-color: #1A342C;
+    background-color: #336857;
     height: 3rem;
     justify-content: center;
+}
+
+.table > :not(:last-child) > :last-child > * {
+    border-color: rgba(51, 104, 87, .5)
 }
 
 thead th {
@@ -354,10 +379,31 @@ thead th {
     margin-bottom: auto;
 }
 
+.basket-content tr.table-head-row {
+    height: 3rem;
+}
+
+.basket-content tr {
+    height: 8.5rem;
+    border: none;
+}
+
+.basket-content tfoot tr {
+    text-align: right;
+    font-size: 1.4rem;
+    height: 4rem;
+}
+
+.basket-content tfoot,
+.basket-content tfoot tr {
+    border: none;
+}
+
 td {
     padding-right: 2rem;
     vertical-align:middle;
     font-size: 1.2rem;
+    color: #1A342C;
 }
 
 .basket-content table input {
