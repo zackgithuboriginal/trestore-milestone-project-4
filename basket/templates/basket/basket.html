@@ -45,11 +45,12 @@
                             <td>€{{ item.product.price }}</td>
                             <td>
                                 <div class="row">
-                                    <form class="col-12" action="">
-                                        <input type="number" value="{{ item.quantity }}">
+                                    <form class="col-12 update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}">
                                     </form>
                                     <div class="col-12 row">
-                                        <a class="col-4 basket-product-update" href="">Update</a>
+                                        <a class="col-4 basket-product-update update-basket-button" role="button" type="submit">Update</a>
                                         <a class="col-4 basket-product-delete" href="">Delete</a>
                                     </div>
                                 </div>
@@ -74,3 +75,16 @@
     </div>
 </div>
 {% endblock %} 
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    $('.update-basket-button').click(function(e) {
+        var form = $(this).parent().prev('.update-quantity-form');
+        form.submit();
+    })
+
+</script>
+
+{% endblock %}
