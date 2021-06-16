@@ -13,18 +13,55 @@
 
 {% block content %}
 <div class="basket-content">
-    <div class="page-title"></div>
-    <div class="col-6">
-        <h2>Basket Items</h2>
-        <hr>
+    <div class="page-title"><h2>Your Basket</h2>
+        <hr></div>
+    <div class="col-12 col-lg-6">
         <div class="product-container">
             {% if basket_items %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in basket_items %}
+                            <tr>
+                            <td><img class="table-product-image" src="{{ item.product.image_url }}" alt=""></td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-12">{{ item.product.product_name }}</div>
+                                    <div class="col-12 basket-product-sku">SKU: {{ item.product.sku }}</div>
+                                </div>
+                            </td>
+                            <td>{{ item.product.price }}</td>
+                            <td>
+                                <div class="row">
+                                    <form class="col-12" action="">
+                                        <input type="number" value="{{ item.quantity }}">
+                                    </form>
+                                    <div class="col-12 row">
+                                        <a class="col-4 basket-product-update" href="">Update</a>
+                                        <a class="col-4 basket-product-delete" href="">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{ item.product.price }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
             {% else %}
                 <p>You have 0 items in your basket.</p>
                 <p><a href="">Click here to return to the store.</a></p>
             {% endif %}
         </div>
     </div>
-    <div class="col-6"></div>
+    <div class="col-12 col-lg-6">
+    </div>
 </div>
 {% endblock %} 

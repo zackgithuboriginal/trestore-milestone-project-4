@@ -53,7 +53,9 @@ body {
 }
 
 .navbar-icon-container,
-.navbar-icon-container-profile {
+.navbar-icon-container-profile,
+.navbar-icon-container-basket
+ {
     flex-direction: column;
     justify-content: center;    
     text-align: center;
@@ -313,6 +315,71 @@ nav.navbar div.navbar-collapse {
 .results-found {
     margin-top: 2rem;
     font-size: 1.2rem;
+}
+
+/* Basket Styling */
+
+.basket-content {
+    padding: 12rem 2rem;
+    min-height: 100vh;
+    position: relative;
+    background-color: #F2F8F7;
+}
+
+.basket-content table {
+    margin: auto;
+    width: 90%;
+    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    background-color: #ffffff;
+}
+
+.table-product-image {
+    width: 10rem;
+    height: auto;
+}
+
+thead {
+    background-color: #1A342C;
+    height: 3rem;
+    justify-content: center;
+}
+
+thead th {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: auto;
+    height: auto;
+    margin-bottom: auto;
+}
+
+td {
+    padding-right: 2rem;
+    vertical-align:middle;
+    font-size: 1.2rem;
+}
+
+.basket-content table input {
+    width: 15rem;
+}
+
+.basket-product-update,
+.basket-product-delete {
+    text-decoration: none;
+}
+
+.basket-product-update {
+    color: #336857;
+}
+
+.basket-product-delete {
+    text-align: right;
+    color: red;
+}
+
+.basket-product-sku {
+    font-size: 1rem;
 }
 
 @media (min-width: 550px) {
