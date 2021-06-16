@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -38,7 +39,7 @@
                                     <div class="col-12 basket-product-sku">SKU: {{ item.product.sku }}</div>
                                 </div>
                             </td>
-                            <td>{{ item.product.price }}</td>
+                            <td>€{{ item.product.price }}</td>
                             <td>
                                 <div class="row">
                                     <form class="col-12" action="">
@@ -50,7 +51,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>{{ item.product.price }}</td>
+                            <td>€{{ item.product.price | calculate_subtotal:item.quantity }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
