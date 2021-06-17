@@ -47,11 +47,11 @@
                                 <div class="row">
                                     <form class="col-12 update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
                                         {% csrf_token %}
-                                        <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}">
+                                        <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
                                     </form>
                                     <div class="col-12 row">
                                         <a class="col-4 basket-product-update update-basket-button" role="button" type="submit">Update</a>
-                                        <a class="col-4 basket-product-delete" href="">Delete</a>
+                                        <a class="col-4 basket-product-delete" id="delete_{{ item.item_id }}">Delete</a>
                                     </div>
                                 </div>
                             </td>
@@ -85,6 +85,18 @@
         form.submit();
     })
 
+    
+    $('.basket-product-delete').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('delete_')[1];
+        var url = `/basket/delete/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
 </script>
 
 {% endblock %}
