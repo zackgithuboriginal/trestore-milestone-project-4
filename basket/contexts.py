@@ -19,11 +19,11 @@ def basket_contents(request):
             'product': product,
         })
 
-    delivery_cost = total * Decimal(settings.DELIVERY_PERCENTAGE)
+    delivery_cost = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)
 
     grand_total = delivery_cost + total
 
-    tree_planting_contribution = total * Decimal(settings.TREE_PLANTING_PERCENTAGE)
+    tree_planting_contribution = total * Decimal(settings.TREE_PLANTING_PERCENTAGE / 100)
 
     context = {
         'basket_items': basket_items,
