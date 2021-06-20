@@ -13,13 +13,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="basket-content">
-    <div class="page-title font-color-green">
+<div class="basket-content row">
+    <div class="page-title font-color-green col-12">
         <h2>Your Basket
             <i class="fab fa-pagelines font-color-green"></i>
         </h2>
-        <hr></div>
-    <div class="col-12 col-lg-6">
+    </div>
+    <div class="basket-left col-12 col-lg-8">
+        <div class="basket-sub-title">
+            <div class="">Basket Items</div>
+            <hr>
+        </div>
         <div class="product-container">
             {% if basket_items %}
                 <table class="table">
@@ -71,10 +75,47 @@
             {% endif %}
         </div>
     </div>
-    <div class="col-12 col-lg-6">
+    <div class="basket-right col-12 col-lg-4">
+        <div  class="basket-sub-title">
+            <div class="">Order Summary</div>
+            <hr>
+        </div>
+        
+        {% if basket_items %}
+            <div class="basket-price-breakdown col-12">
+                <div class="price-breakdown-head">
+                        <p>Payment Information</p>
+                </div>
+                <div class="price-breakdown-body">
+                    <div class="price-breakdown-row row">
+                        <p class="col-6">Basket Total: </p>
+                        <p class="col-6 justify-center">€{{ total|floatformat:2 }}</p>
+                        <p class="price-breakdown-disc col-12">5% of total will go directly to the planting of native Irish trees.</p>
+                    </div>
+                    <div class="price-breakdown-row row">
+                        <p class="col-6">Standard Delivery Cost:</p>
+                        <p class="col-6 justify-center">€{{ delivery_cost|floatformat:2 }}</p>
+                    </div>
+                    <div class="highlighted-total row">
+                        <p class="col-6">Grand Total:</p>
+                        <p class="col-6 justify-center">€{{ grand_total|floatformat:2 }}</p>
+                        <p class="col-6">Contribution To Tree Planting:</p>
+                        <p class="col-6 justify-center">€{{ tree_planting_contribution|floatformat:2 }}</p>
+                </div>
+                </div>
+                <div class="price-breakdown-foot">
+                    <a class="store-link">Return to Store</a>
+                    <button class="checkout-button">Checkout Securely</button>
+                </div>
+            </div>
+            <div class="checkout-options col-12">
+                <a class="store-link">Return to Store</a>
+                <button class="checkout-button">Checkout Securely</button>
+            </div>
+        {% endif %}
     </div>
 </div>
-{% endblock %} 
+{% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
