@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -11,14 +13,17 @@ def view_basket(request):
 def add_to_basket(request, item_id):
     """Add a specific product to basket"""
 
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
 
     basket = request.session.get('basket', {})
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
+        messages.success(request, f'{product.product_name} has been updated in your basket!')
     else:
         basket[item_id] = quantity
+        messages.success(request, f'{product.product_name} has been addded to your basket!')
 
     request.session['basket'] = basket
     return redirect('products')
