@@ -220,7 +220,7 @@ nav.navbar div.navbar-collapse {
     flex-direction: column;
     background-color: #ffffff;
     margin-top: 1rem;
-    height: 33rem;
+    height: 37rem;
     max-width: 28rem;
     min-width: 28rem;
     flex-basis: 100%;
@@ -245,7 +245,7 @@ nav.navbar div.navbar-collapse {
     flex-direction: column;
     justify-content: space-between;
     background-color: #fff;
-    height: 8rem;
+    height: 12rem;
     padding: 0;
     padding-top: 1rem;
     margin: 0;
@@ -277,6 +277,13 @@ nav.navbar div.navbar-collapse {
     margin: 0;
 }
 
+.product-card-options form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .product-card-options button {
     display: flex;
     border: none;
@@ -286,6 +293,25 @@ nav.navbar div.navbar-collapse {
     border: 1px solid lightgrey;
     background-color: #336857;
     justify-content: center;
+    width: 12rem;
+}
+
+.product-details-button {
+    height: 3rem;
+    margin-top: auto;
+}
+
+.add-to-basket-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-to-basket-container > * {
+    display: flex;
+}
+
+.add-to-basket button {
+    width: 100%;
 }
 
 .product-filter-select,
