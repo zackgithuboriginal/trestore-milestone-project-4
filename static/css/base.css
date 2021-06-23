@@ -56,16 +56,25 @@ body {
     white-space: nowrap;
 }
 
+.navbar-icon-container {
+    padding: 0 1rem;
+}
+
 .navbar-icon-container,
 .navbar-icon-container-profile,
-.navbar-icon-container-basket
- {
+.navbar-icon-container-basket {
     flex-direction: column;
     justify-content: center;    
     text-align: center;
-    padding: 0 1rem;
     text-decoration: none;
     color: #ffffff;
+}
+
+
+.navbar-icon-container-profile,
+.navbar-icon-container-basket {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .navbar-icon-container-profile {
@@ -89,6 +98,7 @@ body {
     display: flex;
     color: #ffffff;
     padding:0;
+    margin-bottom: 0;
 }
 
 .dropdown-toggle:after {
@@ -125,6 +135,89 @@ nav.navbar div.navbar-collapse {
 	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
 
+
+/* Toast Styling */
+.message-container {
+    z-index: 1000;
+    position: fixed;
+    top: 8rem;
+    right: 1rem;
+    height: auto;
+    width: auto;
+}
+
+.toast {
+    background-color: rgba(255,255,255,.95); ;
+}
+
+.toast-header {
+    background-color: #336857;
+    color: white;
+    font-family: 'Josefin Slab', sans-serif;
+    font-size: 1.8rem;
+}
+
+.toast-header button {
+    border: none;
+    background: none;
+    color: #ffffff;
+}
+
+.toast-header p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.toast-body p {
+    font-size: 1.4rem;
+}
+
+.toast-basket-total-qty {
+    margin-bottom: 0;
+}
+
+.toast-basket-product-display {
+    max-height: 14rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.toast-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.toast-product-image {
+    width: 100%;
+}
+
+.toast-basket-item p {
+    margin: 0;
+
+}    
+
+.toast-basket-summary {
+    margin: 0;
+    font-size: 1.8rem; 
+    font-weight: 600
+}
+
+.toast-footer {
+    padding-top: 1.2rem;
+    margin-left: auto;
+    text-align: right;
+}
+
+.toast-basket-link {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color:#336857;
+    border-radius: .1rem;
+    padding: .5rem;
+}
 /* Home Page Styling */
 
 .home-content {
@@ -512,6 +605,8 @@ td {
 .checkout-options{
     display: none;
     flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
 }
 
 .price-breakdown-foot {

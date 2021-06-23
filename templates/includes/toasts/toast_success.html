@@ -1,4 +1,4 @@
-<div class="toast" data-autohide="false">
+<div class="toast" data-bs-autohide="false">
     <div class="toast-header">
         <p>Success</p>
         <button type="button" data-dismiss="toast" aria-label="Close">
@@ -6,6 +6,35 @@
         </button>
     </div>
     <div class="toast-body">
-        {{ message }}
+        <div class="toast-message">
+            <p>{{ message }}</p>
+        </div>
+    {% if grand_total %}
+        <p class="toast-basket-summary">Basket summary</p>
+        <p class="toast-basket-total-qty text-muted">{{ product_count }} Items</p>
+        <div class="toast-basket-product-display">
+            {% for item in basket_items %}
+                <div class="row toast-basket-item">
+                    <div class="col-3 my-1">
+                        <img class="toast-product-image" src="{{ item.product.image.url }}">
+                    </div>
+                    <div class="col-9">
+                        <p class=""><strong>{{ item.product.product_name }}</strong></p>
+                        <p class="">€{{ item.product.price }}</p>
+                        <p class="text-muted">Qty: {{ item.quantity }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row toast-footer">
+            <div class="col">
+                <strong><p class="">
+                    Basket Total: ${{ total|floatformat:2 }}
+                </p></strong>
+                <a href="{% url 'view_basket' %}" class="toast-basket-link">View Basket and Checkout
+                </a>
+            </div>
+        </div>
+    {% endif %}
     </div>
 </div>
