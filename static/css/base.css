@@ -662,6 +662,16 @@ td {
     display: flex;
 }
 
+/* CHECKOUT */
+
+.checkout-content {
+    padding: 12rem 4rem;
+    min-height: 100vh;
+    position: relative;
+    background-color: #F2F8F7;
+    justify-content: space-between;
+}
+
 @media (min-width: 550px) {
     .home-page-banner {
         width: 52.5rem;
