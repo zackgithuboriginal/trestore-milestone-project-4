@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
+    {% block extra_css %}
+    {% endblock %}
 
     {% block corejs %}
     <script
@@ -42,6 +44,7 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" 
         crossorigin="anonymous">
     </script>
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
