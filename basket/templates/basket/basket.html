@@ -19,100 +19,102 @@
             <i class="fab fa-pagelines font-color-green"></i>
         </h2>
     </div>
-    <div class="basket-left col-12 col-lg-8">
-        <div class="basket-sub-title">
-            <div class="">Basket Items</div>
-            <hr>
-        </div>
-        <div class="product-container">
-            {% if basket_items %}
-                <table class="table">
-                    <thead>
-                        <tr class="table-head-row">
-                        <th scope="col">Image</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for item in basket_items %}
-                            <tr>
-                            <td><img class="table-product-image" src="{{ item.product.image_url }}" alt=""></td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-12">{{ item.product.product_name }}</div>
-                                    <div class="col-12 basket-product-sku">SKU: {{ item.product.sku }}</div>
-                                </div>
-                            </td>
-                            <td>€{{ item.product.price }}</td>
-                            <td>
-                                <div class="row">
-                                    <form class="col-12 update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
-                                    </form>
-                                    <div class="col-12 row">
-                                        <a class="col-4 basket-product-update update-basket-button" role="button" type="submit">Update</a>
-                                        <a class="col-4 basket-product-delete" id="delete_{{ item.item_id }}">Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>€{{ item.product.price | calculate_subtotal:item.quantity }}</td>
+    <div class="col-12 row">
+        <div class="basket-left col-12 col-lg-8">
+            <div class="basket-sub-title">
+                <div class="">Basket Items</div>
+                <hr>
+            </div>
+            <div class="product-container">
+                {% if basket_items %}
+                    <table class="table">
+                        <thead>
+                            <tr class="table-head-row">
+                            <th scope="col">Image</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Subtotal</th>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td class="font-color-dark" colspan="5">Basket Total: €{{ total }}</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            {% else %}
-                <p>You have 0 items in your basket.</p>
-                <p><a href="">Click here to return to the store.</a></p>
+                        </thead>
+                        <tbody>
+                            {% for item in basket_items %}
+                                <tr>
+                                <td><img class="table-product-image" src="{{ item.product.image_url }}" alt=""></td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-12">{{ item.product.product_name }}</div>
+                                        <div class="col-12 basket-product-sku">SKU: {{ item.product.sku }}</div>
+                                    </div>
+                                </td>
+                                <td>€{{ item.product.price }}</td>
+                                <td>
+                                    <div class="row">
+                                        <form class="col-12 update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                            {% csrf_token %}
+                                            <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
+                                        </form>
+                                        <div class="col-12 row">
+                                            <a class="col-4 basket-product-update update-basket-button" role="button" type="submit">Update</a>
+                                            <a class="col-4 basket-product-delete" id="delete_{{ item.item_id }}">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>€{{ item.product.price | calculate_subtotal:item.quantity }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="font-color-dark" colspan="5">Basket Total: €{{ total }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                {% else %}
+                    <p>You have 0 items in your basket.</p>
+                    <p><a href="">Click here to return to the store.</a></p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="basket-right col-12 col-lg-4">
+            <div  class="basket-sub-title">
+                <div class="">Order Summary</div>
+                <hr>
+            </div>
+            
+            {% if basket_items %}
+                <div class="basket-price-breakdown col-12">
+                    <div class="price-breakdown-head">
+                            <p>Payment Information</p>
+                    </div>
+                    <div class="price-breakdown-body">
+                        <div class="price-breakdown-row row">
+                            <p class="col-6">Basket Total: </p>
+                            <p class="col-6 justify-center">€{{ total|floatformat:2 }}</p>
+                            <p class="price-breakdown-disc col-12">5% of total will go directly to the planting of native Irish trees.</p>
+                        </div>
+                        <div class="price-breakdown-row row">
+                            <p class="col-6">Standard Delivery Cost:</p>
+                            <p class="col-6 justify-center">€{{ delivery_cost|floatformat:2 }}</p>
+                        </div>
+                        <div class="highlighted-total row">
+                            <p class="col-6">Grand Total:</p>
+                            <p class="col-6 justify-center">€{{ grand_total|floatformat:2 }}</p>
+                            <p class="col-6">Contribution To Tree Planting:</p>
+                            <p class="col-6 justify-center">€{{ tree_planting_contribution|floatformat:2 }}</p>
+                    </div>
+                    </div>
+                    <div class="price-breakdown-foot">
+                        <a class="store-link">Return to Store</a>
+                        <a class="checkout-button" href="{% url 'checkout' %}">Checkout Securely</a>
+                    </div>
+                </div>
+                <div class="checkout-options col-12">
+                    <a class="store-link">Return to Store</a>
+                    <a class="checkout-button" href="{% url 'checkout' %}">Checkout Securely</a>
+                </div>
             {% endif %}
         </div>
-    </div>
-    <div class="basket-right col-12 col-lg-4">
-        <div  class="basket-sub-title">
-            <div class="">Order Summary</div>
-            <hr>
-        </div>
-        
-        {% if basket_items %}
-            <div class="basket-price-breakdown col-12">
-                <div class="price-breakdown-head">
-                        <p>Payment Information</p>
-                </div>
-                <div class="price-breakdown-body">
-                    <div class="price-breakdown-row row">
-                        <p class="col-6">Basket Total: </p>
-                        <p class="col-6 justify-center">€{{ total|floatformat:2 }}</p>
-                        <p class="price-breakdown-disc col-12">5% of total will go directly to the planting of native Irish trees.</p>
-                    </div>
-                    <div class="price-breakdown-row row">
-                        <p class="col-6">Standard Delivery Cost:</p>
-                        <p class="col-6 justify-center">€{{ delivery_cost|floatformat:2 }}</p>
-                    </div>
-                    <div class="highlighted-total row">
-                        <p class="col-6">Grand Total:</p>
-                        <p class="col-6 justify-center">€{{ grand_total|floatformat:2 }}</p>
-                        <p class="col-6">Contribution To Tree Planting:</p>
-                        <p class="col-6 justify-center">€{{ tree_planting_contribution|floatformat:2 }}</p>
-                </div>
-                </div>
-                <div class="price-breakdown-foot">
-                    <a class="store-link">Return to Store</a>
-                    <button class="checkout-button">Checkout Securely</button>
-                </div>
-            </div>
-            <div class="checkout-options col-12">
-                <a class="store-link">Return to Store</a>
-                <button class="checkout-button">Checkout Securely</button>
-            </div>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
