@@ -86,10 +86,6 @@ input#store-details + .store-details-label:after {
 	cursor:pointer;
 }
 
-.store-details-row i {
-    font-size: 1.6rem;
-}
-
 .store-details-row input {
     display: flex;
     order: 2;
