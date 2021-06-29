@@ -55,3 +55,47 @@
     height: 100%;
     color: #ffffff;
 }
+
+.store-details-row {
+    margin-top: -.5rem;
+}
+
+input#store-details {
+    color: #336857;
+}
+
+input#store-details {
+    display: none;
+}
+
+.store-details-label {
+    padding: 3px;
+    font-size:1.4rem;
+}
+
+input#store-details:checked + .store-details-label:after  {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f14a";
+	cursor:pointer;
+
+}
+
+input#store-details + .store-details-label:after {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f0c8";
+	cursor:pointer;
+}
+
+.store-details-row i {
+    font-size: 1.6rem;
+}
+
+.store-details-row input {
+    display: flex;
+    order: 2;
+}
+
+.store-details-row label {
+    display: flex;
+    order: 1;
+}

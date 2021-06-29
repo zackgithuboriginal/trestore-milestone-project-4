@@ -105,6 +105,17 @@
                                 {{ order_form.street_address1 | as_crispy_field }}
                                 {{ order_form.street_address2 | as_crispy_field }}
                                 {{ order_form.county | as_crispy_field }}
+                                <div class="store-details-row">
+                                    {% if user.is_authenticated %}
+                                        <input class="font-color-green" type="checkbox" id="store-details" name="store-details" checked>
+                                        <label class="font-color-green store-details-label" for="store-details">Save these delivery details to my account &nbsp; <i></i></label>
+                                    {% else %}
+                                    <div>
+                                        <a class="font-color-green" href="{% url 'account_signup' %}">Register an account</a> or 
+                                        <a class="font-color-green" href="{% url 'account_login' %}">login</a> to store your details for faster checkout.
+                                    </div>
+                                    {% endif %}
+                                </div>
                             </fieldset>
                             <fieldset class="px-3">
                                 <legend class="fieldset-label">Card Details</legend>
@@ -157,4 +168,9 @@
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
+<script type="text/javascript">
+
+</script>
+
 {% endblock %}
