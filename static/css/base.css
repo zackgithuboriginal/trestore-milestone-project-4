@@ -26,6 +26,10 @@ header {
     font-size: 2.8rem;
 }
 
+.page-title {
+    height: 3.5rem;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -451,10 +455,6 @@ tr {
     border-color: rgba(51, 104, 87, .5)
 }
 
-.basket-content .page-title {
-    height: 2rem;
-}
-
 .basket-sub-title {
     color: #336857;
     font-size: 1.8rem;
@@ -485,6 +485,8 @@ tr {
     position: relative;
     background-color: #F2F8F7;
     justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
 }
 
 .basket-content table {
@@ -778,6 +780,9 @@ td {
         padding: 12rem 4rem;
     }
 
+    .basket-lower-section {
+        height: calc(100vh - 15rem)
+    }
 
 }
 
