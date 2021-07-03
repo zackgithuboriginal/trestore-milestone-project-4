@@ -27,7 +27,7 @@ header {
 }
 
 .page-title {
-    height: 3.5rem;
+    height: auto;
 }
 
 body {
@@ -719,6 +719,67 @@ td {
     margin-bottom: 2rem;
 }
 
+/* Checkout confirmation */
+
+.page-title p {
+    font-size: 1.4rem;
+}
+.checkout-confirmation-content {
+    background-color: #1A342C;
+    padding: 12rem 4rem;
+    min-height: 100vh;
+    position: relative;
+    justify-content: space-between;
+}
+
+.checkout-confirmation-content .page-title {
+    color: #ffffff;
+}
+
+.checkout-confirmation-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-confirmation-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #F2F8F7;
+}
+
+.order-confirmation-heading {
+    color: #1A342C;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.order-confirmation-wrapper p {
+    font-size: 1.2rem;
+    margin-bottom: .2rem;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.checkout-confirmation-home-link,
+.checkout-confirmation-home-link:hover {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.checkout-confirmation-home-link:hover {
+    color: #ffffff;
+}
+
+.order-confirmation-line-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-confirmation-line-item span {
+    display: flex;
+}
 @media (min-width: 550px) {
     .home-page-banner {
         width: 52.5rem;

@@ -12,14 +12,181 @@
 {% endblock %}
 
 {% block content %}
-<div class="checkout-content row">
-    <div class="page-title font-color-green col-12">
-        <h2>Order Successful
+<div class="checkout-confirmation-content row">
+    <div class="page-title font-color-green col-12 row">
+        <h1 class="col-12">Order Successful
             <i class="fab fa-pagelines font-color-green"></i>
-        </h2>
-        <p>Thank you for your order and for supporting our mission of replanting native woodlands! Your order details can be found below and you will receive a confirmation email at {{ order.email }}</p>
+        </h1>
+        <p class="col-12 col-md-8">Thank you for your order and for supporting our mission of replanting native woodlands! Your order details can be found below and included in your confirmation email sent to {{ order.email }}</p>
     </div>
-    <div class="col-12 row">
+    <div class="checkout-confirmation-container col-12 row">
+        <div class="order-confirmation-wrapper col-12 col-md-8 col-lg-7">
+            <div class="row">
+                <div class="col">
+                    <h3 class="order-confirmation-heading">Order Info:</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Order Number</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.order_number }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Order Date</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.date }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="order-confirmation-heading">Order Details:</h3>
+                </div>
+            </div>
+
+            {% for item in order.lineitems.all %}
+            <div class="row">
+                <div class="col-4 col-md-6">
+                    <p class="order-confirmation-line-item">
+                        <span>{{ item.product.product_name }}</span><span class="text-end">&nbsp;{{ item.quantity }} @ €{{ item.product.price }} each</span>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="order-confirmation-heading">Delivering To:</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Full Name:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.full_name }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Address 1:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.street_address1 }}</p>
+                </div>
+            </div>
+
+            {% if order.street_address2 %}
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Address 2:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.street_address1 }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if order.county %}
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>County:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.county }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Town or City:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.town_or_city }}</p>
+                </div>
+            </div>
+
+            {% if order.postcode %}
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Postal Code:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.postcode }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Country:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.country }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Phone Number:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">{{ order.phone_number }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="order-confirmation-heading">Billing Info:</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-md-4">
+                    <p>Order Total:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">€{{ order.order_total }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 col-sm-4">
+                    <p>Delivery:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">€{{ order.delivery_cost }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <p>Grand Total:</p>
+                </div>
+                <div class="col-6 offset-1">
+                    <p class="text-end">€{{ order.grand_total }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-7">
+            <a href="{% url 'products' %}" class="font-color-light checkout-confirmation-home-link">
+                <i class="fas fa-arrow-left"></i>&nbsp;Return to the store
+                
+            </a>
+        </div>
+    </div>
     </div>
 </div>
 {% endblock %}
