@@ -36,6 +36,16 @@
     border: 1px solid #336857;
 }
 
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 #progress-spinner {
     display: none;
     position: fixed;

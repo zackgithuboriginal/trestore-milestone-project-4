@@ -99,12 +99,12 @@
                             <fieldset class="rounded px-3 mb-5">
                                 <legend class="fieldset-label">Delivery Details</legend>
                                 {{ order_form.phone_number | as_crispy_field }}
-                                {{ order_form.country | as_crispy_field }}
-                                {{ order_form.postcode | as_crispy_field }}
-                                {{ order_form.town_or_city | as_crispy_field }}
                                 {{ order_form.street_address1 | as_crispy_field }}
                                 {{ order_form.street_address2 | as_crispy_field }}
+                                {{ order_form.town_or_city | as_crispy_field }}
+                                {{ order_form.postcode | as_crispy_field }}
                                 {{ order_form.county | as_crispy_field }}
+                                {{ order_form.country | as_crispy_field }}
                                 <div class="store-details-row">
                                     {% if user.is_authenticated %}
                                         <input class="font-color-green" type="checkbox" id="store-details" name="store-details" checked>
