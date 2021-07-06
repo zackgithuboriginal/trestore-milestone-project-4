@@ -1,59 +1,211 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Trestore - Milestone Project 4
 
-Welcome zackgithuboriginal,
+![Image of responsive page mockups]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## Website Description
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experience / UX
+### User Stories
+### First time user
+  1. **Example User Story.**
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+### Repeat user 
+  1. **Example User Story.**
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Site administrators
+  1. **Example User Story.**
 
-A blue button should appear to click: _Make Public_,
+### Design
 
-Another blue button should appear to click: _Open Browser_.
+#### Design Overview
+There were two driving principles behind the design of this website and these were firstly to create an environment in which there is a clear hierarchy of importance with user’s content and posts being foremost and secondly to create an easily understandable and intuitive navigation and interaction interface.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Colour Scheme
+![Image of responsive page mockups]()
+#### Primary Colours
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Secondary colours 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
 
-## Updates Since The Instructional Video
+#### Typography
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Imagery
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Wireframes
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The wireframes for the website were developed using [Figma](https://www.figma.com/) 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+ -   Home Page - Desktop Wireframe - [View]()
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Database Design / Data Modelling
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Image of data schema diagram]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
----
+#### Object model
 
-Happy coding!
+![Image of post collection object]()
+
+The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+
+    example_attribute:             string
+
+
+
+
+## Features
+
+#### Home Page
+
+![Image of responsive page mockups]()
+
+The home page has two major roles. Firstly, its role is to introduce the user to the website and enable them to understand its purpose and functionality. Secondly, the home page is the primary means of exploring user’s posts and discovering new ideas and discussions.
+
+To achieve the first goal I aimed to make the purpose of the home page as simple and clear as possible. Upon loading the page the user is presented with a column of posts down the centre of the page with a toolbar just above them with options to filter and sort. The user upon interacting with the scrollable list of posts will get an idea of the purpose of the site and will understand that this is an environment for creating and sharing posts.
+
+The second goal of the home page to be the primary post navigation screen is achieved by utilising several smaller features to make the functionality of viewing and exploring posts as convenient and intuitive as possible.
+
+
+## Technologies Used
+
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://www.javascript.com/)
+-   [Python](https://www.python.org/)
+
+
+### Frameworks, Libraries & Programs Used
+
+1. [Bootstrap 5.0:](https://getbootstrap.com/)
+  - Bootstrap was used to create the initial base template of the design that was then built on top of and customised further using CSS.
+
+
+### Testing
+
+### Browser and Device Size Testing
+The website was tested thoroughly across all major browsers and all screen and devices sizes down to 360px. 
+
+- [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/)
+
+- [Google Chrome](https://www.google.com/intl/en_ie/chrome/)
+
+- [Microsoft Edge](https://www.microsoft.com/en-us/edge)
+
+- [Opera](https://www.opera.com/)
+
+- A full range of sizes and devices using Chrome DevTools, [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) and [Am I Responsive?](http://ami.responsivedesign.is/)
+
+### Code Validation
+
+At the end of the project, the code was put through CSS and HTML validators to ensure there were no errors presented.
+
+#### HTML validation [W3 Nu HTML validator](https://validator.w3.org/nu/)
+#### Home page html validation
+![Image of home page results]()
+
+#### Python Validation [PEP8 online check](http://pep8online.com/)
+#### app.py python validation            
+![Image of python validator results]()
+
+#### CSS Validation [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+#### style.css css validation
+![Image of css validator results]()
+
+#### CSS Validation [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+#### style.css css validation
+![Image of css validator results]()
+
+#### Javascript Validation [JSHint](https://jshint.com/)
+#### script.js validation
+![Image of Js linter results]()
+
+#### Javascript Validation [JSHint](https://jshint.com/)
+#### script.js validation
+![Image of Js linter results]()
+
+### Performance Testing
+
+To ensure that the website performed well and loaded all pages quickly I tested each page using [Lighthouse](https://developers.google.com/web/tools/lighthouse) where all pages received positive results
+
+#### EXAMPLE PAGE 
+![EXAMPLE CAPTION](example link)
+
+
+### Testing User Stories from User Experience (UX) Section
+#### First Time User Stories
+
+#### 1.    Goal: EXAMPLE
+
+**Expected:** EXAMPLE
+
+**Result:** EXAMPLE
+
+![Image of main post view]()
+
+
+
+### Manual Functionality Testing
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+EXAMPLE | EXAMPLE ACTION | EXAMPLE RESULT | Pass
+
+
+
+### Bugs Discovered 
+
+
+
+## Deployment
+
+### To Publish to Heroku
+
+
+
+### To Connect your Database to the Project
+
+
+
+### To Clone the Repository and Run Locally
+
+#### To Clone Using the Command Line
+
+
+#### To Clone Using GitHub Desktop
+
+
+
+#### To Run the Project Locally
+
+
+## Credits
+
+### Code
+
+
+
+### Content
+
+
+
+### Media
+
+
+
+#### Original creators and links to images
+
+
+
+### Acknowledgements
+
+
