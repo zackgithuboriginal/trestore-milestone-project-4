@@ -43,6 +43,10 @@ body {
 	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
 
+.form-control {
+    font-size: 1.4rem;
+}
+
 .navbar-brand,
 .navbar-brand a,
 .navbar-brand a:hover,
@@ -222,6 +226,97 @@ nav.navbar div.navbar-collapse {
     border-radius: .1rem;
     padding: .5rem;
 }
+
+/* Allauth Pages Styling */
+.allauth-content {
+    padding: 12rem 1rem;
+    min-height: 100vh;
+    height: 100vh;
+    position: relative;
+    background-color: #F2F8F7;
+    justify-content: space-between;
+}
+
+.allauth-container {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 68rem;
+}
+
+.allauth-body,
+.allauth-image {
+    min-height: 100%;
+    height: 100%;
+}
+
+.allauth-body {
+    background-color: #F2F8F7;
+    margin: 0;
+    padding: 4rem 2rem;
+}
+
+.allauth-body h1 {
+    text-align: center;
+    font-size: 3.4rem;
+    font-family: 'Josefin Slab', sans-serif;
+}
+
+
+.allauth-image {
+    display: none;
+}
+
+.allauth-image,
+.allauth-image img {
+    padding: 0;
+}
+
+.allauth-body .page-title {
+    margin-bottom: 5rem;
+}
+
+.allauth-body form {
+    font-size: 1.4rem;
+}
+
+.allauth-body form div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.allauth-body form a {
+    font-size: 1.2rem;
+}
+
+.allauth-body form label {
+    color: #1A342C;
+}
+
+.allauth-container p {
+    color:#1A342C;
+    font-size: 1.2rem;
+}
+
+.allauth-body form input[type="submit"], 
+.allauth-body form button {
+    display: flex;
+    background-color: #336857;
+    color: #ffffff;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.allauth-link {
+    display: flex;
+}
+
+.allauth-bottom-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 /* Home Page Styling */
 
 .home-content {
@@ -785,7 +880,20 @@ td {
         width: 52.5rem;
         margin-left: auto;
         margin-right: auto;
-    }   
+    }
+        
+    .allauth-content {
+        background-color: #F2F8F7;
+        background: url(https://trestore-milestone-project-4.s3.eu-west-1.amazonaws.com/media/allauth-image.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .allauth-body,
+    .allauth-image {
+	    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    }
 
 }
 
@@ -845,6 +953,48 @@ td {
         height: calc(100vh - 15rem)
     }
 
+    /* Allauth Pages Styling */
+    
+    .allauth-content {
+        padding: 12rem 4rem;
+    }
+
+    .allauth-container {
+        width: 60vw;
+    }
+
+    .allauth-body {
+        padding:  4rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Allauth Pages Styling */
+    .allauth-content {
+        padding: 12rem 8rem;
+        min-height: 100vh;
+        height: 100vh;
+        position: relative;
+        justify-content: space-between;
+        background: #1A342C;
+    }
+
+
+    .allauth-image {
+        display: flex;
+        position: relative;
+        overflow-x: hidden;
+        justify-content: center;
+    }
+
+    .allauth-image img {
+        display: flex;
+        height: 100%;
+        width: auto;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 @media (min-width: 1200px) {
