@@ -6,6 +6,8 @@ from django.conf import settings
 from .forms import OrderForm
 from basket.contexts import basket_contents
 from products.models import Product
+from user_profiles.models import UserProfile
+from user_profiles.forms import UserProfileForm
 from .models import OrderLineItem, Order
 
 import stripe
@@ -40,12 +42,12 @@ def checkout(request):
                     'full_name': request.POST['full_name'],
                     'email': request.POST['email'],
                     'phone_number': request.POST['phone_number'],
-                    'country': request.POST['country'],
-                    'postcode': request.POST['postcode'],
-                    'town_or_city': request.POST['town_or_city'],
                     'street_address1': request.POST['street_address1'],
                     'street_address2': request.POST['street_address2'],
+                    'town_or_city': request.POST['town_or_city'],
+                    'postcode': request.POST['postcode'],
                     'county': request.POST['county'],
+                    'country': request.POST['country'],
                 }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -88,7 +90,24 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'town_or_city': profile.default_town_or_city,
+                    'postcode': profile.default_postcode,
+                    'county': profile.default_county,
+                    'country': profile.default_country,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     template = 'checkout/checkout.html'
     context = {
@@ -106,6 +125,28 @@ def checkout_confirmation(request, order_number):
     """
     store_details = request.session.get('store_details')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # The order is saved to the user's profile
+        order.user_profile = profile
+        order.save()
+
+        # The user's details are stored to their profile if check box checked
+        if store_details:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     messages.success(request, f'Order confirmed! \
                                 Order number: {order_number} \
                                 You will receive a confirmation email with details.')
