@@ -1,0 +1,30 @@
+Hi {{ order.full_name }},
+
+Thank you for your purchase with Trestore.
+
+This email is the confirmation of the order that you have placed with us on {{ order_date }}. The full details of your order can be found below:
+
+Order No.: {{ order.order_number }}
+
+Order Contents:
+{% for item in order.lineitems.all %}{{ item.quantity }} x {{ item.product.product_name }} @ €{{ item.product.price }} each
+{% endfor %}
+
+Price:          {{ order.order_total }}
+Delivery Cost:  {{ order.delivery_cost }}
+Total Price:    {{ order.grand_total }}
+
+Delivery Address:
+{{ order.full_name }}
+{{ order.street_address1 }}
+{% if order.street_address1 %}{{ order.street_address1 }}{% endif %}
+{{ order.town_or_city }}
+{% if order.town_or_city %}{{ order.county }}{% endif %}
+{% if order.postcode %}{{ order.postcode }}{% endif %}
+{{ order.country.name }}
+
+If you have any issues or questions regarding your order please get in contact at {{ contact_email }}.
+
+Kind Regards,
+
+Trestore 
