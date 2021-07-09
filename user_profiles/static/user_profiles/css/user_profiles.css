@@ -1,0 +1,33 @@
+.profile-heading {
+    display: flex;
+    max-width: 40rem;
+    justify-content: space-between;
+}
+
+.profile-heading hr {
+    margin-top: 0;
+}
+
+.profile-heading .flex {
+    margin-top: auto;
+}
+
+.profile-default-details {
+    flex-direction: column;
+}
+
+.profile-default-details p {
+    margin: 0 0 .5rem 0;
+    padding: 0;
+    font-size: 1.4rem;
+}
+
+.form-profile-details {
+    display: none;
+    max-width: 40rem;
+    flex-direction: column;
+}
+
+.edit-button {
+    cursor: pointer;
+}

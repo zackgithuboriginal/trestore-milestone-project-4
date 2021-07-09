@@ -22,6 +22,7 @@ def user_profile(request):
     context = {
         'form': form,
         'orders': orders,
+        'profile': activeProfile,
         'profile_details': True,
     }
 

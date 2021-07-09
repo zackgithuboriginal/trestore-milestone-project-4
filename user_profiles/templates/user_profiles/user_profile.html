@@ -17,24 +17,97 @@
 {% endblock %}
 
 {% block content %}
-<div class="checkout-content row">
+<div class="checkout-content">
     <div class="page-title font-color-green col-12">
-        <h1>Profile
+        <h1>Your Profile
             <i class="fab fa-pagelines font-color-green"></i>
         </h1>
+        <hr>
     </div>
-    <div class="col-12 row m-0 p-0">
-        <p>Delivery Information</p>
-        <form action="{% url 'user_profile' %}" method="POST">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button class="allauth-sub" type="submit">Update Details</button>
-        </form>
-    </div>
-    <div class="col-12 row m-0 p-0">
-        <p>Order History</p>
-        {{ orders }}
+    <div class="row">
+        <div class="basket-left col-12 col-lg-4 row p-0">
+            <div class="">
+                <div  class="basket-sub-title">
+                    <div class="profile-heading">
+                        <div class="flex">Contact Details</div><div class="edit-button flex" onclick="toggleForm(this)" id="toggle-contact-details"><i class="fas fa-edit"></i></div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="profile-default-details profile-contact-details">
+                    <p>Username: {{ user }}</p>
+                    <p>Email:    {{ user.email }}</p>
+                    {% if profile.default_phone_number %}
+                        <p>{{ profile.default_phone_number }}</p>
+                    {% endif %}
+                </div>
+                <form action="" class="form-profile-details"></form>
+            </div>
+            <div>
+                <div  class="basket-sub-title">
+                    <div class="profile-heading">
+                        <div class="flex">Delivery Details</div>
+                        <div class="edit-button flex" onclick="toggleForm(this)"  id="toggle-delviery-details"><i class="fas fa-edit"></i></div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="profile-default-details profile-delivery-details">
+                    <p>{{ profile.default_full_name }}</p>
+                    <p>{{ profile.default_street_address1 }}</p>
+                    <p>{{ profile.default_street_address2 }}</p>
+                    <p>{{ profile.default_town_or_city }}</p>
+                    <p>{{ profile.default_post_code }}</p>
+                    <p>{{ profile.default_county }}</p>
+                    <p>{{ profile.default_country.name }}</p>
+                </div>
+                <form class="form-profile-details" action="{% url 'user_profile' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div>
+                        <button class="cta-button-green" type="submit">Update Details</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="basket-right col-12 col-lg-6 offset-lg-1 row p-0"> 
+            <div  class="basket-sub-title">
+                <div class="">Order History</div>
+                <hr>
+            </div>
+            <table class="tabl table-small">
+                <thead>
+                    <tr class="table-head-row">
+                    <th scope="col">Order Number</th>
+                    <th scope="col">Order Date</th>
+                    <th scope="col">Total</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td title="{{ order.order_number }}">
+                            {{ order.order_number|truncatechars:12 }}
+                        </td>
+                        <td>
+                            {{ order.date }}
+                        </td>
+                        <td>
+                            {{ order.grand_total }}
+                        </td>
+                        <td>
+                            <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number}}">Order details</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        </div>
     </div>
 </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'user_profiles/js/user_profiles.js' %}"></script>
 {% endblock %}
