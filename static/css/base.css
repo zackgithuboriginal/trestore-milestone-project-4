@@ -564,6 +564,8 @@ tr {
     max-width: 40rem;
     width: 100%;
     display: flex;
+    margin-top: .5rem;
+
 }
 
 .basket-content tfoot td {
@@ -875,6 +877,25 @@ td {
 .order-confirmation-line-item span {
     display: flex;
 }
+
+/* User Profile Styling */
+.cta-button-green {
+    display: flex;
+    background-color: #336857;
+    color: #ffffff;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.checkout-content table tbody {
+    max-height: 10rem;
+    overflow-y: scroll;
+}
+
+.checkout-content table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
 @media (min-width: 550px) {
     .home-page-banner {
         width: 52.5rem;
