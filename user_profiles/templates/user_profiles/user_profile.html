@@ -29,18 +29,15 @@
             <div class="">
                 <div  class="basket-sub-title">
                     <div class="profile-heading">
-                        <div class="flex">Contact Details</div><div class="edit-button flex" onclick="toggleForm(this)" id="toggle-contact-details"><i class="fas fa-edit"></i></div>
+                        <div class="flex">Contact Details</div>
                     </div>
                     <hr>
                 </div>
                 <div class="profile-default-details profile-contact-details">
                     <p>Username: {{ user }}</p>
-                    <p>Email:    {{ user.email }}</p>
-                    {% if profile.default_phone_number %}
-                        <p>{{ profile.default_phone_number }}</p>
-                    {% endif %}
+                    <p>Email: {{ user.email }} &nbsp;&nbsp;(<a href="{% url 'account_email' %}">Update Email</a>)</p>
+                    <p>Password: (<a href="{% url 'account_set_password' %}">Update Password</a>)</p>
                 </div>
-                <form action="" class="form-profile-details"></form>
             </div>
             <div>
                 <div  class="basket-sub-title">
