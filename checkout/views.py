@@ -41,7 +41,6 @@ def checkout(request):
         form_data = {
                     'full_name': request.POST['full_name'],
                     'email': request.POST['email'],
-                    'phone_number': request.POST['phone_number'],
                     'street_address1': request.POST['street_address1'],
                     'street_address2': request.POST['street_address2'],
                     'town_or_city': request.POST['town_or_city'],
@@ -96,7 +95,6 @@ def checkout(request):
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
-                    'phone_number': profile.default_phone_number,
                     'street_address1': profile.default_street_address1,
                     'street_address2': profile.default_street_address2,
                     'town_or_city': profile.default_town_or_city,
@@ -135,7 +133,7 @@ def checkout_confirmation(request, order_number):
         # The user's details are stored to their profile if check box checked
         if store_details:
             profile_data = {
-                'default_phone_number': order.phone_number,
+                'default_full_name': order.full_name,
                 'default_country': order.country,
                 'default_postcode': order.postcode,
                 'default_town_or_city': order.town_or_city,
