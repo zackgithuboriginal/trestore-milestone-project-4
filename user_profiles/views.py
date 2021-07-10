@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.conf import settings
 
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -19,9 +20,11 @@ def user_profile(request):
     form = UserProfileForm(instance=activeProfile)
     orders = activeProfile.orders.all()
     template = "user_profiles/user_profile.html"
+    trees_planted = int(float(activeProfile.tree_planting_contribution) / settings.TREE_PLANTING_BASE_COST)
     context = {
         'form': form,
         'orders': orders,
+        'trees_planted': trees_planted,
         'profile': activeProfile,
         'profile_details': True,
     }

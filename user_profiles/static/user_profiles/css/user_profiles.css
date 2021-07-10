@@ -31,3 +31,15 @@
 .edit-button {
     cursor: pointer;
 }
+
+.profile-trees-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+}
+
+.profile-trees-container p {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
