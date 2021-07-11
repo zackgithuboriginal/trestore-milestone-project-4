@@ -40,7 +40,13 @@
                         <tbody>
                             {% for item in basket_items %}
                                 <tr>
-                                <td><img class="table-product-image" src="{{ item.product.image_url }}" alt=""></td>
+                                <td>
+                                    {% if item.product.image %}
+                                        <img class="table-product-image" src="{{ item.product.image.url }}" alt="">
+                                    {% else %}
+                                        ADD IMAGE HERE
+                                    {% endif %}
+                                </td>
                                 <td>
                                     <div class="row">
                                         <div class="col-12">{{ item.product.product_name }}</div>
