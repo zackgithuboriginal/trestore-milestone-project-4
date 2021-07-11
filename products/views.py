@@ -91,7 +91,7 @@ def edit_product(request, product_id):
             messages.success(request, f'{product.product_name} product successfully updated.')
             return redirect(reverse, ('/'))
         else:
-            messages.error(reverse, 'Unable to update product. Ensure there are no errors in the form.')
+            messages.error(request, 'Unable to update product. Ensure there are no errors in the form.')
     else:
         form = AddProductForm(instance=product)
         messages.info(request, f'Now editing {product.product_name}')
@@ -103,3 +103,13 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """ View for delete a product from the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+
+    messages.success(request, 'Product successfully deleted from the store.')
+
+    return redirect(reverse('products'))
