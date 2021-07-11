@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="checkout-content row">
+    <div class="page-title font-color-green col-12">
+        <h1>Product Admin
+            <i class="fab fa-pagelines font-color-green"></i>
+        </h1>
+        <h2>Edit product</h2>
+    </div>
+    <div class="col-12 row m-0 p-0">
+        <form action="{% url 'edit_product' product.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="">
+                <a href="{% url 'products' %}">
+                    Cancel
+                </a>
+                <button type="submit" class="cta-button-green">
+                    Update Product
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
