@@ -2,22 +2,29 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from django.contrib import messages
+
 
 def basket_contents(request):
-
     basket_items = []
     total = 0
     product_count = 0
     basket = request.session.get('basket', {})
     for item_id, quantity in basket.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        product_count += quantity
-        basket_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-        })
+        try:
+            product = get_object_or_404(Product, pk=item_id)
+            total += quantity * product.price
+            product_count += quantity
+            basket_items.append({
+                'item_id': item_id,
+                'quantity': quantity,
+                'product': product,
+            })
+        except Exception:
+            messages.error(request, 'Unfortunately a product in your basket is no longer available.')
+            basket.pop(item_id, quantity)
+            request.session['basket'] = basket
+            break
 
     delivery_cost = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)
 
