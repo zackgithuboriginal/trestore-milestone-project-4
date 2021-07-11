@@ -409,6 +409,7 @@ nav.navbar div.navbar-collapse {
 
 .product-card {
     display: flex;
+    position: relative;
     flex-direction: column;
     background-color: #ffffff;
     margin-top: 1rem;
@@ -894,6 +895,60 @@ td {
 
 .checkout-content table tbody tr:nth-child(even) {
     background-color: #ffffff;
+}
+
+/* Product Edit Options */
+
+.product-edit-options {
+	display: none;
+	position: absolute;
+	font-size: 2rem;
+	flex-direction: column;
+    top: 4rem;
+	right: 0;
+	text-align: right;
+	width: 14rem;
+	padding: 1rem;
+	z-index: 5;
+    background-color: #ffffff;
+}
+
+.product-edit-dropdown {
+    position: absolute;
+    background: none;
+    border: none;
+    top: .5rem;
+    right: .5rem;
+    width: auto;
+	font-size: 2.4rem;
+	min-height: 0;
+    color: #336857;
+}
+
+.product-edit-options i {
+	margin-left: .5rem;
+}
+
+.product-edit-options a,
+.product-edit-options button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: none;
+	background: none;
+	font-size: 2rem;
+	padding: .25rem 0;
+	display: flex;
+	justify-content: space-between;
+	text-decoration: none;
+	color: #1A342C;
+}
+
+.product-edit-options h4,
+.product-edit-options i {
+	margin: 0;
+	display: flex;
+	font-size: 1.6rem;
+    color: #1A342C;
 }
 
 @media (min-width: 550px) {
