@@ -885,6 +885,7 @@ td {
     background-color: #336857;
     color: #ffffff;
     border: none;
+    font-size: 1.4rem;
     padding: .5rem 1rem;
 }
 
@@ -949,6 +950,99 @@ td {
 	display: flex;
 	font-size: 1.6rem;
     color: #1A342C;
+}
+
+/* Edit / Add Products  */
+input#file-input-checkbox:checked + .file-input-label:after  {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f14a";
+	cursor:pointer;
+    margin-left: 1rem;
+
+}
+
+input#file-input-checkbox + .file-input-label:after {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f0c8";
+	cursor:pointer;
+    margin-left: 1rem;
+}
+
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color: #b8b8b8;
+}
+
+.custom-file-checkbox {
+    display: none;
+}
+
+
+.custom-image-file-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%
+}
+
+.custom-image-file-container img {
+    height: 12rem;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+
+.flex-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30rem;
+}
+
+.flex-space-between p,
+.flex-space-between label,
+.flex-space-between input {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.flex-space-between p {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.custom-image-file-clear label {
+    font-size: 1.4rem;
+}
+
+.button-wrap {
+    position: relative;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #336857;
+    font-size: 1.4rem;
+    color: #ffffff;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.custom-image-file-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-image-file-clear {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media (min-width: 550px) {
