@@ -96,11 +96,11 @@ def edit_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
-        form = AddProductForm(request.POST, request.FILES, instace=product)
+        form = AddProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
             messages.success(request, f'{product.product_name} product successfully updated.')
-            return redirect(reverse, ('/'))
+            return redirect(reverse('home'))
         else:
             messages.error(request, 'Unable to update product. Ensure there are no errors in the form.')
     else:
