@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="home-content container-flex bg-dark-green">
+<div class="progress-content container-flex bg-dark-green">
     <div class="tree-graphic">
         <svg id="Capa_1" enable-background="new 0 0 511.999 511.999" viewBox="0 0 600 400" height="800" width="800" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -40,8 +40,32 @@
         </svg>
     </div>
     <div class="progress-post-container">
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <div class="post-button-container">
+                <div class="add-post-button">
+                    <button>
+                        Add New Post <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            {% endif %}
+        {% endif %}
         {% for post in progress_posts %}
-            {{ post.post_title }}
+        <div class="post-card">
+            <div class="post-head">
+                <h2>{{ post.post_title }}</h2>
+            </div>
+            <div class="post-body">
+                <p class="post-content">{{ post.post_content }}</p>
+                <div class="post-body-bottom">
+                    <p>{{ post.date }}</p>
+                    <p>{{ post.author }}</p>
+                </div>
+            </div>
+
+        </div>
         {% endfor %}
     </div>
 </div>

@@ -1045,6 +1045,98 @@ input[type="file"] {
     justify-content: space-between;
 }
 
+/* progress post styling */
+
+.progress-content {
+    padding-top: 8rem;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-post-container {
+    position: relative;
+    padding-top: 5rem;
+    z-index: 200;
+}
+
+.progress-post-container .post-card:not(:first-child) {
+    margin-top: 4rem;
+}
+
+.progress-post-container .post-card:last-child {
+    margin-bottom: 4rem;
+}
+
+.post-head {
+    background-color: #336857;
+}
+
+.post-body {
+    padding: 1rem 2rem;
+}
+
+.post-head h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    padding: 1rem;
+}
+
+.post-card {
+    background-color: #F2F8F7;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width:90%;
+    max-width: 60rem;
+}
+
+.post-content {
+    font-size: 1.4rem;
+}
+
+.post-body-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.add-post-button {
+    position: relative;
+    display: flex;
+    width: 90%;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-start;
+}
+
+.add-post-button button {
+    font-size: 1.6rem;
+    background-color: #336857;
+    color: #F2F8F7;
+    border: none;
+    padding: 1rem;
+    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+}
+
+.post-button-container {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    height: 4.4rem;
+}
+
+div.spacer {
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: 0;
+    margin-bottom: 6rem;
+
+}
+
 @media (min-width: 550px) {
     .home-page-banner {
         width: 52.5rem;
@@ -1095,7 +1187,7 @@ input[type="file"] {
     }   
 
     .tree-graphic {
-        position: absolute;
+        position: fixed;
         top:0;
         right:0;
         bottom:0;
@@ -1164,6 +1256,28 @@ input[type="file"] {
         width: auto;
         right: 0;
         bottom: 0;
+    }
+
+    .post-head h2 {
+        font-size: 1.8rem;
+        color: #ffffff;
+        padding: 1rem;
+    }
+
+    .post-card {
+        margin-left: 15%;
+    }
+
+    .add-post-button {
+        margin-left: calc(15% + 62rem);
+    }
+
+    div.spacer {
+        display: none;
+    }
+
+    .progress-post-container .post-card:not(:first-child) {
+        margin-top: 0;
     }
 }
 
