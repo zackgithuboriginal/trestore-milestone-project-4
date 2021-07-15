@@ -44,9 +44,9 @@
             {% if request.user.is_superuser %}
             <div class="post-button-container">
                 <div class="add-post-button">
-                    <button>
-                        Add New Post <i class="fas fa-plus"></i>
-                    </button>
+                    <a class="cta-button-green" href="{% url 'add_post' %}">
+                        Add New Post &nbsp;<i class="fas fa-plus"></i>
+                    </a>
                 </div>
             </div>
             <div class="spacer"></div>

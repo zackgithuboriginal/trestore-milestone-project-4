@@ -1079,7 +1079,7 @@ input[type="file"] {
 .post-head h2 {
     font-size: 1.8rem;
     color: #ffffff;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .post-card {
@@ -1112,13 +1112,18 @@ input[type="file"] {
     justify-content: flex-start;
 }
 
-.add-post-button button {
+.add-post-button a {
     font-size: 1.6rem;
     background-color: #336857;
     color: #F2F8F7;
     border: none;
     padding: 1rem;
     box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    text-decoration: none;
+}
+
+.add-post-button a i {
+    line-height: 1.5;
 }
 
 .post-button-container {
@@ -1256,12 +1261,6 @@ div.spacer {
         width: auto;
         right: 0;
         bottom: 0;
-    }
-
-    .post-head h2 {
-        font-size: 1.8rem;
-        color: #ffffff;
-        padding: 1rem;
     }
 
     .post-card {
