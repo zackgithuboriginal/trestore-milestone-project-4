@@ -1,6 +1,6 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import ProgressPost
+from .models import ProgressPost, Comment
 
 
 class AddPostForm(forms.ModelForm):
@@ -26,3 +26,16 @@ class AddPostForm(forms.ModelForm):
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+
+
+class AddCommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = '__all__'
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['comment_content'].widget.attrs['autofocus'] = True
+        self.fields[field].widget.attrs['placeholder'] = 'Comment'

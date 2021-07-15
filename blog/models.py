@@ -15,3 +15,15 @@ class ProgressPost(models.Model):
 
     def __str__(self):
         return self.post_title
+
+
+class Comment(models.Model):
+
+    post = models.ForeignKey(ProgressPost, null=False, blank=False, on_delete=models.CASCADE, related_name='comments', editable=False)
+    comment_content = models.CharField(max_length=400, null=False, blank=False)
+    date = models.DateTimeField(auto_now_add=True, editable=False)
+    author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                               null=True, related_name='comments', editable=False)
+
+    def __str__(self):
+        return self.comment_content

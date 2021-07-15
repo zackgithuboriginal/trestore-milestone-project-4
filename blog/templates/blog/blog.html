@@ -82,9 +82,40 @@
                         <p>{{ post.author }}</p>
                     </div>
                 </div>
+                <div class="post-foot">
+                    <div class="foot-options">
+                        <a onclick="displayComments(this, {{ post.id }})"><span>Show Comments </span>({{ post.comments.all.count }})</a>
+                    </div>
+                    <div class="post-comment-container" id="comment-container-{{post.id}}">
+                        {% for comment in post.comments.all %}
+                            <div class="comment-card">
+                                <p>{{ comment.comment_content }}</p>
+                                <div class="comment-bottom-row">
+                                    <p>{{ comment.author }}</p>
+                                    <p>{{ comment.date }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        function displayComments(element, post_id) {
+            if($( `#comment-container-${ post_id }`).css('display') == 'none') {
+                $( `#comment-container-${ post_id }`).css('display', 'flex');
+                element.firstElementChild.textContent = 'Hide Comments '
+            } else {
+                $( `#comment-container-${ post_id }`).css('display', 'none');
+                element.firstElementChild.textContent = 'Show Comments '
+            }
+        }
+    </script>
 {% endblock %}
