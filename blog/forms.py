@@ -7,8 +7,7 @@ class AddPostForm(forms.ModelForm):
 
     class Meta:
         model = ProgressPost
-        fields = ('post_title', 'post_content',
-                  'image',)
+        fields = '__all__'
 
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
@@ -18,12 +17,12 @@ class AddPostForm(forms.ModelForm):
         placeholders = {
             'post_title': 'Post Title',
             'post_content': 'Post Content',
+            'image': 'Image',
+            'author': 'Author',
         }
 
         self.fields['post_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'image':
-                placeholder = f'{placeholders[field]} *'
+            placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False

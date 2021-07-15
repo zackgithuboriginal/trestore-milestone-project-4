@@ -42,31 +42,32 @@
     <div class="progress-post-container">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-            <div class="post-button-container">
-                <div class="add-post-button">
-                    <a class="cta-button-green" href="{% url 'add_post' %}">
-                        Add New Post &nbsp;<i class="fas fa-plus"></i>
-                    </a>
+                <div class="post-button-container">
+                    <div class="add-post-button">
+                        <a class="cta-button-green" href="{% url 'add_post' %}">
+                            Add New Post &nbsp;<i class="fas fa-plus"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="spacer"></div>
+                <div class="spacer"></div>
             {% endif %}
         {% endif %}
-        {% for post in progress_posts %}
-        <div class="post-card">
-            <div class="post-head">
-                <h2>{{ post.post_title }}</h2>
-            </div>
-            <div class="post-body">
-                <p class="post-content">{{ post.post_content }}</p>
-                <div class="post-body-bottom">
-                    <p>{{ post.date }}</p>
-                    <p>{{ post.author }}</p>
+        <div class="progress-posts">
+            {% for post in progress_posts %}
+            <div class="post-card">
+                <div class="post-head">
+                    <h2>{{ post.post_title }}</h2>
+                </div>
+                <div class="post-body">
+                    <p class="post-content">{{ post.post_content }}</p>
+                    <div class="post-body-bottom">
+                        <p>{{ post.date }}</p>
+                        <p>{{ post.author }}</p>
+                    </div>
                 </div>
             </div>
-
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

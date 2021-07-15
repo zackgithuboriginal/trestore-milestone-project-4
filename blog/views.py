@@ -3,6 +3,8 @@ from blog.models import ProgressPost
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import AddPostForm
+from user_profiles.models import UserProfile
+
 
 # Create your views here.
 def progress(request):
@@ -25,7 +27,15 @@ def add_post(request):
         return redirect(reverse('progress'))
 
     if request.method == 'POST':
-        form = AddPostForm(request.POST, request.FILES)
+        author = UserProfile.objects.get(user=request.user)
+        form_data = {
+            'author': author,
+            'post_title': request.POST['post_title'],
+            'post_content': request.POST['post_content'],
+            'image': request.FILES['image'],
+        }
+
+        form = AddPostForm(form_data)
         if form.is_valid():
             form.save()
             messages.success(request, 'Post successfully published.')

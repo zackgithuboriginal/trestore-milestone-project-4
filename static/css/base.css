@@ -1050,6 +1050,7 @@ input[type="file"] {
 .progress-content {
     padding-top: 8rem;
     min-height: 100vh;
+    height: auto;
     overflow: hidden;
     position: relative;
 }
@@ -1273,10 +1274,6 @@ div.spacer {
 
     div.spacer {
         display: none;
-    }
-
-    .progress-post-container .post-card:not(:first-child) {
-        margin-top: 0;
     }
 }
 

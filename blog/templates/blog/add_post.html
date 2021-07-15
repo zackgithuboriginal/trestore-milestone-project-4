@@ -23,10 +23,12 @@
         <form action="{% url 'add_post' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
-                {% if field.name != 'image' %}
-                    {{ field | as_crispy_field }}
-                {% else %}
-                    {{ field }}
+                {% if field.name != 'author'%}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
                 {% endif %}
             {% endfor %}
             <div class="">
