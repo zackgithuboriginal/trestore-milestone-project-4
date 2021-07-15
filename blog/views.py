@@ -54,6 +54,35 @@ def add_post(request):
 
 
 @login_required
+def edit_post(request, post_id):
+    """ View for editing a post in the progress blog """
+    if not request.user.is_superuser:
+        messages.error(request, 'Oops, you need to be authorised to do that.')
+        return redirect(reverse('progress'))
+
+    post = get_object_or_404(ProgressPost, pk=post_id)
+    if request.method == 'POST':
+        form = AddPostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Post successfully updated.')
+            return redirect(reverse('progress'))
+        else:
+            messages.error(request, 'Unable to update post. Ensure there are no errors in the form.')
+    else:
+        form = AddPostForm(instance=post)
+        messages.info(request, 'Now editing post.')
+
+    template = 'blog/edit_post.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def delete_post(request, post_id):
     """ View for delete a post from the progress blog """
     if not request.user.is_superuser:
