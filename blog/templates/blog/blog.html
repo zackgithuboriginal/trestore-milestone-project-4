@@ -57,6 +57,23 @@
             <div class="post-card">
                 <div class="post-head">
                     <h2>{{ post.post_title }}</h2>
+
+                    {% if request.user.is_superuser %}
+                        <button class="display-edit-dropdown"
+                        onclick="displayOptionsDropdown('{{ post.id }}')"><i
+                            class="fas fa-cog font-color-light"></i></button>
+                        <div class="display-edit-options"
+                        id="display-options-{{ post.id }}">
+                            <a class=""
+                                href="">
+                                <h4>Delete Post</h4><i class="fas fa-trash-alt"></i>
+                            </a>
+                            <a class=""
+                                href="">
+                                <h4>Edit Post</h4><i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="post-body">
                     <p class="post-content">{{ post.post_content }}</p>

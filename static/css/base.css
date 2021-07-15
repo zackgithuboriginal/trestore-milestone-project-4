@@ -898,9 +898,9 @@ td {
     background-color: #ffffff;
 }
 
-/* Product Edit Options */
+/* Product/Post Edit Options */
 
-.product-edit-options {
+.display-edit-options {
 	display: none;
 	position: absolute;
 	font-size: 2rem;
@@ -911,10 +911,10 @@ td {
 	width: 14rem;
 	padding: 1rem;
 	z-index: 5;
-    background-color: #ffffff;
+    background-color: #336857;
 }
 
-.product-edit-dropdown {
+.display-edit-dropdown {
     position: absolute;
     background: none;
     border: none;
@@ -923,15 +923,14 @@ td {
     width: auto;
 	font-size: 2.4rem;
 	min-height: 0;
-    color: #336857;
 }
 
-.product-edit-options i {
+.display-edit-options i {
 	margin-left: .5rem;
 }
 
-.product-edit-options a,
-.product-edit-options button {
+.display-edit-options a,
+.display-edit-options button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	border: none;
@@ -944,12 +943,12 @@ td {
 	color: #1A342C;
 }
 
-.product-edit-options h4,
-.product-edit-options i {
+.display-edit-options h4,
+.display-edit-options i {
 	margin: 0;
 	display: flex;
 	font-size: 1.6rem;
-    color: #1A342C;
+    color: #ffffff;
 }
 
 /* Edit / Add Products  */
@@ -1070,6 +1069,7 @@ input[type="file"] {
 }
 
 .post-head {
+    position: relative;
     background-color: #336857;
 }
 
