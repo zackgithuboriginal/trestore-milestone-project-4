@@ -65,7 +65,7 @@
                         <div class="display-edit-options"
                         id="display-options-{{ post.id }}">
                             <a class=""
-                                href="">
+                                href="{% url 'delete_post' post.id %}">
                                 <h4>Delete Post</h4><i class="fas fa-trash-alt"></i>
                             </a>
                             <a class=""

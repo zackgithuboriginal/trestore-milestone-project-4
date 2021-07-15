@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from blog.models import ProgressPost
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -51,3 +51,18 @@ def add_post(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_post(request, post_id):
+    """ View for delete a post from the progress blog """
+    if not request.user.is_superuser:
+        messages.error(request, 'Oops, you need to be authorised to do that.')
+        return redirect(reverse('progress'))
+
+    post = get_object_or_404(ProgressPost, pk=post_id)
+    post.delete()
+
+    messages.success(request, 'Post successfully deleted from the progress blog.')
+
+    return redirect(reverse('progress'))
