@@ -908,7 +908,7 @@ td {
     top: 4rem;
 	right: 0;
 	text-align: right;
-	width: 14rem;
+	width: 12rem;
 	padding: 1rem;
 	z-index: 5;
     background-color: #336857;
@@ -918,11 +918,13 @@ td {
     position: absolute;
     background: none;
     border: none;
-    top: .5rem;
-    right: .5rem;
+    top: 1.28rem;
+    right: 1rem;
     width: auto;
-	font-size: 2.4rem;
+	font-size: 1.6rem;
 	min-height: 0;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .display-edit-options i {
@@ -947,7 +949,7 @@ td {
 .display-edit-options i {
 	margin: 0;
 	display: flex;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
     color: #ffffff;
 }
 
@@ -1073,19 +1075,19 @@ input[type="file"] {
     background-color: #336857;
 }
 
-.post-body,
-.post-foot {
+.post-body {
     padding: 1rem 2rem;
 }
 
-
 .post-foot {
+    padding: 0 2rem 1rem 2rem;
     height: auto;
 }
 
 .foot-options {
     color: #1A342C;
     font-size: 1.2rem;
+    margin-bottom: .5rem;
 }
 
 .foot-options a:not(:first-child){
@@ -1108,6 +1110,7 @@ input[type="file"] {
 }
 
 .post-content {
+    min-height: 4rem;
     font-size: 1.4rem;
 }
 
@@ -1116,6 +1119,10 @@ input[type="file"] {
     flex-direction: row;
     justify-content: space-between;
     font-size: 1.2rem;
+}
+
+.post-body-bottom p {
+    margin-bottom: 0;
 }
 
 .add-post-button {
@@ -1163,6 +1170,89 @@ div.spacer {
 .post-comment-container {
     display: none;
     flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-comment-add {
+    display: flex;
+}
+
+.add-comment-form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.add-comment-form textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    font-size: 1.2rem;
+}
+
+.add-comment-form button {
+    width: 6rem;
+    border: none;
+    font-size: 1.2rem;
+    background-color: #336857;
+    color: #ffffff;
+    margin-top: .5rem;
+}
+
+.comment-bottom-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: grey;
+}
+
+.comment-bottom-details {
+    width: 24rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comment-options {
+    display: flex;
+    flex-direction: flex-start;
+}
+
+.comment-options a:first-child {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.comment-card p {
+    margin-bottom: .5rem;
+}
+
+.comment-date {
+    margin-left: 2rem;
+}
+
+.comment-card {
+    margin-top: .5rem;
+}
+
+.comment-content {
+    font-size: 1.2rem;
+}
+
+.post-comment-container .comment-seperate:nth-child(2) {
+    display: none;
+} 	
+
+.comment-seperate {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: .2rem solid #1A342C;
+    margin-top: .2rem;
 }
 
 @media (min-width: 550px) {

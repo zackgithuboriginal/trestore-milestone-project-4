@@ -120,3 +120,16 @@ def add_comment(request, post_id):
             )
             comment.delete()
             return redirect(reverse('progress'))
+
+@login_required
+def delete_comment(request, comment_id):
+
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if not request.user.is_superuser and request.user != comment.author:
+        messages.error(request, 'Oops, you need to be authorised to do that.')
+        return redirect(reverse('progress'))
+    else:
+        comment.delete()
+        messages.success(request, 'Comment successfully deleted.')
+
+    return redirect(reverse('progress'))
