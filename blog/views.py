@@ -133,3 +133,27 @@ def delete_comment(request, comment_id):
         messages.success(request, 'Comment successfully deleted.')
 
     return redirect(reverse('progress'))
+
+
+@login_required
+def edit_comment(request, comment_id):
+    """ View for adding a comment to a post """
+
+    if not request.user.is_superuser and request.user != comment.author:
+        messages.error(request, 'Oops, you need to be authorised to do that.')
+        return redirect(reverse('progress'))
+    else:
+        if request.method == 'POST':
+            try:
+                comment = get_object_or_404(Comment, pk=comment_id)
+                comment.comment_content = request.POST['comment-content']
+                comment.save()
+                messages.success(request, 'Comment successfully edited.')
+                return redirect(reverse('progress'))
+
+            except ProgressPost.DoesNotExist:
+                messages.error(request, (
+                    "Unfortunately that comment no longer exists!")
+                )
+                comment.delete()
+                return redirect(reverse('progress'))

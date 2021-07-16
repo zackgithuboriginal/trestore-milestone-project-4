@@ -1101,7 +1101,7 @@ input[type="file"] {
 }
 
 .post-card {
-    background-color: #F2F8F7;
+    background-color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     height: auto;
@@ -1251,8 +1251,47 @@ div.spacer {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border-top: .2rem solid #1A342C;
+    border-top: .2rem solid #336857;
     margin-top: .2rem;
+    opacity: 1;
+}
+
+.comment-edit {
+    display: none;
+    margin-top: .5rem;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.form-buttons button:first-child {
+    margin-right: 1rem;
+}
+
+.comment-edit form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.edit-comment-textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    font-size: 1.2rem;
+}
+
+.comment-save,
+.comment-cancel {
+    width: 6rem;
+    border: none;
+    font-size: 1.2rem;
+    background-color: #336857;
+    color: #ffffff;
+    margin-top: .5rem;
 }
 
 @media (min-width: 550px) {

@@ -91,12 +91,15 @@
                             <form class="add-comment-form" action="{% url 'add_comment' post.id %}" method="POST" >
                                 {% csrf_token %}
                                 <textarea name="comment_content" id="comment_content" placeholder="Enter your comment text." cols="30" rows="2"></textarea>
-                                <button type="submit">Add</button>
+                                <div class="form-buttons">  
+                                    <button type="button">Clear</button>
+                                    <button type="submit">Add</button>
+                                </div>
                             </form>
                         </div>
                         {% for comment in post.comments.all %}
                             <hr class="comment-seperate">
-                            <div class="comment-card">
+                            <div class="comment-card" id="comment-{{comment.id}}">
                                 <p class="comment-content">{{ comment.comment_content }}</p>
                                 <div class="comment-bottom-row">
                                     <div class="comment-bottom-details">
@@ -106,12 +109,22 @@
                                     {% if request.user.is_authenticated %}
                                         {% if request.user.is_superuser or request.user == comment.author %}
                                             <div class="comment-options">
-                                                <a href="">Edit</a>
+                                                <button href="" onclick="displayEditForm({{comment.id}})">Edit</button>
                                                 <a href="{% url 'delete_comment' comment.id %}">Delete</a>
                                             </div>
                                         {% endif %}
                                     {% endif %}
                                 </div>
+                            </div>
+                            <div class="comment-edit" id="comment-edit-{{comment.id}}">
+                                <form action="{% url 'edit_comment' comment.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <textarea class="edit-comment-textarea" name="comment-content" id="comment-content" cols="30" rows="2">{{comment.comment_content}}</textarea>
+                                    <div class="form-buttons">   
+                                        <button class="comment-cancel" onclick="closeEdit({{comment.id}})" type="button">Cancel</button>
+                                        <button class="comment-save" type="submit">Save</button>                                    
+                                    </div> 
+                                </form>
                             </div>
                         {% endfor %}
                     </div>
@@ -130,11 +143,31 @@
             if($( `#comment-container-${ post_id }`).css('display') == 'none') {
                 $( `#comment-container-${ post_id }`).css('display', 'flex');
                 element.firstElementChild.textContent = 'Hide Comments '
+                console.log('here')
             } else {
                 $( `#comment-container-${ post_id }`).css('display', 'none');
                 element.firstElementChild.textContent = 'Show Comments '
             }
         }
-        $('#comment-content').autoResize();
+
+        function displayEditForm(comment_id){
+            editNodes = document.getElementsByClassName('comment-edit')
+            let editArray = [].slice.call(editNodes)
+            commentNodes = document.getElementsByClassName('comment-card')
+            let commentArray = [].slice.call(commentNodes)
+            for(i in editArray){
+                editArray[i].style.display='none'
+            }
+            for(i in commentArray){
+                commentArray[i].style.display='inline'
+            }
+            $(`#comment-edit-${ comment_id}`).css('display', 'flex')
+            $(`#comment-${ comment_id}`).css('display', 'none')
+        }
+
+        function closeEdit(comment_id){
+            $(`#comment-edit-${ comment_id}`).css('display', 'none')
+            $(`#comment-${ comment_id}`).css('display', 'inline')
+        }
     </script>
 {% endblock %}
