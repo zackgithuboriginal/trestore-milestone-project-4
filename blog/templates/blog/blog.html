@@ -86,6 +86,13 @@
                     <div class="foot-options">
                         <a onclick="displayComments(this, {{ post.id }})"><span>Show Comments </span>({{ post.comments.all.count }})</a>
                     </div>
+                    <div class="post-comment-add">
+                        <form action="{% url 'add_comment' post.id %}" method="POST" >
+                            {% csrf_token %}
+                            <input type="textarea" name="comment_content" id="comment_content" placeholder="Enter your comment text.">
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
                     <div class="post-comment-container" id="comment-container-{{post.id}}">
                         {% for comment in post.comments.all %}
                             <div class="comment-card">

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from blog.models import ProgressPost
+from blog.models import ProgressPost, Comment
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import AddPostForm
@@ -95,3 +95,28 @@ def delete_post(request, post_id):
     messages.success(request, 'Post successfully deleted from the progress blog.')
 
     return redirect(reverse('progress'))
+
+
+@login_required
+def add_comment(request, post_id):
+    """ View for adding a comment to a post """
+
+    if request.method == 'POST':
+        try:
+            post = get_object_or_404(ProgressPost, pk=post_id)
+            author = UserProfile.objects.get(user=request.user)
+            comment = Comment(
+                post_id=post_id,
+                comment_content=request.POST['comment_content'],
+                author=author,
+            )
+            comment.save()
+            messages.success(request, 'Comment successfully added.')
+            return redirect(reverse('progress'))
+
+        except ProgressPost.DoesNotExist:
+            messages.error(request, (
+                "Unfortunately one of the items in your basket is unavailable!")
+            )
+            comment.delete()
+            return redirect(reverse('progress'))

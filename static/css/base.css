@@ -1073,8 +1073,23 @@ input[type="file"] {
     background-color: #336857;
 }
 
-.post-body {
+.post-body,
+.post-foot {
     padding: 1rem 2rem;
+}
+
+
+.post-foot {
+    height: auto;
+}
+
+.foot-options {
+    color: #1A342C;
+    font-size: 1.2rem;
+}
+
+.foot-options a:not(:first-child){
+    margin-left: 2rem;
 }
 
 .post-head h2 {
@@ -1141,6 +1156,13 @@ div.spacer {
     height: 0;
     margin-bottom: 6rem;
 
+}
+
+/* Post comment styling */
+
+.post-comment-container {
+    display: none;
+    flex-direction: column;
 }
 
 @media (min-width: 550px) {
