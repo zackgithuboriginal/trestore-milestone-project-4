@@ -84,9 +84,9 @@ def add_product(request):
     if request.method == 'POST':
         form = AddProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Product added to store.')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_details', args=[product.id]))
         else:
             messages.error(request, 'Unable to add product. Ensure there are no errors in the form.')
     else:
@@ -113,7 +113,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, f'{product.product_name} product successfully updated.')
-            return redirect(reverse('home'))
+            return redirect(reverse('product_details', args=[product.id]))
         else:
             messages.error(request, 'Unable to update product. Ensure there are no errors in the form.')
     else:
