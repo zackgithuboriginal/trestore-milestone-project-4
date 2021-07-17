@@ -1110,7 +1110,7 @@ input[type="file"] {
 }
 
 .post-content {
-    min-height: 4rem;
+    min-height: 6rem;
     font-size: 1.4rem;
 }
 
@@ -1202,6 +1202,27 @@ div.spacer {
     margin-top: .5rem;
 }
 
+.add-comment-alt {
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #8e8e8e;
+}
+
+.add-comment-alt a {
+    color: #336857;
+}
+
+.form-background {
+    margin-bottom: 2rem;
+}
+
+.form-background,
+.add-comment-form textarea {
+    border: 1px solid #336857;
+}
+
+
 .comment-bottom-row {
     display: flex;
     width: 100%;
@@ -1215,11 +1236,17 @@ div.spacer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+.comment-bottom-row .comment-bottom-details p {
+    margin-bottom: 0;
 }
 
 .comment-options {
     display: flex;
     flex-direction: flex-start;
+    align-items: center;
 }
 
 .comment-options a:first-child {
@@ -1292,6 +1319,13 @@ div.spacer {
     background-color: #336857;
     color: #ffffff;
     margin-top: .5rem;
+}
+
+.comment-link {
+    border: none;
+    background: none;
+    color: #336857;
+    text-decoration: underline;
 }
 
 @media (min-width: 550px) {
