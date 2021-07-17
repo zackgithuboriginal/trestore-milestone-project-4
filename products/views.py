@@ -61,6 +61,19 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+def product_details(request, product_id):
+    """ The view to render the product details page for a product """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/product_details.html', context)
+
+
+
 @login_required
 def add_product(request):
     """ View for adding products to the store """
