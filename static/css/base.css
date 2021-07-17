@@ -453,9 +453,10 @@ nav.navbar div.navbar-collapse {
     background-color: #ffffff;
     margin-top: 1rem;
     height: 37rem;
-    max-width: 28rem;
-    min-width: 28rem;
+    max-width: 30rem;
+    min-width: 24rem;
     flex-basis: 100%;
+    padding: .5rem .5rem 0 .5rem;
     box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .4);
 }
 
@@ -477,11 +478,18 @@ nav.navbar div.navbar-collapse {
     flex-direction: column;
     justify-content: space-between;
     background-color: #fff;
-    height: 12rem;
+    height: 10rem;
     padding: 0;
     padding-top: 1rem;
     margin: 0;
     z-index: 10;
+}
+
+.card-title-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 .product-name,
@@ -507,6 +515,7 @@ nav.navbar div.navbar-collapse {
     flex-direction: row;
     padding: 0;
     margin: 0;
+    margin-top: auto;
 }
 
 .product-card-options form {
@@ -526,7 +535,7 @@ nav.navbar div.navbar-collapse {
     border: 1px solid lightgrey;
     background-color: #336857;
     justify-content: center;
-    width: 12rem;
+    width: 10rem;
     text-decoration: none;
 }
 
@@ -540,9 +549,9 @@ nav.navbar div.navbar-collapse {
     flex-direction: column;
 }
 
-.add-to-basket-container > * {
+.product-card-options form .add-to-basket-container > * {
     display: flex;
-    width: 12rem;
+    width: 10rem;
 }
 
 .add-to-basket button {
