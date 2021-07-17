@@ -53,90 +53,92 @@
             {% endif %}
         {% endif %}
         <div class="progress-posts">
-            {% for post in progress_posts %}
-            <div class="post-card">
-                <div class="post-head">
-                    <h2>{{ post.post_title }}</h2>
+            {% if progress_posts|length >= 1 %}
+                {% for post in progress_posts %}
+                <div class="post-card">
+                    <div class="post-head">
+                        <h2>{{ post.post_title }}</h2>
 
-                    {% if request.user.is_superuser %}
-                        <button class="display-edit-dropdown"
-                        onclick="displayOptionsDropdown('{{ post.id }}')"><i
-                            class="fas fa-ellipsis-v font-color-light"></i></button>
-                        <div class="display-edit-options"
-                        id="display-options-{{ post.id }}">
-                            <a class=""
-                                href="{% url 'delete_post' post.id %}">
-                                <h4>Delete Post</h4><i class="fas fa-trash-alt"></i>
-                            </a>
-                            <a class=""
-                                href="{% url 'edit_post' post.id %}">
-                                <h4>Edit Post</h4><i class="fas fa-pencil-alt"></i>
-                            </a>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="post-body">
-                    <p class="post-content">{{ post.post_content }}</p>
-                    <div class="post-body-bottom">
-                        <p>{{ post.date }}</p>
-                        <p>{{ post.author }}</p>
+                        {% if request.user.is_superuser %}
+                            <button class="display-edit-dropdown"
+                            onclick="displayOptionsDropdown('{{ post.id }}')"><i
+                                class="fas fa-ellipsis-v font-color-light"></i></button>
+                            <div class="display-edit-options"
+                            id="display-options-{{ post.id }}">
+                                <a class=""
+                                    href="{% url 'delete_post' post.id %}">
+                                    <h4>Delete Post</h4><i class="fas fa-trash-alt"></i>
+                                </a>
+                                <a class=""
+                                    href="{% url 'edit_post' post.id %}">
+                                    <h4>Edit Post</h4><i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
-                </div>
-                <div class="post-foot">
-                    <div class="foot-options">
-                        <a onclick="displayComments(this, {{ post.id }})"><span>Show Comments </span>({{ post.comments.all.count }})</a>
-                    </div>
-                    <div class="post-comment-container" id="comment-container-{{post.id}}">
-                        <div {% if request.user.is_authenticated %} class="post-comment-add" {% else %} class="post-comment-add form-background" {% endif %}>
-                            {% if request.user.is_authenticated %}
-                                <form class="add-comment-form" action="{% url 'add_comment' post.id %}" method="POST" >
-                                    {% csrf_token %}
-                                    <textarea name="comment_content" id="comment_content" placeholder="Enter your comment text." cols="30" rows="2"></textarea>
-                                    <div class="form-buttons">  
-                                        <button type="button">Clear</button>
-                                        <button type="submit">Add</button>
-                                    </div>
-                                </form>
-                            {% else %}
-                                <div class="add-comment-alt">
-                                    <p>Please <a href="{% url 'account_login' %}">sign in</a> or <a href="{% url 'account_signup' %}">register</a> to reply to this post.</p>
-                                </div>
-                            {% endif %}
+                    <div class="post-body">
+                        <p class="post-content">{{ post.post_content }}</p>
+                        <div class="post-body-bottom">
+                            <p>{{ post.date }}</p>
+                            <p>{{ post.author }}</p>
                         </div>
-                        {% for comment in post.comments.all %}
-                            <hr class="comment-seperate">
-                            <div class="comment-card" id="comment-{{comment.id}}">
-                                <p class="comment-content">{{ comment.comment_content }}</p>
-                                <div class="comment-bottom-row">
-                                    <div class="comment-bottom-details">
-                                        <p>{{ comment.author }}</p>
-                                        <p class="comment-date">{{ comment.date }}</p>
+                    </div>
+                    <div class="post-foot">
+                        <div class="foot-options">
+                            <a onclick="displayComments(this, {{ post.id }})"><span>Show Comments </span>({{ post.comments.all.count }})</a>
+                        </div>
+                        <div class="post-comment-container" id="comment-container-{{post.id}}">
+                            <div {% if request.user.is_authenticated %} class="post-comment-add" {% else %} class="post-comment-add form-background" {% endif %}>
+                                {% if request.user.is_authenticated %}
+                                    <form class="add-comment-form" action="{% url 'add_comment' post.id %}" method="POST" >
+                                        {% csrf_token %}
+                                        <textarea name="comment_content" id="comment_content" placeholder="Enter your comment text." cols="30" rows="2"></textarea>
+                                        <div class="form-buttons">  
+                                            <button type="button">Clear</button>
+                                            <button type="submit">Add</button>
+                                        </div>
+                                    </form>
+                                {% else %}
+                                    <div class="add-comment-alt">
+                                        <p>Please <a href="{% url 'account_login' %}">sign in</a> or <a href="{% url 'account_signup' %}">register</a> to reply to this post.</p>
                                     </div>
-                                    {% if request.user.is_authenticated %}
-                                        {% if request.user.is_superuser or request.user == comment.author %}
-                                            <div class="comment-options">
-                                                <button class="comment-link" href="" onclick="displayEditForm({{comment.id}})">Edit</button>
-                                                <a class="comment-link"  href="{% url 'delete_comment' comment.id %}">Delete</a>
-                                            </div>
+                                {% endif %}
+                            </div>
+                            {% for comment in post.comments.all %}
+                                <hr class="comment-seperate">
+                                <div class="comment-card" id="comment-{{comment.id}}">
+                                    <p class="comment-content">{{ comment.comment_content }}</p>
+                                    <div class="comment-bottom-row">
+                                        <div class="comment-bottom-details">
+                                            <p>{{ comment.author }}</p>
+                                            <p class="comment-date">{{ comment.date }}</p>
+                                        </div>
+                                        {% if request.user.is_authenticated %}
+                                            {% if request.user.is_superuser or request.user == comment.author %}
+                                                <div class="comment-options">
+                                                    <button class="comment-link" href="" onclick="displayEditForm({{comment.id}})">Edit</button>
+                                                    <a class="comment-link"  href="{% url 'delete_comment' comment.id %}">Delete</a>
+                                                </div>
+                                            {% endif %}
                                         {% endif %}
-                                    {% endif %}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="comment-edit" id="comment-edit-{{comment.id}}">
-                                <form action="{% url 'edit_comment' comment.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <textarea class="edit-comment-textarea" name="comment-content" id="comment-content" cols="30" rows="2">{{comment.comment_content}}</textarea>
-                                    <div class="form-buttons">   
-                                        <button class="comment-cancel" onclick="closeEdit({{comment.id}})" type="button">Cancel</button>
-                                        <button class="comment-save" type="submit">Save</button>                                    
-                                    </div> 
-                                </form>
-                            </div>
-                        {% endfor %}
+                                <div class="comment-edit" id="comment-edit-{{comment.id}}">
+                                    <form action="{% url 'edit_comment' comment.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <textarea class="edit-comment-textarea" name="comment-content" id="comment-content" cols="30" rows="2">{{comment.comment_content}}</textarea>
+                                        <div class="form-buttons">   
+                                            <button class="comment-cancel" onclick="closeEdit({{comment.id}})" type="button">Cancel</button>
+                                            <button class="comment-save" type="submit">Save</button>                                    
+                                        </div> 
+                                    </form>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>
