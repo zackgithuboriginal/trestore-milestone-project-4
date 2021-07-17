@@ -151,6 +151,24 @@ nav.navbar div.navbar-collapse {
 	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
 
+.sm-display .dropdown-menu {
+    background-color: #336857;
+    color: #ffffff;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.sm-display i {
+    font-size: 1.4rem;
+    margin-left: .5rem;
+}
+
+.sm-display .dropdown-menu .dropdown-item,
+.sm-display .dropdown-menu .dropdown-item:hover {
+    color: #ffffff;
+    background: none;
+    padding-left: 0;
+}
 
 /* Toast Styling */
 .message-container {
@@ -511,6 +529,7 @@ nav.navbar div.navbar-collapse {
 
 .add-to-basket-container > * {
     display: flex;
+    width: 12rem;
 }
 
 .add-to-basket button {
@@ -1462,6 +1481,11 @@ div.spacer {
 }
 
 @media (min-width: 768px) {
+    .sm-display {
+        display: none;
+    }
+
+
     nav.navbar div.navbar-collapse {
         box-shadow: none;
         position: absolute;

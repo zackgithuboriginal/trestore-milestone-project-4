@@ -74,6 +74,23 @@
                     <li class="nav-item">
                         <a href="{% url 'sponsor' %}" class="nav-link">Sponsor</a>
                     </li>
+                    <li class="sm-display nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="sm-profile" role="button" data-toggle="dropdown"  data-bs-toggle="dropdown" aria-expanded="false">
+                            Profile<i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="sm-profile">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a class="dropdown-item" href="{% url 'add_product' %}">Product Management</a>
+                                {% endif %}
+                                <a class="dropdown-item" href="{% url 'user_profile' %}">My Profile</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            {% else %}
+                                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="flex col-md-4 navbar-right-side">
