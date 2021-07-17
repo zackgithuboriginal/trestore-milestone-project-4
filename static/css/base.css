@@ -54,6 +54,7 @@ body {
 .banner {
     background-color:#336857;
     position: relative;
+	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
 
 .banner-text {
@@ -159,6 +160,7 @@ nav.navbar div.flex {
 nav.navbar div.navbar-collapse {
     background-color: #336857;
     padding: 1rem;
+    z-index: 1;
     margin: 0;
 	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
@@ -372,7 +374,7 @@ nav.navbar div.navbar-collapse {
     height: auto;
     width: 100vw;
     padding: 4rem 3rem;
-	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .25);
     font-family: 'Josefin Slab', sans-serif;
 }
 
@@ -411,11 +413,10 @@ nav.navbar div.navbar-collapse {
     background-color: #1A342C;
     color: #ffffff;
     font-size: 2rem;
-    border-radius: 1rem;
     padding: .5rem 1rem;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .25);
 }
 
 .cta-sponsor {
@@ -553,7 +554,29 @@ nav.navbar div.navbar-collapse {
     margin-right: 2rem;
 }
 
+.display-options form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.display-options form .filter-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+
+.display-options form .filter-row .filter-row {
+    margin: 0;
+}
+
+.display-options form .flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 .display-options label {
+    margin-bottom: .2rem;
     margin-right: .5rem;
 }
 
@@ -561,14 +584,24 @@ nav.navbar div.navbar-collapse {
     margin-top: 2rem;
 }
 
-.display-options select,
 .display-options input,
 .display-options button {
+    margin-top: auto;
+}
+
+.display-options select,
+.display-options input {
     padding: .5rem;
     color: #1A342C;
     background-color: #ffffff;
     border: none;
-    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    width: auto;
+}
+
+.display-options select,
+.display-options input,
+.display-options button {
+    box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .25);
     font-size: 1.2rem;
 }
 
@@ -1295,6 +1328,7 @@ input[type="file"] {
     display: flex;
     position: fixed;
     height: 4.4rem;
+    z-index: 100;
 }
 
 div.spacer {

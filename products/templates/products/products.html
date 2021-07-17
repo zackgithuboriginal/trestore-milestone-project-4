@@ -5,7 +5,6 @@
 <div class="container header-container">
     <div class="row">
         <div class="col">
-
         </div>
     </div>
 </div>
@@ -19,24 +18,34 @@
     <div class="store-row row">
         <div class="display-options col-12 row">
             <form method="GET" action="{% url 'products' %}">
-                <label for="product-filter">Filter By:</label>
-                <select onchange="this.form.submit()" class="product-filter-select" name="product-filter" id="product-filter">
-                    <option value="all" {% if current_category == None %} selected {% endif %}>All Products</option>
-                    <option value="seeds" {% if current_category == 'seeds' %} selected {% endif %}>Seeds</option>
-                    <option value="sapling_2_litre_pot" {% if current_category == 'sapling_2_litre_pot' %} selected {% endif %}>Saplings 2L Pot</option>
-                    <option value="sapling_4_litre_pot" {% if current_category == 'sapling_4_litre_pot' %} selected {% endif %}>Saplings 4L Pot</option>
-                    <option value="sapling_10_litre_pot" {% if current_category == 'sapling_10_litre_pot' %} selected {% endif %}>Saplings 10L Pot</option>
-                </select>
-                <label for="product-sort">Sort By:</label>
-                <select onchange="this.form.submit()" class="product-sort-select" name="product-sort" id="product-sort">
-                    <option value="price_asc" {% if current_sorting == 'price_asc' or current_sorting == None %} selected {% endif %}>Price Ascending</option>
-                    <option value="price_desc" {% if current_sorting == 'price_desc' %} selected {% endif %}>Price Descending</option>
-                    {% if current_category == None %} 
-                        <option value="category" {% if current_sorting == 'category' %} selected {% endif %}>Category</option>
-                    {% endif %}
-                </select>
-                <input type="text" placeholder="Search Keyword" name="q" {% if search_term %}value="{{ search_term }}"{% endif %}>
-                <button type='submit'>Search</button>
+                <div class="filter-row">
+                    <label for="product-filter">Filter By:</label>
+                    <select onchange="this.form.submit()" class="product-filter-select" name="product-filter" id="product-filter">
+                        <option value="all" {% if current_category == None %} selected {% endif %}>All Products</option>
+                        <option value="seeds" {% if current_category == 'seeds' %} selected {% endif %}>Seeds</option>
+                        <option value="sapling_2_litre_pot" {% if current_category == 'sapling_2_litre_pot' %} selected {% endif %}>Saplings 2L Pot</option>
+                        <option value="sapling_4_litre_pot" {% if current_category == 'sapling_4_litre_pot' %} selected {% endif %}>Saplings 4L Pot</option>
+                        <option value="sapling_10_litre_pot" {% if current_category == 'sapling_10_litre_pot' %} selected {% endif %}>Saplings 10L Pot</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="product-sort">Sort By:</label>
+                    <select onchange="this.form.submit()" class="product-sort-select" name="product-sort" id="product-sort">
+                        <option value="price_asc" {% if current_sorting == 'price_asc' or current_sorting == None %} selected {% endif %}>Price Asc.</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %} selected {% endif %}>Price Desc.</option>
+                        {% if current_category == None %} 
+                            <option value="category" {% if current_sorting == 'category' %} selected {% endif %}>Category</option>
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <label for="search-q">Search:</label>
+                <div class="filter-row">
+                    <div class="flex-row">
+                        <input type="text" placeholder="Keyword" name="q" id="search-q" {% if search_term %}value="{{ search_term }}"{% endif %}>
+                        <button class="cta-button-green" type='submit'>Search</button>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="results-found col-12">
