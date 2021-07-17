@@ -1083,6 +1083,22 @@ td {
 
 /* Product/Post Edit Options */
 
+.admin-content {
+    padding: 12rem 4rem;
+    background-color: #F2F8F7;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
 .display-edit-options {
 	display: none;
 	position: absolute;
@@ -1634,6 +1650,10 @@ div.spacer {
         width: 100%;
         height: auto;
     }
+
+    .admin-container {
+        width: 80%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1727,5 +1747,9 @@ div.spacer {
 
     .product-details-info-container {
         margin-left: 4rem;
+    }
+
+    .admin-container {
+        width: 60%;
     }
 }
