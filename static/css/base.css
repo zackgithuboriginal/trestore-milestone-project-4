@@ -186,9 +186,9 @@ nav.navbar div.navbar-collapse {
 
 /* Toast Styling */
 .message-container {
-    z-index: 1000;
+    z-index: 10000;
     position: fixed;
-    top: 8rem;
+    top: 11rem;
     right: 1rem;
     height: auto;
     width: auto;
