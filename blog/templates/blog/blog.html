@@ -114,7 +114,7 @@
                                             <p class="comment-date">{{ comment.date }}</p>
                                         </div>
                                         {% if request.user.is_authenticated %}
-                                            {% if request.user.is_superuser or request.user == comment.author %}
+                                            {% if request.user.is_superuser or request.user == comment.author.user %}
                                                 <div class="comment-options">
                                                     <button class="comment-link" href="" onclick="displayEditForm({{comment.id}})">Edit</button>
                                                     <a class="comment-link"  href="{% url 'delete_comment' comment.id %}">Delete</a>

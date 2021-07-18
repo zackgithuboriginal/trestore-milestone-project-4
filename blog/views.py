@@ -130,7 +130,7 @@ def add_comment(request, post_id):
 def delete_comment(request, comment_id):
 
     comment = get_object_or_404(Comment, pk=comment_id)
-    if not request.user.is_superuser and request.user != comment.author:
+    if not request.user.is_superuser and request.user != comment.author.user:
         messages.error(request, 'Oops, you need to be authorised to do that.')
         return redirect(reverse('progress'))
     else:
@@ -144,7 +144,8 @@ def delete_comment(request, comment_id):
 def edit_comment(request, comment_id):
     """ View for adding a comment to a post """
 
-    if not request.user.is_superuser and request.user != comment.author:
+    checkComment = Comment.objects.get(id=comment_id)
+    if not request.user.is_superuser and request.user != checkComment.author.user:
         messages.error(request, 'Oops, you need to be authorised to do that.')
         return redirect(reverse('progress'))
     else:
