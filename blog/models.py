@@ -11,7 +11,7 @@ class ProgressPost(models.Model):
     image = models.ImageField(null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True, editable=False)
     author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                               null=True, related_name='posts', editable=False)
+                               null=True, related_name='posts')
 
     def __str__(self):
         return self.post_title

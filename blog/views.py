@@ -28,11 +28,16 @@ def add_post(request):
 
     if request.method == 'POST':
         author = UserProfile.objects.get(user=request.user)
+        if 'image' in request.FILES:
+            image = request.FILES['image']
+        else:
+            image = False
+
         form_data = {
             'author': author,
             'post_title': request.POST['post_title'],
             'post_content': request.POST['post_content'],
-            'image': request.FILES['image'],
+            'image': image,
         }
 
         form = AddPostForm(form_data)
