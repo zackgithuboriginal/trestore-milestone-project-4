@@ -1084,10 +1084,30 @@ td {
 /* Product/Post Edit Options */
 
 .admin-content {
-    padding: 12rem 4rem;
+    padding: 12rem 4rem 6rem 4rem;
     background-color: #F2F8F7;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
+}
+
+.admin-form-container {
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.admin-form-container label {
+    margin-bottom: 0;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.button-row button {
+    margin-left: 2rem;
 }
 
 .admin-container {
@@ -1752,4 +1772,13 @@ div.spacer {
     .admin-container {
         width: 60%;
     }
+
+    .admin-content {
+        max-height: 100vh;
+    }
+
+    .admin-content form div {
+        margin-bottom: .5rem;
+    }
+
 }

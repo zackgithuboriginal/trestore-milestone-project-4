@@ -12,34 +12,35 @@
 {% endblock %}
 
 {% block content %}
-<div class="checkout-content row">
-    <div class="page-title font-color-green col-12">
-        <h1>Post Admin
-            <i class="fab fa-pagelines font-color-green"></i>
-        </h1>
-        <h2>Edit post</h2>
+<div class="admin-content row">
+    <div class="admin-container">
+        <div class="page-title font-color-green col-12">
+            <h1>Post Admin
+                <i class="fab fa-pagelines font-color-green"></i>
+            </h1>
+            <h2>Edit post</h2>
+        </div>
+        <div class="admin-form-container">
+            <form action="{% url 'edit_post' post.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <div class="">
+                    <a href="{% url 'progress' %}">
+                        Cancel
+                    </a>
+                    <button type="submit" class="cta-button-green">
+                        Update Post
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="col-12 row m-0 p-0">
-        <form action="{% url 'edit_post' post.id %}" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-                {% if field.name != 'image' %}
-                    {{ field | as_crispy_field }}
-                {% else %}
-                    {{ field }}
-                {% endif %}
-            {% endfor %}
-            <div class="">
-                <a href="{% url 'progress' %}">
-                    Cancel
-                </a>
-                <button type="submit" class="cta-button-green">
-                    Update Post
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
 </div>
 {% endblock %}
 
