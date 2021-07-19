@@ -19,6 +19,9 @@ class ProgressPost(models.Model):
 
 class Comment(models.Model):
 
+    class Meta:
+        ordering = ['-date']
+
     post = models.ForeignKey(ProgressPost, null=False, blank=False, on_delete=models.CASCADE, related_name='comments', editable=False)
     comment_content = models.CharField(max_length=400, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True, editable=False)
