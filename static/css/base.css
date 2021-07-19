@@ -474,6 +474,12 @@ nav.navbar div.navbar-collapse {
     margin: 0;
 }
 
+.alt-product-image {
+    height: 100%;
+    width: 100%;
+    background-color:rgba(51, 104, 87, .5)
+}
+
 .card-title {
     display: flex;
     flex-direction: column;

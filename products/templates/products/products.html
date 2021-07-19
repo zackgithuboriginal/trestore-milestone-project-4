@@ -60,7 +60,7 @@
                         {% if request.user.is_superuser %}
                             <button class="display-edit-dropdown"
                             onclick="displayOptionsDropdown('{{ product.id }}')"><i
-                                class="fas fa-cog font-color-light"></i></button>
+                            class="fas fa-ellipsis-v font-color-light"></i></button>
 
                             <div class="display-edit-options"
                             id="display-options-{{ product.id }}">
@@ -74,11 +74,13 @@
                                 </a>
                             </div>
                         {% endif %}
-                        {% if product.image %}
-                            <a class="product-card-image col-12" href="">
-                                <img src="{{ product.image.url }}" alt="">
-                            </a>
-                        {% endif %}
+                        <a class="product-card-image col-12" href="{% url 'product_details' product.id %}">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="product image for {{ product.product_name }}">
+                            {% else %}
+                                <div class="alt-product-image"></div>
+                            {% endif %}
+                        </a>
                         <div class="card-title">
                             <div class="card-title-head">
                                 <p class="product-name">{{ product.product_name }}</p>
