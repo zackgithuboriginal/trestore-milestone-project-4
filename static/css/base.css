@@ -84,6 +84,15 @@ body {
     font-size: 2rem;
     color: #ffffff;
     white-space: nowrap;
+    border-bottom: .5rem solid #336857;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link.active-link,
+.sm-display .dropdown-menu .dropdown-item.active-link,
+.sm-display .dropdown-menu .dropdown-item:hover  {
+    background-color: #ffffff;
+    color: #336857;
 }
 
 .navbar-icon-container {
@@ -178,11 +187,8 @@ nav.navbar div.navbar-collapse {
     margin-left: .5rem;
 }
 
-.sm-display .dropdown-menu .dropdown-item,
-.sm-display .dropdown-menu .dropdown-item:hover {
+.sm-display .dropdown-menu .dropdown-item {
     color: #ffffff;
-    background: none;
-    padding-left: 0;
 }
 
 /* Toast Styling */
@@ -1607,6 +1613,13 @@ div.spacer {
 
     .navbar-icon-container-profile {
         display: flex;
+    }
+    
+    .nav-item .nav-link:hover,
+    .nav-item .nav-link.active-link {
+        background-color: #336857;
+        color: #ffffff;
+        border-bottom: .5rem solid #ffffff;
     }
 
     .home-page-banner {
