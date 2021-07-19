@@ -94,7 +94,7 @@
                                         {% csrf_token %}
                                         <textarea name="comment_content" id="comment_content" placeholder="Enter your comment text." cols="30" rows="2"></textarea>
                                         <div class="form-buttons">  
-                                            <button type="button">Clear</button>
+                                            <button type="button" id="clear-button">Clear</button>
                                             <button type="submit">Add</button>
                                         </div>
                                     </form>
@@ -151,7 +151,6 @@
             if($( `#comment-container-${ post_id }`).css('display') == 'none') {
                 $( `#comment-container-${ post_id }`).css('display', 'flex');
                 element.firstElementChild.textContent = 'Hide Comments '
-                console.log('here')
             } else {
                 $( `#comment-container-${ post_id }`).css('display', 'none');
                 element.firstElementChild.textContent = 'Show Comments '
@@ -177,5 +176,9 @@
             $(`#comment-edit-${ comment_id}`).css('display', 'none')
             $(`#comment-${ comment_id}`).css('display', 'inline')
         }
+
+        $('#clear-button').click(function(){
+            $('#comment_content').val('');
+        })
     </script>
 {% endblock %}
