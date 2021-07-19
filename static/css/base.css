@@ -427,7 +427,7 @@ nav.navbar div.navbar-collapse {
 /* Products Page */
 
 .store-content {
-    padding: 12rem 2rem;
+    padding: 14rem 2rem;
     min-height: 100vh;
     position: relative;
     background-color: #F2F8F7;
@@ -458,7 +458,7 @@ nav.navbar div.navbar-collapse {
     min-width: 24rem;
     flex-basis: 100%;
     padding: .5rem .5rem 0 .5rem;
-    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .4);
+    box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .25);
 }
 
 .product-card-image {
@@ -756,7 +756,7 @@ tr {
 }
 
 .basket-content {
-    padding: 12rem 4rem;
+    padding: 14rem 4rem;
     min-height: 100vh;
     position: relative;
     background-color: #F2F8F7;
@@ -1080,6 +1080,11 @@ td {
 
 .checkout-content table tbody tr:nth-child(even) {
     background-color: #ffffff;
+}
+
+.profile-row {
+    padding: 0;
+    --bs-gutter: 0;
 }
 
 /* Product/Post Edit Options */
