@@ -84,6 +84,7 @@ body {
     font-size: 2rem;
     color: #ffffff;
     white-space: nowrap;
+    padding-left: .5rem;
     border-bottom: .5rem solid #336857;
 }
 
@@ -189,6 +190,11 @@ nav.navbar div.navbar-collapse {
 
 .sm-display .dropdown-menu .dropdown-item {
     color: #ffffff;
+}
+
+.navbar-right-side .dropdown .dropdown-menu .dropdown-item,
+.navbar-right-side .dropdown .dropdown-menu .dropdown-item:hover {
+    color:#336857;
 }
 
 /* Toast Styling */
@@ -1613,6 +1619,10 @@ div.spacer {
 
     .navbar-icon-container-profile {
         display: flex;
+    }
+
+    .nav-item .nav-link {
+        padding: 0;
     }
     
     .nav-item .nav-link:hover,
