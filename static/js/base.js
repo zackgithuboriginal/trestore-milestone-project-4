@@ -16,7 +16,7 @@
  * This function clears all of the post edit option dropdowns to ensure no more than one displays at a time
  */
 function clearDropdowns() {
-    let allDropdowns = document.querySelectorAll(".display-edit-options");
+    let allDropdowns = document.querySelectorAll(".display-product-options");
     for (let i = 0; i < allDropdowns.length; i++) {
         allDropdowns[i].style.display = "none";
     }
