@@ -21,3 +21,7 @@ function clearDropdowns() {
         allDropdowns[i].style.display = "none";
     }
 }
+
+$(document).ready(function () {
+    $("#date-target").text(new Date().getFullYear());
+})

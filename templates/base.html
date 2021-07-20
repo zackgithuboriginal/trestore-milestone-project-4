@@ -157,6 +157,19 @@
     {% block content %}
     {% endblock %}
 
+    <footer>
+        <div class="social-container">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Link to trestore's facebook page"><i
+                    class="fab fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Link to trestore's instagram page"><i
+                    class="fab fa-instagram-square" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com/" target="_blank" aria-label="Link to trestore's twitter page">
+                <i class="fab fa-twitter-square" aria-hidden="true"></i></a>
+        </div>
+        <i class="fab fa-pagelines footer-center" aria-hidden="true"></i>
+        <p>Trestore &nbsp;<span id="date-target"></span></p>
+    </footer>
+
     {% block postloadjs %}
         <script type="text/javascript">
             $(document).ready(function() {

@@ -2,6 +2,10 @@ html {
     font-size:62.5%;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     padding: 0;
 }
@@ -282,9 +286,9 @@ nav.navbar div.navbar-collapse {
 
 /* Allauth Pages Styling */
 .allauth-content {
-    padding: 12rem 1rem;
-    min-height: 100vh;
-    height: 100vh;
+    padding: 12rem 4rem;
+    min-height: calc(100vh - 4rem);
+    height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
     justify-content: space-between;
@@ -374,7 +378,8 @@ nav.navbar div.navbar-collapse {
 
 .home-content {
     padding-top: 8rem;
-    height: 100vh;
+    padding-bottom: 4rem;
+    height: calc(100vh - 4rem);
     overflow: hidden;
     position: relative;
 }
@@ -405,7 +410,7 @@ nav.navbar div.navbar-collapse {
 .tree-graphic {
     position: absolute;
     top: 0;
-    height: 100vh;
+    height: calc(100vh - 4rem);
     width: 100vw;
 }
 
@@ -440,7 +445,7 @@ nav.navbar div.navbar-collapse {
 
 .store-content {
     padding: 14rem 2rem;
-    min-height: 100vh;
+    min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
 }
@@ -704,7 +709,7 @@ nav.navbar div.navbar-collapse {
 /* Product Details Page */
 .product-details-content {    
     padding: 12rem 4rem;
-    min-height: 100vh;
+    min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
     display: flex;
@@ -833,13 +838,13 @@ tr {
 }
 
 .basket-content {
-    padding: 14rem 4rem;
-    min-height: 100vh;
+    padding: 14rem 4rem 8rem 4rem;
+    min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100vh;
+    height: auto;
 }
 
 .basket-content table {
@@ -1006,8 +1011,7 @@ td {
     justify-content: center;
 }
 
-.basket-left,
-.basket-right {
+.basket-section {
     display: flex;
     flex-direction: column;
 }
@@ -1021,7 +1025,7 @@ td {
 
 .checkout-content {
     padding: 12rem 1rem;
-    min-height: 100vh;
+    min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
     justify-content: space-between;
@@ -1080,7 +1084,7 @@ td {
 .checkout-confirmation-content {
     background-color: #1A342C;
     padding: 12rem 4rem;
-    min-height: 100vh;
+    min-height: calc(100vh - 4rem);
     position: relative;
     justify-content: space-between;
 }
@@ -1169,7 +1173,7 @@ td {
 .admin-content {
     padding: 12rem 4rem 6rem 4rem;
     background-color: #F2F8F7;
-    min-height: 100vh;
+    min-height: calc(100vh - 4rem);
     overflow: hidden;
 }
 
@@ -1352,7 +1356,8 @@ input[type="file"] {
 
 .progress-content {
     padding-top: 8rem;
-    min-height: 100vh;
+    padding-bottom: 4rem;
+    min-height: calc(100vh - 4rem);
     height: auto;
     overflow: hidden;
     position: relative;
@@ -1631,6 +1636,48 @@ div.spacer {
     text-decoration: underline;
 }
 
+/* Footer Styling */
+footer {
+    position: relative;
+    bottom: 0;
+    background-color: #336857;
+    height: 4rem;
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+}
+
+.footer-center {
+    display: flex;
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+footer p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+footer p,
+.social-container {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.social-container i {
+	padding: 1rem;
+	color: #ffffff;
+}
+
 @media (min-width: 550px) {
     .home-page-banner {
         width: 52.5rem;
@@ -1723,10 +1770,10 @@ div.spacer {
     }
 
     .basket-lower-section {
-        height: calc(100vh - 15rem)
+        height: 100%
     }
 
-    /* Allauth Pages Styling */
+        /* Allauth Pages Styling */
     
     .allauth-content {
         padding: 12rem 4rem;
@@ -1775,8 +1822,8 @@ div.spacer {
     /* Allauth Pages Styling */
     .allauth-content {
         padding: 12rem 8rem;
-        min-height: 100vh;
-        height: 100vh;
+        min-height: calc(100vh - 4rem);
+        height: calc(100vh - 4rem);
         position: relative;
         justify-content: space-between;
         background: #1A342C;
@@ -1812,7 +1859,7 @@ div.spacer {
 
     .product-details-content {    
         padding: 12rem 8rem;
-        min-height: 100vh;
+        min-height: calc(100vh - 4rem);
         position: relative;
         background-color: #F2F8F7;
         display: flex;
@@ -1843,7 +1890,11 @@ div.spacer {
     }
 
     .store-content {
-        padding: 12rem 14rem 12rem 14rem;
+        padding: 12rem 14rem;
+    }
+
+    .basket-content {
+        height: calc(100vh - 4rem);
     }
 
     .checkout-options{
