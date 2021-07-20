@@ -26,12 +26,16 @@ header {
     color: #336857;
 }
 
-.link-green {
-    color:#336857
+.link-red,
+.link-red:hover,
+.link-red:active {
+    color: #dc3545;
 }
 
-.link-green:hover {
-    color:#336857;
+.link-green,
+.link-green:hover,
+.link-green:active {
+    color: #336857;
 }
 
 .page-title h1{
@@ -359,7 +363,11 @@ nav.navbar div.navbar-collapse {
 }
 
 .allauth-body form input[type="submit"], 
-.allauth-body form button {
+.allauth-body form input[type="submit"]:hover, 
+.allauth-body form button,
+.allauth-body form button:hover,
+.allauth-link.button,
+.allauth-link.button:hover {
     display: flex;
     background-color: #336857;
     color: #ffffff;
@@ -369,12 +377,35 @@ nav.navbar div.navbar-collapse {
 
 .allauth-link {
     display: flex;
+    text-decoration: none;
+}
+
+.allauth-link.button {
+    font-size: 1.4rem;
+}
+
+.allauth-body p a:hover,
+.allauth-body p a {
+    color: #336857;
+
 }
 
 .allauth-bottom-options {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.buttonHolder button,
+.buttonHolder {
+    flex-direction: column;
+}
+
+.buttonHolder button {
+    width: auto;
+    margin-top: .5rem;
+    padding: 1rem;
+    margin-bottom: .5rem;
 }
 
 /* Home Page Styling */
@@ -709,6 +740,12 @@ nav.navbar div.navbar-collapse {
     font-size: 1.2rem;
 }
 
+.results-found a,
+.results-found a:hover,
+.results-found a:active {
+    color:#336857;
+}
+
 /* Product Details Page */
 .product-details-content {    
     padding: 14rem 4rem 6rem 4rem;
@@ -916,13 +953,18 @@ td {
 .basket-product-update,
 .basket-product-delete {
     text-decoration: none;
+    cursor: pointer;
 }
 
-.basket-product-update {
+.basket-product-update,
+.basket-product-update:hover,
+.basket-product-update:active {
     color: #336857;
 }
 
-.basket-product-delete {
+.basket-product-delete,
+.basket-product-delete:hover,
+.basket-product-delete:active {
     text-align: right;
     color: red;
 }
@@ -996,15 +1038,21 @@ td {
     font-size: 1.4rem;
 }
  
-.checkout-button {
+.checkout-button,
+.checkout-button:hover,
+.checkout-button:active {
     display: flex;
     background-color: #336857;
+    text-decoration: none;
     color: #ffffff;
     border: none;
     padding: .5rem 1rem;
 }
 
-.store-link {
+.store-link,
+.store-link:hover,
+.store-link:active {
+    cursor: pointer;
     display: flex;
     color: #336857;
 }
@@ -1188,6 +1236,15 @@ td {
 
 .admin-form-container label {
     margin-bottom: 0;
+}
+
+.post-admin-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-admin-options button {
+    margin-left: 2rem;
 }
 
 .button-row {

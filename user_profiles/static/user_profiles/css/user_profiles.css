@@ -43,3 +43,8 @@
     margin-top: 1rem;
     font-size: 1.4rem;
 }
+
+.profile-row a,
+.profile-row a {
+    color: #336857;
+}

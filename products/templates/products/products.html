@@ -48,7 +48,7 @@
             </form>
         </div>
         <div class="results-found col-12">
-            <p class="font-color-dark">{% if search_term %}{{ search_term }} - {% endif %}{% if current_category == None %}All Categories{% else %}{{ category_friendly.friendly_name }}{% endif %} - {{ sort_friendly }} | {{ products|length }} Items Found <a href="{% url 'products' %}">Clear Search</a></p>
+            <p class="font-color-dark">{% if search_term %}{{ search_term }} - {% endif %}{% if current_category == None %}All Categories{% else %}{{ category_friendly.friendly_name }}{% endif %} - {{ sort_friendly }} | {{ products|length }} Items Found <a href="{% url 'products' %}">Reset</a></p>
         </div>
     </div>
     <div class="store-row">
