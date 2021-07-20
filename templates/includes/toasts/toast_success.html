@@ -9,7 +9,7 @@
         <div class="toast-message">
             <p>{{ message }}</p>
         </div>
-    {% if grand_total and not profile_details %}
+    {% if 'checkout' in message.tags %}
         <p class="toast-basket-summary">Basket summary</p>
         <p class="toast-basket-total-qty text-muted">{{ product_count }} Items</p>
         <div class="toast-basket-product-display">
