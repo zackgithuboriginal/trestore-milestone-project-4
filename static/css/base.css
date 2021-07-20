@@ -169,6 +169,7 @@ nav.navbar div.flex {
     left: 1.5rem;
     width: auto;
     color: #ffffff;
+    z-index: 5;
     font-size: 2.4rem;
 }
 
@@ -176,6 +177,8 @@ nav.navbar div.navbar-collapse {
     background-color: #336857;
     padding: 1rem;
     z-index: 1;
+    position: absolute;
+    top: 6rem;
     margin: 0;
 	box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
 }
@@ -1706,11 +1709,10 @@ footer p,
         display: none;
     }
 
-
     nav.navbar div.navbar-collapse {
         box-shadow: none;
-        position: absolute;
         display: flex;
+        top: 1rem;
         flex-direction: row;
         justify-content: center;
         left: 50%;
@@ -1718,6 +1720,7 @@ footer p,
     }
 
     .navbar-brand {
+        position: absolute;
         text-align: left;
         margin-left: 1.5rem;
         color: #ffffff;
