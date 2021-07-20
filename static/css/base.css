@@ -1463,6 +1463,7 @@ input[type="file"] {
 .post-button-container {
     width: 100%;
     display: flex;
+    z-index: 100;
     position: fixed;
     height: 4.4rem;
 }
