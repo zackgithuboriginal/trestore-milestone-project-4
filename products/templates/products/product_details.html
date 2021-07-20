@@ -26,8 +26,16 @@
             <p class="pd-price">€{{ product.price }}</p>
             {% if product.category %}
             <p class="pd-category">
-                <a class="category-link" href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}
-                </a>
+                {% if product.category.name == 'sponsorship' %}
+                    <a class="category-link" href="{% url 'sponsorship_packages' %}">{{ product.category.friendly_name }}
+                    </a>
+                {% else %}
+                    <a class="category-link" href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}
+                    </a>
+                {% endif %}
+                {% if product.sku %}
+                    <p>{{ product.sku }}</p>
+                {% endif %}
             </p>
             {% endif %}
             <p class="pd-description">{{ product.product_description }}</p> 

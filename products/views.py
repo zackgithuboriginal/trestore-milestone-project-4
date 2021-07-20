@@ -9,8 +9,8 @@ from .forms import AddProductForm
 
 def all_products(request):
     """ This view will display all products """
-
-    products = Product.objects.all()
+    
+    products = Product.objects.exclude(category__name='sponsorship')
     sortkey = None
     query = None
     category_friendly = 'All Categories'
@@ -61,6 +61,19 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+def sponsorship_packages(request):
+    """ This view will display all sponsorship packages """
+
+    sponsorship_packages = Product.objects.filter(category__name='sponsorship')
+
+    context = {
+        'sponsorship_packages': sponsorship_packages,
+    }
+    print(sponsorship_packages)
+
+    return render(request, 'products/sponsorship_packages.html', context)
+
+
 def product_details(request, product_id):
     """ The view to render the product details page for a product """
 
@@ -71,7 +84,6 @@ def product_details(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
-
 
 
 @login_required

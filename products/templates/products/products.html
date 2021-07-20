@@ -67,11 +67,11 @@
                         id="display-options-{{ product.id }}">
                             <a class=""
                                 href="{% url 'delete_product' product.id %}">
-                                <h4>Delete Post</h4><i class="fas fa-times"></i>
+                                <h4>Delete Product</h4><i class="fas fa-times"></i>
                             </a>
                             <a class=""
                                 href="{% url 'edit_product' product.id %}">
-                                <h4>Edit Post</h4><i class="fas fa-pencil-alt"></i>
+                                <h4>Edit Product</h4><i class="fas fa-pencil-alt"></i>
                             </a>
                         </div>
                     {% endif %}
@@ -86,7 +86,9 @@
                             <div class="card-title-head">
                                 <p class="product-name">{{ product.product_name }}</p>
                                 <p class="product-price ">€{{ product.price }}</p>
-                                <p class="product-sku">SKU: <em>{{ product.sku }}</em></p>
+                                {% if product.sku %}
+                                    <p class="product-sku">SKU: <em>{{ product.sku }}</em></p>
+                                {% endif %}
                             </div>
                             <div class="product-card-options">
                                 <form action="{% url 'add_to_basket' product.id %}" method="POST" class="form">
