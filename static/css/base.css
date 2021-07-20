@@ -289,7 +289,7 @@ nav.navbar div.navbar-collapse {
 
 /* Allauth Pages Styling */
 .allauth-content {
-    padding: 12rem 4rem;
+    padding: 14rem 4rem 6rem 4rem;
     min-height: calc(100vh - 4rem);
     height: calc(100vh - 4rem);
     position: relative;
@@ -508,7 +508,7 @@ nav.navbar div.navbar-collapse {
     top: 4rem;
     right: 0;
     text-align: right;
-    width: 12rem;
+    width: 14rem;
     padding: 1rem;
     z-index: 5;
     background-color: #ffffff;
@@ -711,7 +711,7 @@ nav.navbar div.navbar-collapse {
 
 /* Product Details Page */
 .product-details-content {    
-    padding: 12rem 4rem;
+    padding: 14rem 4rem 6rem 4rem;
     min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
@@ -1027,7 +1027,7 @@ td {
 /* CHECKOUT */
 
 .checkout-content {
-    padding: 12rem 1rem;
+    padding: 14rem 4rem 6rem 4rem;
     min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
@@ -1174,7 +1174,7 @@ td {
 /* Product/Post Edit Options */
 
 .admin-content {
-    padding: 12rem 4rem 6rem 4rem;
+    padding: 14rem 4rem 6rem 4rem;
     background-color: #F2F8F7;
     min-height: calc(100vh - 4rem);
     overflow: hidden;
@@ -1358,7 +1358,7 @@ input[type="file"] {
 /* progress post styling */
 
 .progress-content {
-    padding-top: 8rem;
+    padding-top: 10rem;
     padding-bottom: 4rem;
     min-height: calc(100vh - 4rem);
     height: auto;
