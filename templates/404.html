@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="error-content container-flex bg-dark-green">
+    <h1 class="error-heading error-text">404</h1>
+    <h2 class="error-heading error-text">Oops, this page doesn't exist!</h2>
+    <p class="error-text">If you are not redirected in <span id="counter-target">5</span> seconds, click <a
+            href="{% url 'home' %}">here.</a></p>
+</div>
+{% endblock %}
+
+
+{% block postloadjs %}
+{{ block.super }}
+    <script>
+        /**
+        * This function will display a countdown to the user to inform them when the page is due to be redirected
+        */
+        let counter = 5;
+        let interval = setInterval(function () {
+        counter--;
+        document.getElementById("counter-target").textContent = counter
+        if (counter <= 0) {
+            window.location.href = "{% url 'home' %}";
+        }
+        }, 1000);
+    </script>
+{% endblock %}
