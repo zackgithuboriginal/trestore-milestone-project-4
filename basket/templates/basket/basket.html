@@ -13,60 +13,97 @@
 {% endblock %}
 
 {% block content %}
-<div class="basket-content row">
+<div class="basket-content">
     <div class="page-title font-color-green col-12">
         <h1>Your Basket
             <i class="fab fa-pagelines font-color-green"></i>
         </h1>
     </div>
-    <div class="col-12 row basket-lower-section">
-        <div class="basket-left col-12 col-lg-8">
+    <div class="col-12 basket-lower-section">
+        <div class="basket-left">
             <div class="basket-sub-title">
                 <div class="">Basket Items</div>
                 <hr>
             </div>
             <div class="product-container">
+                <h2 class="mobile-basket-head">Summary</h2>
                 {% if basket_items %}
+                    <div class="mobile-basket-display">
+                        <div class="basket-item-container">
+                            {% for item in basket_items %}
+                                <div class="mobile-basket-product">
+                                    <div class="basket-product-image">
+                                        {% if item.product.image %}
+                                            <img class="mobile-product-image" src="{{ item.product.image.url }}" alt="">
+                                        {% else %}
+                                            <div class="alt-product-image"></div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="flex-col">
+                                        <div class="basket-product-details">
+                                            <a class="basket-product-delete" id="delete_{{ item.item_id }}"><i class="fa fa-times"></i></a>
+                                            <p class="mobile-product-name">{{ item.product.product_name }}</p>
+                                            <p class="mobile-product-sku">SKU: {{ item.product.sku }}</p>
+                                        </div>
+
+                                        <div class="mobile-basket-quantity">
+                                            <form class="update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
+                                            </form>
+                                            <a class="basket-product-update update-basket-button" role="button" type="submit"><i class="fa fa-check"></i></a>
+                                        </div>
+
+                                        <div class="basket-product-details">
+                                            <p class="mobile-product-price">Product Pirce: €{{ item.product.price }}</p>
+                                            <p class="mobile-product-price">Subotal: €{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <p class="mobile-product-price basket-total">Basket Total: €{{ total|floatformat:2 }}</p>
+                        </div>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr class="table-head-row">
                             <th scope="col">Image</th>
-                            <th scope="col">Product Name</th>
+                            <th scope="col">Product</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for item in basket_items %}
                                 <tr>
-                                <td>
-                                    {% if item.product.image %}
-                                        <img class="table-product-image" src="{{ item.product.image.url }}" alt="">
-                                    {% else %}
-                                        ADD IMAGE HERE
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <div class="row">
-                                        <div class="col-12">{{ item.product.product_name }}</div>
-                                        <div class="col-12 basket-product-sku">SKU: {{ item.product.sku }}</div>
-                                    </div>
-                                </td>
-                                <td>€{{ item.product.price }}</td>
-                                <td>
-                                    <div class="row">
-                                        <form class="col-12 update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
-                                            {% csrf_token %}
-                                            <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
-                                        </form>
-                                        <div class="col-12 row">
-                                            <a class="col-4 basket-product-update update-basket-button" role="button" type="submit">Update</a>
-                                            <a class="col-4 basket-product-delete" id="delete_{{ item.item_id }}">Delete</a>
+                                    <td>
+                                        {% if item.product.image %}
+                                            <img class="table-product-image" src="{{ item.product.image.url }}" alt="">
+                                        {% else %}
+                                            ADD IMAGE HERE
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-12">{{ item.product.product_name }}</div>
+                                            <div class="col-12 basket-product-sku">SKU: {{ item.product.sku }}</div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>€{{ item.product.price | calculate_subtotal:item.quantity }}</td>
+                                    </td>
+                                    <td>€{{ item.product.price }}</td>
+                                    <td>
+                                        <div class="table-basket-quantity">
+                                            <form class="update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
+                                            </form>
+                                            <a class="basket-product-update update-basket-button" role="button" type="submit"><i class="fa fa-check"></i></a>
+                                        </div>
+                                    </td>
+                                    <td><p class="m-0 text-end">€{{ item.product.price | calculate_subtotal:item.quantity }}</p></td>
+                                    <td><a class="basket-product-delete" id="delete_{{ item.item_id }}"><i class="fa fa-times"></i></a>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -77,12 +114,11 @@
                         </tfoot>
                     </table>
                 {% else %}
-                    <p>You have 0 items in your basket.</p>
-                    <p><a href="">Click here to return to the store.</a></p>
+                    <p>You have 0 items in your basket.<a href="{% url 'products' %}">Click here to return to the store.</a></p>
                 {% endif %}
             </div>
         </div>
-        <div class="basket-right col-12 col-lg-4">
+        <div class="basket-right">
             <div  class="basket-sub-title">
                 <div class="">Order Summary</div>
                 <hr>
@@ -114,10 +150,6 @@
                         <a class="store-link">Return to Store</a>
                         <a class="checkout-button" href="{% url 'checkout' %}">Checkout Securely</a>
                     </div>
-                </div>
-                <div class="checkout-options col-12">
-                    <a class="store-link">Return to Store</a>
-                    <a class="checkout-button" href="{% url 'checkout' %}">Checkout Securely</a>
                 </div>
             {% endif %}
         </div>

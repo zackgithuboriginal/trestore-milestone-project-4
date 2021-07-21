@@ -230,6 +230,11 @@ nav.navbar div.navbar-collapse {
 	flex-direction: column;
 }
 
+
+.error-container p {
+    font-size: 1.6rem;
+}
+
 .error-heading {
 	font-size: 6rem;
 }
@@ -915,7 +920,7 @@ tr {
 }
 
 .basket-content {
-    padding: 14rem 4rem 8rem 4rem;
+    padding: 14rem 2rem 8rem 2rem;
     min-height: calc(100vh - 4rem);
     position: relative;
     background-color: #F2F8F7;
@@ -924,14 +929,22 @@ tr {
     height: auto;
 }
 
+.mobile-basket-display {
+    display: flex;
+    margin-right:auto;
+    margin-left:auto;
+    padding-right: 1rem;
+}
+
 .basket-content table {
-    width: 90%;
+    display: none;
+    width: 100%;
     box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
     background-color: #ffffff;
 }
 
 .table-product-image {
-    width: 14rem;
+    width: 12rem;
     height: auto;
 }
 
@@ -954,6 +967,11 @@ thead th,
     margin-top: auto;
     height: auto;
     margin-bottom: auto;
+}
+
+.table-head-row th {
+    min-width: 6rem;
+    max-width:10rem;
 }
 
 .basket-content tr.table-head-row {
@@ -983,14 +1001,19 @@ td {
     color: #1A342C;
 }
 
+td p {
+    line-height: 2.5rem;
+}
+
 .basket-content table input {
-    width: 15rem;
+    width: 8rem;
 }
 
 .basket-product-update,
 .basket-product-delete {
     text-decoration: none;
     cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .basket-product-update,
@@ -1004,10 +1027,122 @@ td {
 .basket-product-delete:active {
     text-align: right;
     color: red;
+    font-size: 1.6rem;
 }
 
 .basket-product-sku {
     font-size: 1rem;
+}
+
+.basket-product-image {
+    width: 100%;
+    max-width: 25rem;
+    height: 15rem;
+    overflow-y: hidden;
+}
+
+.mobile-product-image {
+    width: 100%;
+    height: auto;
+}
+
+.basket-product-details {
+    width: 20rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.basket-product-details .basket-product-delete {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    font-size: 1.6rem;
+}
+
+.mobile-basket-quantity,
+.table-basket-quantity {
+    width: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.mobile-basket-quantity {
+    margin: 0 0 1rem 0;
+}
+
+.table-basket-quantity {
+    margin: 0;
+}
+
+.mobile-basket-quantity a,
+.table-basket-quantity a {
+    height: 2.5rem;
+    justify-content: center;
+    line-height: 2.5rem;
+    background: #336857;
+    padding: 0 .5rem
+}
+
+.mobile-basket-quantity a i,
+.table-basket-quantity a i {
+    text-align: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+}
+
+.mobile-basket-quantity input,
+.table-basket-quantity input {
+    width: 8rem;
+    height: 2.5rem;
+}
+
+.mobile-basket-display form {
+    padding: 0;
+}
+
+.mobile-basket-product:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.mobile-basket-product {
+    display: flex;
+    flex-direction: row;
+}
+
+.mobile-basket-product .flex-col {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+.mobile-product-name {
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+.mobile-product-price {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+    text-align: right;
+}
+
+.mobile-product-sku {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.mobile-basket-head {
+    background-color: #336857;
+    color: #ffffff;
+    height: 3rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: .5rem .5rem;
+    display: flex;
+    font-size: 1.4rem;
 }
 
 .basket-price-breakdown {
@@ -1017,6 +1152,7 @@ td {
     background-color: #ffffff;
     padding: 0;
     width: 100%;
+    min-width: 25rem;
 }
 
 .price-breakdown-head {
@@ -1033,22 +1169,24 @@ td {
 
 .price-breakdown-body {
 
-    padding: 0 4rem 4rem 4rem;
+    padding: 0 1rem 2rem 1rem;
 }
 
 .price-breakdown-body p {
     font-size: 1.2rem;
 }
 
-.price-breakdown-row .price-breakdown-disc {
-    font-size: 1rem;
+.price-breakdown-row {
+    margin-bottom: 1.5rem;
+    padding: 0 .5rem;
 }
 
-.checkout-options{
-    display: none;
-    flex-direction: row;
-    width: 90%;
-    justify-content: space-between;
+.basket-total {
+    padding-right: .5rem;
+}
+
+.price-breakdown-row .price-breakdown-disc {
+    font-size: 1rem;
 }
 
 .price-breakdown-foot {
@@ -1078,6 +1216,7 @@ td {
 .checkout-button,
 .checkout-button:hover,
 .checkout-button:active {
+    text-align: center;
     display: flex;
     background-color: #336857;
     text-decoration: none;
@@ -1104,11 +1243,13 @@ td {
     flex-direction: column;
 }
 
-
 .product-container {
+    background-color: #ffffff;
+    padding: 0;
     display: flex;
+    margin: 0;
+    flex-direction: column;
 }
-
 /* CHECKOUT */
 
 .checkout-content {
@@ -1242,8 +1383,8 @@ td {
 }
 
 
-.checkout-content table tbody {
-    max-height: 10rem;
+.checkout-content table tbody div {
+    max-height: 10px;
     overflow-y: scroll;
 }
 
@@ -1777,6 +1918,14 @@ footer p,
 }
 
 @media (min-width: 550px) {
+    .basket-right,
+    .basket-left {
+        max-width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
     .home-page-banner {
         width: 52.5rem;
         margin-left: auto;
@@ -1804,6 +1953,44 @@ footer p,
 }
 
 @media (min-width: 768px) {
+
+    .mobile-basket-display {
+        display: none;
+    }
+
+
+    .basket-price-breakdown {
+
+        max-width: 30rem;
+        min-width: 25rem;
+    }
+
+    .basket-content table {
+        display: inline;
+    }
+
+    .product-container {
+        background: none;
+        padding: 0 0 2rem 0;
+        margin: 0;
+    }
+
+    .mobile-basket-head {
+        display: none;
+    }
+
+    .basket-right,
+    .basket-left {
+        display: flex;
+        flex-direction: column;
+        max-width: 60vw;
+        margin: 0;
+    }
+
+    .basket-left {
+        margin-right: 5%;
+    }
+
     .sm-display {
         display: none;
     }
@@ -1899,7 +2086,9 @@ footer p,
     }
 
     .basket-lower-section {
-        height: 100%
+        height: 100%;
+        display: flex;
+        flex-direction: row;
     }
 
         /* Allauth Pages Styling */
@@ -1968,6 +2157,9 @@ footer p,
         overflow-y: hidden;
     }
 
+    .basket-content table {
+        min-width: 45rem;
+    }
 
     .allauth-image {
         display: flex;
@@ -2033,16 +2225,12 @@ footer p,
     }
 
     .basket-content {
-        height: calc(100vh - 4rem);
+        padding: 14rem 15rem 8rem 10rem;
     }
 
-    .checkout-options{
-        display: flex;
-
-    }
-    
-    .price-breakdown-foot {
-        display: none;
+    .basket-right {
+        position: fixed;
+        left: calc(70rem + 10%)
     }
 
     .checkout-content {
