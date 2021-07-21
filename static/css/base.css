@@ -431,14 +431,14 @@ nav.navbar div.navbar-collapse {
 }
 
 .home-page-banner h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #fff;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .home-page-banner p {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .tree-graphic {
@@ -456,7 +456,7 @@ nav.navbar div.navbar-collapse {
 .cta-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-top: 5rem;
 }
 
@@ -464,7 +464,7 @@ nav.navbar div.navbar-collapse {
     display: flex;
     background-color: #1A342C;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: .5rem 1rem;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
@@ -1803,6 +1803,33 @@ footer p,
         border-bottom: .5rem solid #ffffff;
     }
 
+    .cta-container {
+        justify-content: flex-start;
+    }
+
+    .home-page-banner {
+        z-index: 100;
+        background-color: rgba(51,104,87);
+        position: relative;
+        margin-top: 12rem;
+        height: auto;
+        width: 100vw;
+        padding: 4rem 3rem;
+        box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .25);
+        font-family: 'Josefin Slab', sans-serif;
+    }
+
+    .home-page-banner h1 {
+        margin-bottom: 2rem;
+        color: #fff;
+        font-size: 3.5rem;
+    }
+
+    .home-page-banner p {
+        color: #fff;
+        font-size: 2rem;
+    }
+
     .home-page-banner {
         width: 66rem;
         margin-left: auto;
@@ -1942,7 +1969,7 @@ footer p,
 @media (min-width: 1200px) {
 
     .home-page-banner {
-        margin-left: 10%;
+        margin-left: 15%;
     }   
 
     .tree-graphic svg {
