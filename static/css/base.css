@@ -208,6 +208,43 @@ nav.navbar div.navbar-collapse {
     color:#336857;
 }
 
+/* Error Page Styling */
+
+.error-content {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    height: calc(100vh - 4rem);
+    overflow: hidden;
+    position: relative;
+}
+
+.error-text {
+	color: #ffffff;
+	font-weight: 300;
+}
+
+.error-container {
+	display: flex;
+	max-width: 80vw;
+	margin: 10rem auto 0 auto;
+	flex-direction: column;
+}
+
+.error-heading {
+	font-size: 6rem;
+}
+
+h2.error-text {
+	margin-top: 4rem;
+	font-size: 3rem;
+}
+
+.error-text a,
+.error-text a:visited,
+.error-text a:hover {
+	color: #ffffff;
+}
+
 /* Toast Styling */
 .message-container {
     z-index: 10000;
@@ -1906,6 +1943,15 @@ footer p,
 
     .admin-container {
         width: 80%;
+    }
+
+    /* Error styling */
+    .error-container {
+        max-width: 60vw;
+    }
+    
+    .error-heading {
+        font-size: 6rem;
     }
 }
 
