@@ -305,7 +305,7 @@ nav.navbar div.navbar-collapse {
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
-    height: 68rem;
+    height: auto;
 }
 
 .allauth-body,
@@ -317,7 +317,7 @@ nav.navbar div.navbar-collapse {
 .allauth-body {
     background-color: #F2F8F7;
     margin: 0;
-    padding: 4rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .allauth-body h1 {
@@ -1759,6 +1759,10 @@ footer p,
 	    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
     }
 
+    .allauth-container {
+        height: 60rem;
+    }
+
 
 }
 
@@ -1888,6 +1892,7 @@ footer p,
         position: relative;
         justify-content: space-between;
         background: #1A342C;
+        overflow-y: hidden;
     }
 
 
