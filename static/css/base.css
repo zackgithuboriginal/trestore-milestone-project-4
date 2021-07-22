@@ -1258,7 +1258,8 @@ td p {
 }
 /* CHECKOUT */
 
-.checkout-content {
+.checkout-content,
+.profile-content {
     padding: 14rem 4rem 6rem 4rem;
     min-height: calc(100vh - 4rem);
     position: relative;

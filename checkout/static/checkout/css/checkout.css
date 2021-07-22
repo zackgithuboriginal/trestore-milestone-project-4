@@ -36,9 +36,14 @@
     border: 1px solid #336857;
 }
 
-select,
-select option {
-    color: #000000;
+#div_id_country select,
+#div_id_country select option {
+    font-size: 1.4rem;
+    color:#336857;
+}
+
+#div_id_country select option {
+    padding: 0;
 }
 
 select:invalid,
