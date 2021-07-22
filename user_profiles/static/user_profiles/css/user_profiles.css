@@ -28,6 +28,31 @@
     flex-direction: column;
 }
 
+#div_id_default_country select,
+#div_id_default_country select option {
+    font-size: 1.4rem;
+    color:#336857;
+}
+
+
+#div_id_default_country select {
+    border: 1px solid #336857;
+}
+
+#div_id_default_country select option {
+    padding: 0;
+}
+
+#div_id_default_country select:invalid,
+#div_id_default_country select option[value=""] {
+    color: #aab7c4 !important;
+}
+
+.form-profile-details .form-control {
+    color: #336857;
+    border: 1px solid #336857;
+}
+
 .edit-button {
     cursor: pointer;
 }
@@ -39,6 +64,10 @@
     max-width: 60rem;
 }
 
+.profile-trees-container h2 {
+    font-size: 1.8rem;
+}
+
 .profile-trees-container p {
     margin-top: 1rem;
     font-size: 1.4rem;
@@ -47,4 +76,8 @@
 .profile-row a,
 .profile-row a {
     color: #336857;
+}
+
+.order-table-alt {
+    font-size: 1.4rem;
 }

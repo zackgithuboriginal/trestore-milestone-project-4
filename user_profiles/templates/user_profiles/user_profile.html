@@ -25,7 +25,7 @@
         <hr>
     </div>
     <div class="profile-row row">
-        <div class="basket-left col-12 col-lg-4 row p-0">
+        <div class="flex col-12 col-lg-4 row p-0">
             <div class="profile-trees-container">
                 <h2 class="font-color-green">Tree's Planted: {{ trees_planted }}</h2>
                 <p>5% of all sales go directly towards the planting of native Irish Tree Species. You can find out more about our progress and our wider replanting efforts <a href="{% url 'progress' %}">in our progress blog.</a></p>
@@ -52,13 +52,13 @@
                     <hr>
                 </div>
                 <div class="profile-default-details profile-delivery-details">
-                    <p>{{ profile.default_full_name }}</p>
-                    <p>{{ profile.default_street_address1 }}</p>
-                    <p>{{ profile.default_street_address2 }}</p>
-                    <p>{{ profile.default_town_or_city }}</p>
-                    <p>{{ profile.default_post_code }}</p>
-                    <p>{{ profile.default_county }}</p>
-                    <p>{{ profile.default_country.name }}</p>
+                    {% if profile.default_full_name %}<p>{{ profile.default_full_name }}</p>{% endif %}
+                    {% if profile.default_street_address1 %}<p>{{ profile.default_street_address1 }}</p>{% endif %}
+                    {% if profile.default_street_address2 %}<p>{{ profile.default_street_address2 }}</p>{% endif %}
+                    {% if profile.default_town_or_city %}<p>{{ profile.default_town_or_city }}</p>{% endif %}
+                    {% if profile.default_post_code %}<p>{{ profile.default_post_code }}</p>{% endif %}
+                    {% if profile.default_county %}<p>{{ profile.default_county }}</p>{% endif %}
+                    {% if profile.default_country %}<p>{{ profile.default_country.name }}</p>{% endif %}
                 </div>
                 <form class="form-profile-details" action="{% url 'user_profile' %}" method="POST">
                     {% csrf_token %}
@@ -69,39 +69,45 @@
                 </form>
             </div>
         </div>
-        <div class="basket-right col-12 col-lg-6 offset-lg-1 row p-0"> 
+        <div class="flex-col col-12 col-lg-6 offset-lg-1 p-0"> 
             <div  class="basket-sub-title">
                 <div class="">Order History</div>
                 <hr>
             </div>
-            <table class="table-small">
-                <thead>
-                    <tr class="table-head-row">
-                    <th scope="col">Order Number</th>
-                    <th scope="col">Order Date</th>
-                    <th scope="col">Total</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for order in orders %}
-                    <tr>
-                        <td title="{{ order.order_number }}">
-                            {{ order.order_number|truncatechars:12 }}
-                        </td>
-                        <td>
-                            {{ order.date }}
-                        </td>
-                        <td>
-                            {{ order.grand_total }}
-                        </td>
-                        <td>
-                            <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number}}">Order details</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-        </table>
+            {% if orders|length > 0 %}
+                <table class="table-small">
+                    <thead>
+                        <tr class="table-head-row">
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Total</th>
+                        <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td title="{{ order.order_number }}">
+                                {{ order.order_number|truncatechars:12 }}
+                            </td>
+                            <td>
+                                {{ order.date }}
+                            </td>
+                            <td>
+                                {{ order.grand_total }}
+                            </td>
+                            <td>
+                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number}}">Order details</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="order-table-alt">
+                    <p>You haven't made any orders yet.</p>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
