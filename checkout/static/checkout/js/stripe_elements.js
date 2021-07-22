@@ -49,7 +49,7 @@ form.addEventListener('submit', function(ev) {
     $('#payment-form').fadeToggle(100);
     $('#progress-spinner').fadeToggle(100);
 
-    var storeDetails = Boolean($('#store-details').attr('checked'));
+    var storeDetails = Boolean($('#id-store-details').prop('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,

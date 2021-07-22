@@ -904,7 +904,7 @@ tr {
     padding: 0;
     display: flex;
     margin-bottom: 1rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     flex-direction: column;
 }
 
@@ -1286,6 +1286,10 @@ td p {
 .checkout-card .row {
     padding: 0 1rem 1rem 1rem;
     margin: 1rem 0 0 0;
+}
+
+.checkout-body p {
+    font-size: 1.2rem;
 }
 
 .order-summary-col-head {

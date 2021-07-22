@@ -24,7 +24,7 @@
         </h1>
     </div>
     <div class="col-12 row m-0 p-0">
-        <div class="basket-left col-12 col-lg-5 offset-lg-1 order-lg-last">
+        <div class="flex-col col-12 col-lg-5 offset-lg-1 order-lg-last">
             <div class="basket-sub-title">
                 <p class="">Order Summary ({{ product_count }})</p>
                 <hr>
@@ -40,8 +40,8 @@
                 </div>
 
                 {% for item in basket_items %}
-                <div class="row">
-                    <div class="col-2 mb-1">
+                <div class="checkout-body row">
+                    <div class="col-3 mb-1">
                         <a href="">
                             {% if item.product.image %}
                             <img class="checkout-basket-image" src="{{ item.product.image.url }}" alt="{{ product.product_name }}">
@@ -50,7 +50,7 @@
                             {% endif %}
                         </a>
                     </div>
-                    <div class="col-7">
+                    <div class="col-6">
                         <p class="my-0"><strong>{{ item.product.product_name }}</strong></p>
                         <p class="my-0">Qty: {{ item.quantity }}</p>
                     </div>
@@ -59,8 +59,8 @@
                     </div>
                 </div>
                 {% endfor %}
-                <div class="row text-black text-right">
-                    <div class="col-7 offset-2">
+                <div class="checkout-body row text-black text-right">
+                    <div class="col-6 offset-3">
                         <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>
                         <p class="my-0">Grand Total:</p>
@@ -75,9 +75,9 @@
             </div>
             
         </div>
-        <div class="basket-right col-12 col-lg-6">
+        <div class="flex-col  col-12 col-lg-6">
             <div class="basket-sub-title">
-                <div class="">Delivery and Payment Details</div>
+                <div class=""><p>Delivery and Payment Details</p></div>
                 <hr>
             </div>
 
@@ -90,13 +90,13 @@
                     <div class="price-breakdown-row row">
                         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                             {% csrf_token %}
-                            <fieldset class="rounded px-3 mb-5">
+                            <fieldset class="rounded px-3 mb-2">
                                 <legend class="fieldset-label">Personal Details</legend>
                                 <p>Fields marked with a (*) are required.</p>
                                 {{ order_form.full_name | as_crispy_field }}
                                 {{ order_form.email | as_crispy_field }}
                             </fieldset>
-                            <fieldset class="rounded px-3 mb-5">
+                            <fieldset class="rounded px-3 mb-2">
                                 <legend class="fieldset-label">Delivery Details</legend>
                                 {{ order_form.street_address1 | as_crispy_field }}
                                 {{ order_form.street_address2 | as_crispy_field }}
@@ -106,8 +106,8 @@
                                 {{ order_form.country | as_crispy_field }}
                                 <div class="store-details-row">
                                     {% if user.is_authenticated %}
-                                        <input class="font-color-green" type="checkbox" id="store-details" name="store-details" checked>
-                                        <label class="font-color-green store-details-label" for="store-details">Save these delivery details to my account &nbsp; <i></i></label>
+                                        <input class="font-color-green" type="checkbox" id="id-store-details" name="store-details">
+                                        <label class="font-color-green store-details-label" for="id-store-details">Save these delivery details to my account &nbsp; <i></i></label>
                                     {% else %}
                                     <div>
                                         <a class="font-color-green" href="{% url 'account_signup' %}">Register an account</a> or 
