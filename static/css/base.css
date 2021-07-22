@@ -161,6 +161,11 @@ nav.navbar div.flex {
     display: flex;
 }
 
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar-right-side {
     position: absolute;
     display: flex;
@@ -1006,8 +1011,9 @@ td p {
 }
 
 .basket-content table input {
-    width: 8rem;
+    width: 6rem;
 }
+
 
 .basket-product-update,
 .basket-product-delete {
@@ -2228,9 +2234,13 @@ footer p,
         padding: 14rem 15rem 8rem 10rem;
     }
 
+    .basket-content > * {
+        margin-left: 10%;
+    }
+
     .basket-right {
         position: fixed;
-        left: calc(70rem + 10%)
+        left: calc(70rem + 15%)
     }
 
     .checkout-content {
