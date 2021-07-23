@@ -1,24 +1,26 @@
 .StripeElement,
 .stripe-style-input {
-  box-sizing: border-box;
-  height: 3rem;
-  padding: .5rem 1.2rem;
-  border: 1px solid #336857;
-  border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+    box-sizing: border-box;
+    height: 3rem;
+    padding: .5rem 1.2rem;
+    border: 1px solid #336857;
+    border-radius: 0;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    -moz-transition: box-shadow 150ms ease;
+    -o-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+    background-color: #fefde5 !important;
 }
 
 .stripe-style-input::placeholder {
@@ -39,7 +41,7 @@
 #div_id_country select,
 #div_id_country select option {
     font-size: 1.4rem;
-    color:#336857;
+    color: #336857;
 }
 
 #div_id_country select option {
@@ -58,7 +60,8 @@ select option[value=""] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 52, 44,.85);
+    background: #1a342c;
+    background: rgba(26, 52, 44, .85);
     z-index: 99999;
 }
 
@@ -75,30 +78,30 @@ select option[value=""] {
     margin-top: -.5rem;
 }
 
-input#id-store-details {
+#id-store-details {
     color: #336857;
 }
 
-input#id-store-details {
+#id-store-details {
     display: none;
 }
 
 .store-details-label {
     padding: 3px;
-    font-size:1.4rem;
+    font-size: 1.4rem;
 }
 
-input#id-store-details:checked + .store-details-label:after  {
+#id-store-details:checked+.store-details-label:after {
     font-family: 'Font Awesome 5 Free';
     content: "\f14a";
-	cursor:pointer;
+    cursor: pointer;
 
 }
 
-input#id-store-details + .store-details-label:after {
+#id-store-details+.store-details-label:after {
     font-family: 'Font Awesome 5 Free';
     content: "\f0c8";
-	cursor:pointer;
+    cursor: pointer;
 }
 
 .store-details-row input {
