@@ -4,12 +4,21 @@ from .models import Product, Category
 
 
 class AddProductForm(forms.ModelForm):
+    """
+    Form for adding products to store, creates input fields
+    for all fields of the product model.
+
+    Uses a custom widget as the image input
+
+    Adds necessary attributes and restrictions to each field
+    """
 
     class Meta:
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image', required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

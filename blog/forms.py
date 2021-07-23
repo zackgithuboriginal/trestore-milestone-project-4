@@ -1,15 +1,18 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import ProgressPost, Comment
+from .models import ProgressPost
 
 
 class AddPostForm(forms.ModelForm):
-
+    """
+    Form for adding a progress post
+    """
     class Meta:
         model = ProgressPost
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image',
+                             required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

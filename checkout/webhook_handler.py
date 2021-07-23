@@ -9,16 +9,23 @@ from products.models import Product
 from user_profiles.models import UserProfile
 from .models import Order, OrderLineItem
 import time
-
 import json
+
+
 class StripeWH_Handler:
-    """Handles and processes Stripe webhook"""
+    """
+    Handles and processes Stripe webhook after order is submitted
+    """
 
     def __init__(self, request):
         self.request = request
-    
+
     def _send_confirmation_email(self, order):
-        """Method to send a confirmation email when an order is placed"""
+        """
+        Method to send a confirmation email when an order is placed
+
+        Takes the placed order as an argument to access order details
+        """
         target_email = order.email
         email_subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -47,7 +54,7 @@ class StripeWH_Handler:
         """
         Method handles a payment_intent_succeeded webhook from Stripe
         """
-       
+
         intent = event.data.object
         pid = intent.id
         basket = intent.metadata.basket
@@ -69,8 +76,10 @@ class StripeWH_Handler:
             profile = UserProfile.objects.get(user__username=username)
             if store_details:
                 profile.default_full_name = shipping_details.name
-                profile.default_street_address1 = shipping_details.address.line1
-                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_street_address1 = (shipping_details.
+                                                   address.line1)
+                profile.default_street_address2 = (shipping_details.
+                                                   address.line2)
                 profile.default_town_or_city = shipping_details.address.city
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_county = shipping_details.address.state
@@ -103,10 +112,16 @@ class StripeWH_Handler:
             self._send_confirmation_email(order)
             if username != 'AnonymousUser':
                 profile = UserProfile.objects.get(user__username=username)
-                profile.tree_planting_contribution = profile.tree_planting_contribution+order.order_total*Decimal(settings.TREE_PLANTING_PERCENTAGE / 100)
+                profile.\
+                    tree_planting_contribution = ((profile.
+                                                  tree_planting_contribution) +
+                                                  order.order_total *
+                                                  Decimal(
+                        settings.TREE_PLANTING_PERCENTAGE / 100))
                 profile.save()
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=(f'Webhook received: {event["type"]} |'
+                         ' SUCCESS: Verified order already in database'),
                 status=200)
         else:
             order = None
@@ -141,10 +156,16 @@ class StripeWH_Handler:
         self._send_confirmation_email(order)
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
-            profile.tree_planting_contribution = profile.tree_planting_contribution+order.order_total*Decimal(settings.TREE_PLANTING_PERCENTAGE / 100)
+            profile.\
+                tree_planting_contribution = ((profile.
+                                              tree_planting_contribution) +
+                                              order.order_total *
+                                              Decimal(
+                    settings.TREE_PLANTING_PERCENTAGE / 100))
             profile.save()
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} |'
+                     ' SUCCESS: Created order in webhook',
             status=200)
 
     def handle_payment_intent_failed(self, event):

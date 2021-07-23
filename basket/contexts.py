@@ -6,6 +6,10 @@ from django.contrib import messages
 
 
 def basket_contents(request):
+    """
+    Basket content context containing information regarding
+    contents of basket and total price of products
+    """
     basket_items = []
     total = 0
     product_count = 0
@@ -21,7 +25,9 @@ def basket_contents(request):
                 'product': product,
             })
         except Exception:
-            messages.error(request, 'Unfortunately a product in your basket is no longer available.')
+            messages.error(request,
+                           "Unfortunately a product in your basket is no"
+                           " longer available.")
             basket.pop(item_id, quantity)
             request.session['basket'] = basket
             break
@@ -30,7 +36,9 @@ def basket_contents(request):
 
     grand_total = delivery_cost + total
 
-    tree_planting_contribution = total * Decimal(settings.TREE_PLANTING_PERCENTAGE / 100)
+    tree_planting_contribution = total * Decimal(
+                                         settings.TREE_PLANTING_PERCENTAGE /
+                                         100)
 
     context = {
         'basket_items': basket_items,

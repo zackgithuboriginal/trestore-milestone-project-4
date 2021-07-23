@@ -3,6 +3,17 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for creating a user model to store delivery details and track orders.
+
+    Creates input fields for all fields of the user profile
+    model except for the foreign key user object and
+    the tree planting contribution which is tracked passively through the
+    checkout view
+
+    Adds necessary attributes and placeholders to each field
+    """
+
     class Meta:
         model = UserProfile
         exclude = ('user', 'tree_planting_contribution')
@@ -13,7 +24,7 @@ class UserProfileForm(forms.ModelForm):
         to input elements
         """
         super().__init__(*args, **kwargs)
-        placeholders = {            
+        placeholders = {
             'default_full_name': 'Full Name',
             'default_postcode': 'Postal Code',
             'default_town_or_city': 'Town or City',

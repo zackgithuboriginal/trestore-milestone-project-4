@@ -12,6 +12,7 @@ from user_profiles.models import UserProfile
 
 # Create your models here.
 class Order(models.Model):
+    """ Order model used for tracking details of a customer's order """
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
@@ -66,6 +67,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ Sub model used to calculate subtotals and track quantities of each product"""
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)

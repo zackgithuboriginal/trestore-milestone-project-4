@@ -5,11 +5,17 @@ from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import AddProductForm
 
-# Create your views here.
 
 def all_products(request):
-    """ This view will display all products """
-    
+    """
+    View displays products page with all products except for
+    sponsorship packages
+
+    Accepts request object as argument to allow for
+    sorting and filtering of products from the store page
+
+    """
+
     products = Product.objects.exclude(category__name='sponsorship')
     sortkey = None
     query = None
@@ -30,20 +36,22 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-            
-            queries = Q(product_name__icontains=query) | Q(product_description__icontains=query)
+                messages.error(request,
+                               "You didn't enter any search criteria!")
+
+            queries = Q(product_name__icontains=query) | Q(
+                        product_description__icontains=query)
             products = products.filter(queries)
 
         if 'product-sort' in request.GET:
             sortkey = request.GET['product-sort']
             if sortkey == 'price_asc':
                 products = products.order_by('price')
-                sort_friendly = 'Price Ascending'
+                current_sorting = 'Price Ascending'
             elif sortkey == 'price_desc':
                 sort_direction = '-price'
                 products = products.order_by(sort_direction)
-                sort_friendly = 'Price Descending'
+                current_sorting = 'Price Descending'
             else:
                 products = products.order_by('category')
                 current_sorting = 'Category'
@@ -62,20 +70,28 @@ def all_products(request):
 
 
 def sponsorship_packages(request):
-    """ This view will display all sponsorship packages """
+    """
+    View renders the products page with only
+    products with a category of sponsorship
+    """
 
     sponsorship_packages = Product.objects.filter(category__name='sponsorship')
 
     context = {
         'sponsorship_packages': sponsorship_packages,
     }
-    print(sponsorship_packages)
 
     return render(request, 'products/sponsorship_packages.html', context)
 
 
 def product_details(request, product_id):
-    """ The view to render the product details page for a product """
+    """
+    The view to render the product details page for a product
+
+    Accepts product_id and request object
+    as arguments to pass the required product
+    as context to the product details page
+    """
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -88,7 +104,23 @@ def product_details(request, product_id):
 
 @login_required
 def add_product(request):
-    """ View for adding products to the store """
+    """
+    View to either render the add product page,
+    or handle the add product post request
+
+    Accepts request object as argument which provides access to the
+    add product form data.
+
+    Requires user to be logged in to access,
+    if user is not a superuser they will receive an error message
+    and be redirected
+
+    When the view recieves a post request, it takes the form data
+    and passes it to the AddProductForm to check if it meets requirements
+
+    The form then gets saved as a new product and the user is redirected
+    to the product details page for that product
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, you need to be authorised to do that.')
         return redirect(reverse('home'))
@@ -100,7 +132,9 @@ def add_product(request):
             messages.success(request, 'Product added to store.')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Unable to add product. Ensure there are no errors in the form.')
+            messages.error(request,
+                           'Unable to add product. '
+                           'Ensure there are no errors in the form.')
     else:
         form = AddProductForm()
 
@@ -114,7 +148,25 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ View for editing a product in the store """    
+    """
+    View to either render the edit product page,
+    or handle the edit product post request
+
+    Accepts request object and product id as argument which provides access to
+    the add product form data and allows view to access the
+    correct product object.
+
+    Requires user to be logged in to access,
+    if user is not a superuser they will receive an error message
+    and be redirected
+
+    When the view recieves a post request, it takes the form data
+    and passes it to the AddProductForm along with the relevant product object,
+    to check if it meets requirements
+
+    The form then gets saved to update the object and the user is redirected
+    to the product details page for that product
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, you need to be authorised to do that.')
         return redirect(reverse('home'))
@@ -124,10 +176,14 @@ def edit_product(request, product_id):
         form = AddProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'{product.product_name} product successfully updated.')
+            messages.success(request,
+                             f'{product.product_name} product '
+                             'successfully updated.')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Unable to update product. Ensure there are no errors in the form.')
+            messages.error(request,
+                           'Unable to update product.'
+                           ' Ensure there are no errors in the form.')
     else:
         form = AddProductForm(instance=product)
         messages.info(request, f'Now editing {product.product_name}')
@@ -143,7 +199,18 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ View for delete a product from the store """
+    """
+    View that handles the deletion of a product object
+
+    Accepts request object and product id as arguments which allows
+    the view to access the correct product object.
+
+    Requires user to be logged in to access,
+    if user is not a superuser they will receive an error message
+    and be redirected
+
+    View gets the correct object and deletes it, then redirects user
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, you need to be authorised to do that.')
         return redirect(reverse('home'))
