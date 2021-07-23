@@ -146,39 +146,5 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-        function displayComments(element, post_id) {
-            if($( `#comment-container-${ post_id }`).css('display') == 'none') {
-                $( `#comment-container-${ post_id }`).css('display', 'flex');
-                element.firstElementChild.textContent = 'Hide Comments '
-            } else {
-                $( `#comment-container-${ post_id }`).css('display', 'none');
-                element.firstElementChild.textContent = 'Show Comments '
-            }
-        }
-
-        function displayEditForm(comment_id){
-            editNodes = document.getElementsByClassName('comment-edit')
-            let editArray = [].slice.call(editNodes)
-            commentNodes = document.getElementsByClassName('comment-card')
-            let commentArray = [].slice.call(commentNodes)
-            for(i in editArray){
-                editArray[i].style.display='none'
-            }
-            for(i in commentArray){
-                commentArray[i].style.display='inline'
-            }
-            $(`#comment-edit-${ comment_id}`).css('display', 'flex')
-            $(`#comment-${ comment_id}`).css('display', 'none')
-        }
-
-        function closeEdit(comment_id){
-            $(`#comment-edit-${ comment_id}`).css('display', 'none')
-            $(`#comment-${ comment_id}`).css('display', 'inline')
-        }
-
-        $('#clear-button').click(function(){
-            $('#comment_content').val('');
-        })
-    </script>
+    <script src="{% static 'blog/js/blog.js' %}"></script>
 {% endblock %}

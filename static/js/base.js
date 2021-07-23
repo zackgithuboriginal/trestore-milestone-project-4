@@ -1,7 +1,7 @@
 /**
  * This function handles the display of the post edit options dropdown menu
  */
- function displayOptionsDropdown(id) {
+function displayOptionsDropdown(id) {
     let target = document.getElementById(`display-options-${id}`);
     if (target.style.display == "flex") {
         clearDropdowns();
