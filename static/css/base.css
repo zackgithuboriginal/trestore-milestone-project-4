@@ -567,6 +567,9 @@ h2.error-text {
     width: auto;
     height: 100%;
     margin: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .alt-product-image {
