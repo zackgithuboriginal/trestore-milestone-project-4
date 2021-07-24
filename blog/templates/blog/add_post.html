@@ -42,11 +42,16 @@
                         Cancel
                     </a>
                     <button type="submit" class="cta-button-green">
-                        Add Product
+                        Add Post
                     </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'blog/js/blog.js' %}"></script>
 {% endblock %}

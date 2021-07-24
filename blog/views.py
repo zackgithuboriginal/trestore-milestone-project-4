@@ -31,22 +31,11 @@ def add_post(request):
         return redirect(reverse('progress'))
 
     if request.method == 'POST':
-        author = UserProfile.objects.get(user=request.user)
-        if 'image' in request.FILES:
-            image = request.FILES['image']
-        else:
-            image = False
-
-        form_data = {
-            'author': author,
-            'post_title': request.POST['post_title'],
-            'post_content': request.POST['post_content'],
-            'image': image,
-        }
-
-        form = AddPostForm(form_data)
+        form = AddPostForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.author = UserProfile.objects.get(user=request.user)
+            post.save()
             messages.success(request, 'Post successfully published.')
             return redirect(reverse('progress'))
         else:

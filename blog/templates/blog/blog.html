@@ -82,6 +82,11 @@
                         {% endif %}
                     </div>
                     <div class="post-body">
+                        {% if post.image %}
+                            <div class="post-image-container">
+                                <img src="{{ post.image.url }}" alt="progress post image">
+                            </div>
+                        {% endif %}
                         <p class="post-content">{{ post.post_content }}</p>
                         <div class="post-body-bottom">
                             <p>{{ post.date }}</p>
@@ -143,6 +148,7 @@
                     </div>
                 </div>
                 {% endfor %}
+            {% else %}
             {% endif %}
         </div>
     </div>

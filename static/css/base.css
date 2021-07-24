@@ -1632,6 +1632,18 @@ input[type="file"] {
     padding: 1rem 2rem;
 }
 
+.post-image-container {
+    width: 100%;
+    max-height: 35rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.post-image-container img {
+    width: 100%;
+    height: auto;
+}
+
 .post-foot {
     padding: 0 2rem 1rem 2rem;
     height: auto;
