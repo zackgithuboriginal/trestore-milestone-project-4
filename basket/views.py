@@ -36,7 +36,10 @@ def add_to_basket(request, item_id):
                          ' to your basket!', extra_tags='checkout')
 
     request.session['basket'] = basket
-    return redirect('products')
+    if product.category.name != 'sponsorship':
+        return redirect('products')
+    else:
+        return redirect('sponsorship_packages')
 
 
 def update_basket(request, item_id):
