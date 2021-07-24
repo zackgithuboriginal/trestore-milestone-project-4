@@ -13,7 +13,6 @@ def all_products(request):
 
     Accepts request object as argument to allow for
     sorting and filtering of products from the store page
-
     """
 
     products = Product.objects.exclude(category__name='sponsorship')
@@ -216,8 +215,12 @@ def delete_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
+    store_location = product.category.name
     product.delete()
 
     messages.success(request, 'Product successfully deleted from the store.')
 
-    return redirect(reverse('products'))
+    if store_location != 'sponsorship':
+        return redirect(reverse('products'))
+    else:
+        return redirect(reverse('sponsorship_packages'))

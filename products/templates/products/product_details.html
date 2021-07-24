@@ -58,12 +58,21 @@
                 </div>
 
                 <div class="pd-options">
-                    <a href="{% url 'products' %}" class="cta-button-green">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="">Return to Store</span>
-                    </a>
+                    {% if product.category.name != 'sponsorship' %}
+                        <a href="{% url 'products' %}" class="cta-button-green">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>Return to Store</span>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'sponsorship_packages' %}" class="cta-button-green">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>Return to Packages</span>
+                        </a>
+                    {% endif %}
                     <input type="submit" class="cta-button-green" value="Add to Basket">
                 </div>
                 <input type="hidden" name="redirect_location" value="{{ request.path }}">
