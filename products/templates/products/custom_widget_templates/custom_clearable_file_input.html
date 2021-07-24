@@ -1,35 +1,35 @@
 {% if widget.is_initial %}
-<p>{{ widget.initial_text }}: </p>
-<div class="custom-image-file-input">
-    <div class="custom-image-file-container">
-        <a href="{{ widget.value.url }}">
-            <img src="{{ widget.value.url }}">
-        </a>
-    </div>
-    <div class="flex-space-between">
-        <div class="custom-file-input-button-container">
-            <div class="button-wrap">
-                <label class="button" for="new-image">Select New Image</label>
-                <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    <p>{{ widget.initial_text }}: </p>
+    <div class="custom-image-file-input">
+        <div class="custom-image-file-container">
+            <a href="{{ widget.value.url }}">
+                <img src="{{ widget.value.url }}">
+            </a>
+        </div>
+        <div class="flex-space-between">
+            <div class="custom-file-input-button-container">
+                <div class="button-wrap">
+                    <label class="button" for="id_image">Select New Image</label>
+                    <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+                </div>
+            </div>
+            <p>or</p>
+            <div class="custom-image-file-clear">
+                {% if not widget.required %}
+                    <input class="custom-file-checkbox"  type="checkbox" name="{{ widget.checkbox_name }}" id="file-input-checkbox"{% if widget.attrs.disabled %} disabled{% endif %}>
+                    <label class="file-input-label text-danger"  for="file-input-checkbox">Delete Image</label>
+                {% endif %}
             </div>
         </div>
-        <p>or</p>
-        <div class="custom-image-file-clear">
-            {% if not widget.required %}
-                <input class="custom-file-checkbox"  type="checkbox" name="{{ widget.checkbox_name }}" id="file-input-checkbox"{% if widget.attrs.disabled %} disabled{% endif %}>
-                <label class="file-input-label text-danger"  for="file-input-checkbox">Delete Image</label>
-            {% endif %}
-        </div>
     </div>
-</div>
 {% else %}
-<div class="custom-image-file-input">
-    <div class="custom-file-input-button-container">
-        <div class="button-wrap">
-            <label class="button" for="new-image">Select Image</label>
-            <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    <div class="custom-image-file-input">
+        <div class="custom-file-input-button-container">
+            <div class="button-wrap">
+                <label class="button" for="id_image">Select Image</label>
+                <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+            </div>
         </div>
     </div>
-</div>
 {% endif %}
-<strong><p class="text-danger" id="filename"></p></strong>
+<p class="text-danger" id="filename"></p>

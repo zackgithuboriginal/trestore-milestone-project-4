@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'blog/js/blog.js' %}"></script>
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -42,9 +47,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script src="{% static 'blog/js/blog.js' %}"></script>
 {% endblock %}

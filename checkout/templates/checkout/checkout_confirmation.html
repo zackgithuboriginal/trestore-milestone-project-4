@@ -14,21 +14,24 @@
 {% block content %}
 {{ from_profile }}
 <div class="checkout-confirmation-content row">
-{% if from_profile %}
-    <div class="page-title font-color-green col-12 row">
-        <h1 class="col-12">Order Details
-            <i class="fab fa-pagelines font-color-green"></i>
-        </h1>
-        <p class="col-12 col-md-8">The details for order {{ order.order_number }} are below. A copy of these details were also sent to {{ order.email }} on {{ order.date }}</p>
-    </div>
-{% else %}
-    <div class="page-title font-color-green col-12 row">
-        <h1 class="col-12">Order Successful
-            <i class="fab fa-pagelines font-color-green"></i>
-        </h1>
-        <p class="col-12 col-md-8">Thank you for your order and for supporting our mission of replanting native woodlands! Your order details can be found below and included in your confirmation email sent to {{ order.email }}</p>
-    </div>
-{% endif %}
+    {% if from_profile %}
+        <div class="page-title font-color-green col-12 row">
+            <h1 class="col-12">Order Details
+                <i class="fab fa-pagelines font-color-green"></i>
+            </h1>
+            <p class="col-12 col-md-8">The details for order {{ order.order_number }} are below. A copy of these details
+                were also sent to {{ order.email }} on {{ order.date }}</p>
+        </div>
+    {% else %}
+        <div class="page-title font-color-green col-12 row">
+            <h1 class="col-12">Order Successful
+                <i class="fab fa-pagelines font-color-green"></i>
+            </h1>
+            <p class="col-12 col-md-8">Thank you for your order and for supporting our mission of replanting native
+                woodlands! Your order details can be found below and included in your confirmation email sent to {{
+                order.email }}</p>
+        </div>
+    {% endif %}
     <div class="checkout-confirmation-container col-12 row">
         <div class="order-confirmation-wrapper col-12 col-md-8 col-lg-7">
             <div class="row">
@@ -62,13 +65,14 @@
             </div>
 
             {% for item in order.lineitems.all %}
-            <div class="row">
-                <div class="col-4 col-md-6">
-                    <p class="order-confirmation-line-item">
-                        <span>{{ item.product.product_name }}</span><span class="text-end">&nbsp;{{ item.quantity }} @ €{{ item.product.price }} each</span>
-                    </p>
+                <div class="row">
+                    <div class="col-4 col-md-6">
+                        <p class="order-confirmation-line-item">
+                            <span>{{ item.product.product_name }}</span><span class="text-end">&nbsp;{{ item.quantity }} @
+                                €{{ item.product.price }} each</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
             {% endfor %}
 
             <div class="row">
@@ -96,25 +100,25 @@
             </div>
 
             {% if order.street_address2 %}
-            <div class="row">
-                <div class="col-4 col-md-4">
-                    <p>Address 2:</p>
+                <div class="row">
+                    <div class="col-4 col-md-4">
+                        <p>Address 2:</p>
+                    </div>
+                    <div class="col-6 offset-1">
+                        <p class="text-end">{{ order.street_address1 }}</p>
+                    </div>
                 </div>
-                <div class="col-6 offset-1">
-                    <p class="text-end">{{ order.street_address1 }}</p>
-                </div>
-            </div>
             {% endif %}
 
             {% if order.county %}
-            <div class="row">
-                <div class="col-4 col-md-4">
-                    <p>County:</p>
+                <div class="row">
+                    <div class="col-4 col-md-4">
+                        <p>County:</p>
+                    </div>
+                    <div class="col-6 offset-1">
+                        <p class="text-end">{{ order.county }}</p>
+                    </div>
                 </div>
-                <div class="col-6 offset-1">
-                    <p class="text-end">{{ order.county }}</p>
-                </div>
-            </div>
             {% endif %}
 
             <div class="row">
@@ -127,14 +131,14 @@
             </div>
 
             {% if order.postcode %}
-            <div class="row">
-                <div class="col-4 col-md-4">
-                    <p>Postal Code:</p>
+                <div class="row">
+                    <div class="col-4 col-md-4">
+                        <p>Postal Code:</p>
+                    </div>
+                    <div class="col-6 offset-1">
+                        <p class="text-end">{{ order.postcode }}</p>
+                    </div>
                 </div>
-                <div class="col-6 offset-1">
-                    <p class="text-end">{{ order.postcode }}</p>
-                </div>
-            </div>
             {% endif %}
 
             <div class="row">
@@ -181,29 +185,25 @@
         </div>
     </div>
 
-{% if from_profile %}
-    <div class="row">
-        <div class="col-12 col-lg-7">
-            <a href="{% url 'user_profile' %}" class="font-color-light checkout-confirmation-home-link">
-                <i class="fas fa-arrow-left"></i>&nbsp; Profile
-                
-            </a>
+    {% if from_profile %}
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <a href="{% url 'user_profile' %}" class="font-color-light checkout-confirmation-home-link">
+                    <i class="fas fa-arrow-left"></i>&nbsp; Profile
+                </a>
+            </div>
         </div>
-    </div>
+    {% else %}
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <a href="{% url 'products' %}" class="font-color-light checkout-confirmation-home-link">
+                    <i class="fas fa-arrow-left"></i>&nbsp; Return to the store
+                </a>
+            </div>
+        </div>
+    {% endif %}
     </div>
 </div>
-{% else %}
-    <div class="row">
-        <div class="col-12 col-lg-7">
-            <a href="{% url 'products' %}" class="font-color-light checkout-confirmation-home-link">
-                <i class="fas fa-arrow-left"></i>&nbsp; Return to the store
-                
-            </a>
-        </div>
-    </div>
-    </div>
-</div>
-{% endif %}
 {% endblock %}
 
 

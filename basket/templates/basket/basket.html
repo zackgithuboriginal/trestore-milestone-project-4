@@ -22,7 +22,7 @@
     <div class="col-12 basket-lower-section">
         <div class="basket-left">
             <div class="basket-sub-title">
-                <div class="">Basket Items</div>
+                <div>Basket Items</div>
                 <hr>
             </div>
             <div class="product-container">
@@ -41,22 +41,28 @@
                                     </div>
                                     <div class="flex-col">
                                         <div class="basket-product-details">
-                                            <a class="basket-product-delete" id="delete_{{ item.item_id }}"><i class="fa fa-times"></i></a>
+                                            <a data-csrf="{{ csrf_token }}"  class="basket-product-delete  basket-product-delete-sm" id="delete_sm_{{ item.item_id }}"><i
+                                                    class="fa fa-times"></i></a>
                                             <p class="mobile-product-name">{{ item.product.product_name }}</p>
                                             <p class="mobile-product-sku">SKU: {{ item.product.sku }}</p>
                                         </div>
 
                                         <div class="mobile-basket-quantity">
-                                            <form class="update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                            <form class="update-quantity-form" action="{% url 'update_basket' item.item_id %}"
+                                                method="POST">
                                                 {% csrf_token %}
-                                                <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
+                                                <input class="quantity-input" type="number" name="quantity"
+                                                    value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0"
+                                                    max="99">
                                             </form>
-                                            <a class="basket-product-update update-basket-button" role="button" type="submit"><i class="fa fa-check"></i></a>
+                                            <a class="basket-product-update update-basket-button-sm"><i
+                                                    class="fa fa-check"></i></a>
                                         </div>
 
                                         <div class="basket-product-details">
                                             <p class="mobile-product-price">Product Pirce: €{{ item.product.price }}</p>
-                                            <p class="mobile-product-price">Subotal: €{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                                            <p class="mobile-product-price">Subotal:
+                                                €{{ item.product.price | calculate_subtotal:item.quantity }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -67,12 +73,12 @@
                     <table class="table">
                         <thead>
                             <tr class="table-head-row">
-                            <th scope="col">Image</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Subtotal</th>
-                            <th scope="col">Action</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,15 +100,23 @@
                                     <td>€{{ item.product.price }}</td>
                                     <td>
                                         <div class="table-basket-quantity">
-                                            <form class="update-quantity-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                            <form class="update-quantity-form" action="{% url 'update_basket' item.item_id %}"
+                                                method="POST">
                                                 {% csrf_token %}
-                                                <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0" max="99">
+                                                <input class="quantity-input" type="number" name="quantity"
+                                                    value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="0"
+                                                    max="99">
                                             </form>
-                                            <a class="basket-product-update update-basket-button" role="button" type="submit"><i class="fa fa-check"></i></a>
+                                            <a class="basket-product-update update-basket-button" role="button"><i
+                                                    class="fa fa-check"></i></a>
                                         </div>
                                     </td>
-                                    <td><p class="m-0 text-end">€{{ item.product.price | calculate_subtotal:item.quantity }}</p></td>
-                                    <td><a class="basket-product-delete" id="delete_{{ item.item_id }}"><i class="fa fa-times"></i></a>
+                                    <td>
+                                        <p class="m-0 text-end">€{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                                    </td>
+                                    <td>
+                                        <a data-csrf="{{csrf_token}}" class="basket-product-delete basket-product-delete-tb" id="delete_{{ item.item_id }}"><i
+                                                class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -114,26 +128,28 @@
                         </tfoot>
                     </table>
                 {% else %}
-                    <p>You have 0 items in your basket.<a href="{% url 'products' %}">Click here to return to the store.</a></p>
+                    <p>You have 0 items in your basket.<a href="{% url 'products' %}">Click here to return to the store.</a>
+                    </p>
                 {% endif %}
             </div>
         </div>
         <div class="basket-right">
-            <div  class="basket-sub-title">
+            <div class="basket-sub-title">
                 <div class="">Order Summary</div>
                 <hr>
             </div>
-            
+
             {% if basket_items %}
                 <div class="basket-price-breakdown col-12">
                     <div class="price-breakdown-head">
-                            <p>Payment Information</p>
+                        <p>Payment Information</p>
                     </div>
                     <div class="price-breakdown-body">
                         <div class="price-breakdown-row row">
                             <p class="col-6">Basket Total: </p>
                             <p class="col-6 justify-center">€{{ total|floatformat:2 }}</p>
-                            <p class="price-breakdown-disc col-12">5% of total will go directly to the planting of native Irish trees.</p>
+                            <p class="price-breakdown-disc col-12">5% of total will go directly to the planting of native
+                                Irish trees.</p>
                         </div>
                         <div class="price-breakdown-row row">
                             <p class="col-6">Standard Delivery Cost:</p>
@@ -144,10 +160,10 @@
                             <p class="col-6 justify-center">€{{ grand_total|floatformat:2 }}</p>
                             <p class="col-6">Contribution To Tree Planting:</p>
                             <p class="col-6 justify-center">€{{ tree_planting_contribution|floatformat:2 }}</p>
-                    </div>
+                        </div>
                     </div>
                     <div class="price-breakdown-foot">
-                        <a class="store-link">Return to Store</a>
+                        <a class="store-link" href="{% url 'products' %}">Return to Store</a>
                         <a class="checkout-button" href="{% url 'checkout' %}">Checkout Securely</a>
                     </div>
                 </div>
@@ -157,7 +173,7 @@
 </div>
 {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script src="{% static 'basket/js/basket.js' %}"></script>
+{% block postloadjs%}
+    {{ block.super }}
+    <script src="{% static 'basket/js/basket.js' %}"></script>
 {% endblock %}
