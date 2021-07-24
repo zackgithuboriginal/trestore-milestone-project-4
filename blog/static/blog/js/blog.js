@@ -28,8 +28,9 @@ function closeEdit(comment_id) {
     $(`#comment-${ comment_id}`).css('display', 'inline');
 }
 
-$('#clear-button').click(function () {
-    $('#comment_content').val('');
+$('.clear-text-button').click(function (e) {
+    var elementId = $(this).attr('id').split('clear-button-')[1];
+    $(`#comment_content_${elementId}`).val('');
 });
 
 $('#id_image').change(function () {

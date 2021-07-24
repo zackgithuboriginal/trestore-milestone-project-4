@@ -102,9 +102,9 @@
                                 {% if request.user.is_authenticated %}
                                     <form class="add-comment-form" action="{% url 'add_comment' post.id %}" method="POST" >
                                         {% csrf_token %}
-                                        <textarea name="comment_content" id="comment_content_{{ post.id }}" placeholder="Enter your comment text." cols="30" rows="2"></textarea>
+                                        <textarea name="comment_content" id="comment_content_{{ post.id }}" placeholder="Enter your comment text." cols="30" rows="2" required></textarea>
                                         <div class="form-buttons">  
-                                            <button type="button" id="clear-button-{{ post.id }}">Clear</button>
+                                            <button type="button" class="clear-text-button" id="clear-button-{{ post.id }}">Clear</button>
                                             <button type="submit">Add</button>
                                         </div>
                                     </form>
@@ -136,7 +136,7 @@
                                 <div class="comment-edit" id="comment-edit-{{comment.id}}">
                                     <form action="{% url 'edit_comment' comment.id %}" method="POST">
                                         {% csrf_token %}
-                                        <textarea class="edit-comment-textarea" name="comment-content-{{ comment.id }}" id="comment-content-{{ comment.id }}" cols="30" rows="2">{{comment.comment_content}}</textarea>
+                                        <textarea class="edit-comment-textarea" name="comment-content-{{ comment.id }}" id="comment-content-{{ comment.id }}" cols="30" rows="2" required>{{comment.comment_content}}</textarea>
                                         <div class="form-buttons">   
                                             <button class="comment-cancel" onclick="closeEdit({{comment.id}})" type="button">Cancel</button>
                                             <button class="comment-save" type="submit">Save</button>                                    
