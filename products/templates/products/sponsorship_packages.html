@@ -53,7 +53,7 @@
                                 {% endif %}
                             </div>
                             <div class="product-card-options">
-                                <form action="{% url 'add_to_basket' item.id %}" method="POST" class="form">
+                                <form action="{% url 'add_to_basket' item.id 'sponsorship_packages' %}" method="POST" class="form">
                                     {% csrf_token %}
                                     <a href="{% url 'product_details' item.id %}" class="product-details-button">Details</a>
                                     <div class="add-to-basket-container">

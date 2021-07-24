@@ -45,7 +45,7 @@
                 <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
             </div>
         {% endif %}
-        <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
+        <form class="form" action="{% url 'add_to_basket' product.id 'product_details' %}" method="POST">
             {% csrf_token %}
             <div class="form-row">
                 <div class="col-12">

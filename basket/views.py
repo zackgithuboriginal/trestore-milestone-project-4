@@ -12,7 +12,7 @@ def view_basket(request):
     return render(request, 'basket/basket.html')
 
 
-def add_to_basket(request, item_id):
+def add_to_basket(request, item_id, location):
     """
     View to add a product to the request session basket object
 
@@ -36,10 +36,11 @@ def add_to_basket(request, item_id):
                          ' to your basket!', extra_tags='checkout')
 
     request.session['basket'] = basket
-    if product.category.name != 'sponsorship':
-        return redirect('products')
+
+    if location == 'product_details':
+        return redirect(location, product.id)
     else:
-        return redirect('sponsorship_packages')
+        return redirect(location)
 
 
 def update_basket(request, item_id):
