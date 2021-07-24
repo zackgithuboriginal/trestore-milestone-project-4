@@ -1887,7 +1887,9 @@ div.spacer {
     margin-top: .5rem;
 }
 
-.comment-link {
+.comment-link,
+.comment-link:focus,
+.comment-link:hover {
     border: none;
     background: none;
     color: #336857;
