@@ -20,12 +20,16 @@ class AddPostForm(forms.ModelForm):
         placeholders = {
             'post_title': 'Post Title',
             'post_content': 'Post Content',
-            'image': 'Image',
             'author': 'Author',
         }
 
         self.fields['post_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'image':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False
