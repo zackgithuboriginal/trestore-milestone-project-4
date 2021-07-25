@@ -89,7 +89,37 @@
                                 {% endif %}
                             </div>
                             <div class="product-card-options">
-                                <form action="{% url 'add_to_basket' product.id 'products' %}" method="POST" class="form">
+                                {% if search_term %}
+                                    <form {% if current_category %}
+                                            {% if current_sorting %} 
+                                                action="{% url 'add_to_basket' product.id 'products' current_sorting current_category search_term %}"
+                                            {% else %}
+                                                action="{% url 'add_to_basket' product.id 'products' 'price_asc' current_category search_term %}"
+                                            {% endif %}
+                                          {% else %} 
+                                            {% if current_sorting %} 
+                                                action="{% url 'add_to_basket' product.id 'products' current_sorting 'all' search_term %}"
+                                            {% else %}
+                                                action="{% url 'add_to_basket' product.id 'products' 'price_asc' 'all' search_term %}"
+                                            {% endif %}
+                                          {% endif %} 
+                                    method="POST" class="form">
+                                {% else %}
+                                    <form {% if current_category %}
+                                            {% if current_sorting %} 
+                                                action="{% url 'add_to_basket' product.id 'products' current_sorting current_category %}"
+                                            {% else %}
+                                                action="{% url 'add_to_basket' product.id 'products' 'price_asc' current_category %}"
+                                            {% endif %}
+                                          {% else %} 
+                                            {% if current_sorting %} 
+                                                action="{% url 'add_to_basket' product.id 'products' current_sorting 'all' %}"
+                                            {% else %}
+                                                action="{% url 'add_to_basket' product.id 'products' 'price_asc' 'all' %}"
+                                            {% endif %}
+                                          {% endif %}  
+                                          method="POST" class="form">
+                                {% endif %}
                                     {% csrf_token %}
                                     <a href="{% url 'product_details' product.id %}" class="product-details-button">Details</a>
                                     <div class="add-to-basket-container">

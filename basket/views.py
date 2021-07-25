@@ -12,7 +12,7 @@ def view_basket(request):
     return render(request, 'basket/basket.html')
 
 
-def add_to_basket(request, item_id, location):
+def add_to_basket(request, item_id, location, sort='price_asc', filter='all', search=None):
     """
     View to add a product to the request session basket object
 
@@ -39,6 +39,20 @@ def add_to_basket(request, item_id, location):
 
     if location == 'product_details':
         return redirect(location, product.id)
+    elif location == 'products':
+        if filter != 'all':
+            filter_arg = f"product-filter={filter}"
+        else:
+            filter_arg = "all"
+        if sort != 'price_asc':
+            sort_arg = f"product-sort={sort}"
+        else:
+            sort_arg = "product-sort=price_asc"
+        if search is not None:
+            search_arg = f"q={search}"
+            return redirect(f"{reverse(location)}?{filter_arg}&{sort_arg}&{search_arg}")
+        else:
+            return redirect(f"{reverse(location)}?{filter_arg}&{sort_arg}")
     else:
         return redirect(location)
 

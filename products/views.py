@@ -34,7 +34,7 @@ def all_products(request):
 
         if 'q' in request.GET:
             query = request.GET['q']
-            if not query:
+            if not query and not request.GET['product-filter'] and not request.GET['product-sort']:
                 messages.error(request,
                                "You didn't enter any search criteria!")
 
@@ -54,6 +54,11 @@ def all_products(request):
             else:
                 products = products.order_by('category')
                 current_sorting = 'Category'
+        else:
+            products = products.order_by('price')
+            current_sorting = 'Price Ascending'
+    else:
+        products = products.order_by('price')
 
     context = {
         'products': products,
