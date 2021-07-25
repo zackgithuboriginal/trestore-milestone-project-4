@@ -13,7 +13,7 @@
 {% block content %}
 <div class="store-content container-flex bg-dark-green">
     <div class="store-row row">
-        <h2 class="page-title font-color-dark col-12">Native Trees and Seeds</h2>
+        <h1 class="page-title font-color-dark col-12">Native Trees and Seeds</h1>
     </div>
     <div class="store-row row">
         <div class="display-options col-12 row">
@@ -133,6 +133,9 @@
                     </div>
                 {% endfor %}
             {% else %}
+                <div class="no-products-display">
+                    <p>No products matched your search.</p>
+                </div>
             {% endif %}
         </div>
     </div>

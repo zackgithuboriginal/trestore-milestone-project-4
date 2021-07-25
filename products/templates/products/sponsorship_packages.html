@@ -13,7 +13,7 @@
 {% block content %}
 <div class="store-content container-flex bg-dark-green">
     <div class="store-row row">
-        <h2 class="page-title font-color-dark col-12">Sponsorship Packages</h2>
+        <h1 class="page-title font-color-dark col-12">Sponsorship Packages</h1>
     </div>
     <div class="store-row">
         <div class="products-container">
@@ -67,6 +67,9 @@
                     </div>
                 {% endfor %}
             {% else %}
+                <div class="no-products-display">
+                    <p>There are currently no sponsorship packages available.</p>
+                </div>
             {% endif %}
         </div>
     </div>

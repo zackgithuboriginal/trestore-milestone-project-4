@@ -38,7 +38,8 @@ header {
     color: #336857;
 }
 
-.page-title h1 {
+.page-title h1,
+h1.page-title {
     font-size: 2.8rem;
 }
 
@@ -793,6 +794,10 @@ h2.error-text {
     color: #336857;
 }
 
+.no-products-display p{
+    font-size: 1.8rem;
+}
+
 /* Product Details Page */
 .product-details-content {
     padding: 14rem 4rem 6rem 4rem;
@@ -1473,6 +1478,7 @@ td p {
 .display-edit-dropdown {
     position: absolute;
     background: none;
+    z-index: 10;
     border: none;
     top: 1rem;
     right: 2rem;
