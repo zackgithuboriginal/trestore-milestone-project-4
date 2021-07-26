@@ -868,7 +868,11 @@ h2.error-text {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+.pd-options input {
+    margin-left: 2rem;
 }
 
 .pd-options .icon {
@@ -2138,9 +2142,9 @@ footer p,
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        width: auto;
+        width: 50%;
         min-width: 30rem;
-        padding: 0 2rem 2rem 2rem;
+        padding: 0;
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
@@ -2227,7 +2231,10 @@ footer p,
         justify-content: center;
     }
 
-    .product-details-info-container,
+    .product-details-info-container {
+        margin:0 0 0 2rem;
+    }
+
     .product-image-container {
         margin: 0
     }
