@@ -954,7 +954,7 @@ tr {
 .basket-content table {
     display: none;
     width: 100%;
-    box-shadow: .4rem .4rem .4rem rgba(0, 0, 0, .25);
+    box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .1);
     background-color: #ffffff;
 }
 
@@ -1170,6 +1170,7 @@ td p {
     padding: 0;
     width: 100%;
     min-width: 25rem;
+    box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .1);
 }
 
 .price-breakdown-head {
@@ -1266,6 +1267,7 @@ td p {
     display: flex;
     margin: 0;
     flex-direction: column;
+    box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .1);
 }
 
 /* Checkout Styling */
@@ -1398,6 +1400,7 @@ td p {
     font-size: 1.4rem;
     padding: .5rem 1rem;
     text-decoration: none;
+    box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .1);
 }
 
 .cta-button-green:hover {
@@ -1491,6 +1494,7 @@ td p {
     min-height: 0;
     margin-top: auto;
     margin-bottom: auto;
+    z-index: 55;
 }
 
 .display-edit-options i {
@@ -1732,6 +1736,7 @@ input[type="file"] {
     width: 100%;
     display: flex;
     position: fixed;
+    z-index: 50;
     height: 4.4rem;
 }
 
@@ -2007,6 +2012,7 @@ footer p,
         background: none;
         padding: 0 0 2rem 0;
         margin: 0;
+        box-shadow: none;
     }
 
     .mobile-basket-head {
