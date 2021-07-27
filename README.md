@@ -83,18 +83,22 @@ In order to make the user experience as seamless and easy as possible the websit
 
 ### Design
 
-#### Design Overview
-There were two driving principles behind the design of this website and these were firstly to create an environment in which there is a clear hierarchy of importance with user’s content and posts being foremost and secondly to create an easily understandable and intuitive navigation and interaction interface.
+#### Design Overview n b 
+
+The main principles and ideas behind the design of this website were number 1 to strongly express the website's driving ideal of replanting native woodlands and enabling customers to grow their own native trees and number 2 to provide a clear and well laid out hierarchy of interactions and informain.
 
 #### Colour Scheme
 ![Image of responsive page mockups]()
 #### Primary Colours
-In the creation of the branding and design for the website I decided to draw on nature and the trees that the store would be selling for the colour scheme of the website. The primary brand colour for the website is #336857 a deep green colour reminiscent #F2F8F7 #1A342C 
+
+In the creation of the branding and design for the website I decided to draw on nature and the trees that the store would be selling for the colour scheme of the website. The primary brand colour for the website is #336857 a deep green colour chosen to evoke a sense of the relationship between the company and nature and the trees and woodlands that it supports through it's sales and sponsorship packages. The other two primary colours in Trestore's scheme are #F2F8F7 and #1A342C the first, #F2F8F7 is a light white colour with a slight green tone, the second #1A342C is a very dark shade of green. The two colours are used opposed to each other. Primarily as the background colour of the page and in the case of #F2F8F7 as the backgroudnd color of containers for infromation and forms in order to provide as clear and legible an environment for interacting with information as quickly as possible
 
 #### Typography
 
 
 #### Imagery
+
+Imagery is used in a few places throughout the website.
 
 ### Wireframes
 
@@ -952,23 +956,260 @@ EXAMPLE | EXAMPLE ACTION | EXAMPLE RESULT | Pass
 ## Deployment
 
 ### To Publish to Heroku
+1. Create a heroku app, choose appropriate region.
+
+![Deploy step 1](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_01.PNG)
+
+![Deploy step 2](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_02.PNG)
+
+2. Go to Resources tab
+
+![Deploy step 3](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_4.PNG)
+
+3. Add Heroku Postgres in Add-Ons section
+
+![Deploy step 4](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_5.PNG)
+
+4. In project terminal install dj_database_url and psychopg2-binary update requirements.txt
+
+![Deploy step 5](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_9.PNG)
+
+![Deploy step 6](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_10.PNG)
+
+5. In settings.py import dj_databse_url add heroku url to allowed hosts setting
+
+![Deploy step 7](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_7settings.PNG)
+
+6. Temporarily replace databse config and set it to the heroku postgres database
+
+7. Run migrations to update database with models needed for project, and create a superuser for the postgres deployed project
+
+![Deploy step 8](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_11.PNG)
+
+8. Update Databases configuration to check for 'DATABASE_URL' in env, if it is, connect the project to the postgres database, otherwise uses local sqlite database.
+
+![Deploy step 9](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_8.PNG)
+
+9. Install gunicorn to act as webserver and update requirements.txt
+
+![Deploy step 10](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_12.PNG)
+
+10. Create Procfile and setup gunicorn
+
+        web: gunicorn ms4_trestore.wsgi:application
+
+11. Login to heroku through the terminal 
+
+![Deploy step 11](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_13.PNG)
+
+12. Then in heroku set DISABLE_COLLECTSTATIC = 1 in config vars
+
+![Deploy step 12](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_6.PNG)
+
+13. Then commit and push to github
+
+14. Then setup heroku remote and push to heroku master
+
+![Deploy step 13](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_14.PNG)
+
+15. In heroku Deploy tab connect to the github repo and enable automatic deploys
+
+![Deploy step 14](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_2.PNG)
+
+![Deploy step 15](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_3.PNG)
+
+16. Generate secret key and add as SECRET_KEY to config vars
+
+17. In settings.py set SECRET_KEY to call variable from os.environ and set DEBUG = 'DEVELOPMENT' in os.environ
 
 
 
-### To Connect your Database to the Project
+### Setting Up AWS bucket
+1. Create an AWS account
 
+2. Open AWS management console and open the S3 service tab
+
+![Deploy step 16](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_15.PNG)
+
+3. Create a new bucket and set nanme and region then disable Block all public access setting
+
+![Deploy step 17](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_18.PNG)
+
+![Deploy step 18](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_19.PNG)
+
+4. Create bucket and navigate to properties tab, then turn on static website hosting
+
+5. Set bucket to host a website and fill in default values
+
+![Deploy step 19](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_22.PNG)
+
+6. Navigate to permissions tab and input the CORS configuration from the image below
+
+![Deploy step 21](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_24.PNG)
+
+7. Open the bucket policy tab and select policy generator
+
+![Deploy step 22](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_25.PNG)
+
+8. Set the fields to the values in the images below and set the ARN to the value displayed in the CORS configuration tab
+
+![Deploy step 23](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_26.PNG)
+
+![Deploy step 24](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_27.PNG)
+
+9. Add statement and then generate policy and copy the JSON document that is displayed
+
+![Deploy step 25](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_29.PNG)
+
+10. Then paste that policy into the bucket policy tab adding /* to the end of the resource key to allow access to all resources
+
+![Deploy step 26](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_30.PNG)
+
+11. Then navigate to Access Control List and set the values to the ones shown in the image below
+
+![Deploy step 27](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_31.PNG)
+
+
+### Set up IAM user
+1. Navigate to IAM in the AWS dashboard and select Groups
+
+![Deploy step 28](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_33.PNG)
+
+2. Create a new group called manage-trestore
+
+![Deploy step 29](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_35.PNG)
+
+3. Navigate to Policies tab and select Create Policy button
+
+![Deploy step 30](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_37.PNG)
+
+4. Open the JSON tab and select import policy
+
+![Deploy step ](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_38.PNG)
+
+5. Select the AmazonS3FullAccess Policy 
+
+![Deploy step 31](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_39.PNG)
+
+6. Copy the bucket ARN from the bucket policy tab of S3 and paste it into the JSON policy tab as seen in the image below
+
+![Deploy step 32](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_40.PNG)
+
+7. Continue through to Review policy tab and import values as seen below with a name and description and Create the Policy
+
+![Deploy step 33](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_42.PNG)
+
+8. Return to the groups tab and open the manage-trestore group and select the attach policy option. Then attach the newly created policy
+
+![Deploy step 34](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_44.PNG)
+
+9. Navigate to the Users tab and click the add user option.
+
+![Deploy step 35](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_45.PNG)
+
+10. Create a user with a name similar to the one in the image below and programmatic access
+
+![Deploy step 36](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_46.PNG)
+
+11. Then click next and attach them to the manage-trestore group
+
+![Deploy step 37](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_47.PNG)
+
+12. Click through to the end and create user
+
+13. Then download the .csv file containing that user's access credentials
+
+![Deploy step 38](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_48.PNG)
+
+
+### Connect your project to the S3 bucket
+
+1. Open your project and install boto3 and django storages, updating requirements.txt after doing so
+
+![Deploy step 39](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_49.PNG)
+
+2. Then add storages to INSTALLED_APPS in settings.py
+
+![Deploy step 40](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_50.PNG)
+
+3. In settings.py set up AWS config as seen in the image below
+
+![Deploy step 41](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_55.PNG)
+
+4. Then add the user access credentials to the heroku config vars as in the image below and set USE_AWS to True
+
+![Deploy step 42](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_54_LI.jpg)
+
+5. In project directory create custom_storages.py and set it up as seen in the image below to configurate the project storing files using AWS
+
+![Deploy step 43](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_61.PNG)
+
+6. Then in settings.py add in the static and media file storage configuration in the USE AWS block with the variables seen below
+
+![Deploy step 44](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_56.PNG)
+
+7. When project is deployed on heroku static files will automatically be collected and uploaded to AWS bucket static/ folder
+
+![Deploy step 45](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_57.PNG)
+
+8. Then add the settings in the below image to the top of the AWS configuration block to allow for caching of static files
+
+![Deploy step 46](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_62.PNG)
+
+9. Next navigate to the AWS s3 bucket and create a new media folder, upload any necessary images and set the public permissions to grant read access and upload
+
+![Deploy step 47](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_58.PNG)
+
+10. Return to your deployed project on heroku and through the /admin/ portal verify the superuser's email address to grant them full access to the site
+
+11. To finalise deploying the project, add the stripe access variables to the heroku config vars as seen below
+
+![Deploy step 48](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_60.PNG)
+
+12. Then create a new stripe webhook endpoint for the deployed url and copy the webhook signing secret to the config vars
+
+![Deploy step 49](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_59.PNG)
 
 
 ### To Clone the Repository and Run Locally
 
 #### To Clone Using the Command Line
 
+1. Navigate to the home page of the repository.
+
+2. To the top right of the repository, file directory click the "Code" button.
+
+3. Make sure that the HTTPS tab is open and click the copy to clipboard button.
+
+4. Navigate to your IDE and open the directory to which you want to clone the repository
+
+5. Open the terminal and type "git clone" followed by the contents of the clipboard which will be "https://github.com/zackgithuboriginal/trestore-milestone-project-4.git" click enter and the repository will then clone to that directory.
+
+    git clone https://github.com/zackgithuboriginal/trestore-milestone-project-4.git
 
 #### To Clone Using GitHub Desktop
 
+1. Navigate to the home page of the repository.
 
+2. To the top right of the repository, file directory click the "Code" button.
+
+3. Halfway down the tab click the "Open with GitHub Desktop" option.
+
+4. If the GitHub Desktop application is installed and open it will be presented with this prompt.
+
+5. Enter the desired location to clone the repository and click the clone button. 
+
+6. The repository will then be cloned to that location.
 
 #### To Run the Project Locally
+
+To run the project locally there are several things that you need to do. 
+Firstly open the project in your IDE of choice and ensure that all of the dependencies listed in Requirements.txt are installed.
+
+Then you either need to export the projects necessary config vars through the terminal or create an env.py file containing the config vars as these will be necessary for the full functionality of the website.
+After adding all of the necessary settings to the env.py the project will run locally and you can host locally by using the following command.
+
+    python3 manage.py runserver
 
 
 ## Credits
