@@ -1,7 +1,7 @@
 
-DEPLOYMENT# Trestore - Milestone Project 4
+# Trestore - Milestone Project 4
 
-![Image of responsive page mockups]()
+![Image of responsive page mockups](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/multi-device.PNG)
 
 ## Website Description
 
@@ -34,9 +34,9 @@ In order to make the user experience as seamless and easy as possible the websit
   3. **As a customer, I should be able to view details about a specific product.**
 
   3. **As a customer, I should be able to add a product to the basket.**
-  4. 
+  
   5. **As a customer, I should be able to edit the quantity of an item the basket.**
-  6. 
+  
   7. **As a customer, I should be able to remove an item from the basket.**
 
   3. **As a customer, I want to be able to view the contents of the basket.**
@@ -668,7 +668,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** Upon reaching the landing page the user is presented with a banner element containing two CTA buttons linking to the store and the sponsorship page. As well as this, the banner contains an information text piece briefly explaining the goals of the company.
 
-![Image of main post view]()
+![Image of banner](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/banner.PNG)
 
 #### 2.    Goal: As a first-time user, I should be able to understand the navigation structure and how to interact with the website.
 
@@ -676,7 +676,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The navbar is fixed to the top of the screen so that the main navigation options are always available to the user, and the primary interactions on each page are hightlighted with a consistent and eye catching CTA button design indicating to the user at a very quick glance what the primary interactions are.
 
-![Image of main post view]()
+![Image of navbar](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/navbar.PNG)
 
 #### 3.    Goal: As a first-time user, I want to be able to find out about the company and their actions.
 
@@ -684,7 +684,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The user can click on the progress link present in the navbar to be navigated to the Progress page. When on the progress page the user is presented with a series of posts in horizontal display. These posts contain information about the company's progress and actions.
 
-![Image of main post view]()
+![Image of progress blog page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/progress.PNG)
 
 #### 4.    Goal: As a first-time user, I want to be able to register an account.
 
@@ -692,7 +692,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The user can select the register link on the navbar below the profile dropdown. Upon navigating to the page the user can fill in the form to submit and create an account.
 
-![Image of main post view]()
+![Image of registration page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/register.PNG)
 
 ### Repeat User
 
@@ -702,7 +702,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The user can navigate to the store page. The store page will be populated with all of the products present in the database.
 
-![Image of main post view]()
+![Image of store page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/store.PNG)
 
 #### 2.    Goal: As a customer, I want to be able to view sponsorship packages.
 
@@ -710,22 +710,23 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The user can navigate to the sponsorship page. The sponsorship page will be populated with all of the sponsorship packages in the database.
 
-![Image of main post view]()
+![Image of sponsorship page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/sponsor.PNG)
 
-#### 3.    Goal: As a customer, I should be able to sort products by category.
+#### 3.    Goal: As a customer, I should be able to silter products by category.
 
 **Expected:** The user should be able to select from a series of options to filter the display of products on the page.
 
 **Result:** When on the product store page, the user can click the select element labelled Filter By: and then select one of the dropdown options representing the different categories of the products on the store to filter the products display to just products of that category.
 
-![Image of main post view]()
+![Image of product filter option](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/filter.PNG)
 
 #### 4.    Goal: As a customer, I should be alter the criteria under which the displayed products are ordered.
 
 **Expected:** The user should be able to select from a series of options to adjust the displayed order of products in the store.
 
 **Result:** When on the product store page, the user can click the select element labelled Sort By: and then select one of the dropdown options representing a number of different criteria. When the user selects one of these options the products displayed will adjust and become ordered by the manner chosen. 
-![Image of main post view]()
+
+![Image of sort field](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/sort.PNG)
 
 #### 5.    Goal: As a customer, I should be able to search products directly by key words.
 
@@ -733,7 +734,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** When on the product store page, the user can enter search terms in the input field at the top of the page. When the user enters their query and clicks the submit button, the page will reload with only products referencing that query displayed.
 
-![Image of main post view]()
+![Image of key word search input](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/search.PNG)
 
 #### 6.    Goal: As a customer, I should be able to view details about a specific product.
 
@@ -741,7 +742,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the store or sponsorship page the user can either select the button labelled Details on any of the product display cards or on the image of the product. When the user does this they will be navigated to the product details page where they can find out more about the product.
 
-![Image of main post view]()
+![Image of product details page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/product-details.PNG)
 
 #### 7.    Goal: As a customer, I should be able to add a product to the basket.
 
@@ -749,7 +750,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** Whether on the store or sponsorship page, or in the product details page of a specific product the user is able to select a quantity from the number input field and then select the add to basket button to add the product to their basket.
 
-![Image of main post view]()
+![Image of add to basket button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-to-basket.PNG)
 
 #### 8.    Goal: As a customer, I want to be able to view the contents of the basket.
 
@@ -757,7 +758,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The user can select the branch icon in the top right of the page above the current basket total display to be navigated to the basket page. On the basket page the user will then be presented with a table displaying each of the products in the basket along with the quantity of each item and the subtotal.
 
-![Image of main post view]()
+![Image of basket contents](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/basket.PNG)
 
 #### 9.    Goal: As a customer, I should be able to see the total of the basket at all times.
 
@@ -765,7 +766,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** In the navbar below the branch icon representing the basket there is a display of the current total of the items in the basket. Whenever a new item is added or removed from the basket the total will dynamically update.
 
-![Image of main post view]()
+![Image of update quantity button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/update-quantity.PNG)
 
 #### 10.    Goal: As a customer, I should be able to edit the quantity of an item in the basket.
 
@@ -773,7 +774,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the basket page, the user can adjust the number input field on the product display table. If they then click the 'Update' button the page will reload and the product will display the new quantity.
 
-![Image of main post view]()
+![Image of remove item button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/remove.PNG)
 
 #### 11.    Goal: As a customer, I should be able to remove an item from the basket.
 
@@ -781,7 +782,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the basket page the user can select the 'X' icon alongside any product in the product display table. After doing so the page will reload and the product will have been removed from the basket.
 
-![Image of main post view]()
+![Image of basket total](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/basket-total.PNG)
 
 #### 12.    Goal: As a customer, I should be able to checkout easily.
 
@@ -789,7 +790,9 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** Upon adding an item to the basket, a notification will appear at the top of the page presenting an option to 'View contents and checkout'. If the user selects this option they will be navigated to the basket page, where they will be presented with a summary of items in the basket and a price breakdown presenting the total price of the order. Under the price breakdown there is a link to 'Checkout Securely'. If the user selects this button they will be navigated to the checkout page, containing a delivery and card details form and a 'Complete order' button.
 
-![Image of main post view]()
+![Image of checkout button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/checkout-1.PNG)
+
+![Image of checkout form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/checkout-2.PNG)
 
 #### 13.    Goal: As a customer, I want to be able to store my delivery details for future use.
 
@@ -797,7 +800,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the checkout screen, if a user is signed in, they will be presented with a checkbox labelled 'Store these details'. If a user selects this checkbox before checking out, the details will be adding to their profile and will automatically populate the form in future checkouts.
 
-![Image of main post view]()
+![Image of store details checkbox](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/store-details.PNG)
 
 ### Registered User Stories
 
@@ -807,7 +810,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the navbar the user can select the sign in link from the profile dropdown. When selected the user will be navigated to the sign in page from where they can enter their details and sign in to the website.
 
-![Image of main post view]()
+![Image of image of sign in button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/login.PNG)
 
 #### 2.    Goal: As a registered user, I should be able to sign out.
 
@@ -815,7 +818,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the navbar the user can select the sign out link from the profile dropdown. When selected the user will be navigated to the sign out page where they will be asked to confirm taht they wish to sign out and when confirmed be redirected to the home page and signed out.
 
-![Image of main post view]()
+![Image of sign out button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/logout.PNG)
 
 #### 3.    Goal: As a registered user, I should be able to view my order history.
 
@@ -823,7 +826,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the profile page a user can see their previous orders displayed in a table.
 
-![Image of main post view]()
+![Image of order history table](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/order-history.PNG)
 
 #### 4.    Goal: As a registered user, I should be able to view the details of previously placed orders.
 
@@ -831,7 +834,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the profile page a user can select the 'Details' link of an order in the order history table. THis will navigate them to the order details page for that order, where the information about the order will be displyaed. 
 
-![Image of main post view]()
+![Image of order details page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/order-details.PNG)
 
 #### 5.    Goal: As a registered user, I should be able to view my saved address details.
 
@@ -839,7 +842,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** On the profile page, there is a section with a heading of 'Delivery Details' under which the details stored for the user are displayed.
 
-![Image of main post view]()
+![Image of stored details](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/stored-details.PNG)
 
 #### 6.    Goal: As a registered user, I should be able to edit my saved address details.
 
@@ -847,7 +850,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** On the profile page, above the 'Delivery details' section there is an edit icon. When the user selects this icon the delivery details will be replaced with a form, containing the existing stored details. If a user changes any of the values in the fields and submits the form the stored details on their profile will be updated.
 
-![Image of main post view]()
+![Image of edit details form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-details.PNG)
 
 #### 7.    Goal: As a registered user, I should be able to add comments to company posts in the progress blog.
 
@@ -855,7 +858,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the progress blog page, the user can select the 'Show comments' link on the bottom of each post to bring up the comment section. At the top of the comment section there is a textarea input field with a clear and submit button. If the user enters a comment in the field and selects the submit button the page will reload and the comment will be added to the comment section of the post.
 
-![Image of main post view]()
+![Image of add comment](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-comment.PNG)
 
 #### 8.    Goal: As a registered user, I should be able to change my registered email address
 
@@ -863,7 +866,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the profile page user can select the 'Change Email' link alongside their current email address. Upon clicking this link the user will be redirected to the email admin page. They can then input their new email in the form and select the add email button.
 
-![Image of main post view]()
+![Image of email admin form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/email-admin.PNG)
 
 #### 9.    Goal: As a registered user, I should be able to change my password.
 
@@ -871,7 +874,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** From the profile page user can select the 'Change Password' link alongside their current email address. Upon clicking this link the user will be redirected to the password admin page. From there they can then enter a new password and repeat it in the form and click sumbit. The password will then be updated.
 
-![Image of main post view]()
+![Image of password admin form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/password-admin.PNG)
 
 ### Site Administrator Stories
 
@@ -881,7 +884,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** The user can select the Product Management link from the navbar. The user will then be directed to the Add Product page, from where they can fill in the form with the details of the new product. When the user then selects the 'Add Product' button the user will be redirected to the store page and the product will be added to store.
 
-![Image of main post view]()
+![Image of add product form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-product.PNG)
 
 #### 2.    Goal: As an authorised user, I should be able to edit products in the store.
 
@@ -889,7 +892,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** While on the product, store or product details page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Edit' option. The user will then be directed to the edit product page, where the current details of the product will be input. The user can then edit the fields and when they submit the form the product will be updated in the store.
 
-![Image of main post view]()
+![Image of edit product form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-product.PNG)
 
 #### 3.    Goal: As an authorised user, I should be able to delete products from the store.
 
@@ -897,7 +900,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** While on the product, store or product details page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Delete' option. The product will then be deleted from the store and the user will be directed to the store page.
 
-![Image of main post view]()
+![Image of add post button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-post.PNG)
 
 #### 4.    Goal: As an authorised user, I should be able to add posts to the progress blog.
 
@@ -905,7 +908,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** If the user is signed in and authorised the user can select the 'Add Post' button from the top of the page. The user will then be navigated to the Add Post page and form. After filling in the post details the user can submit the form and the post will be added to the progress blog. The user will be redirected back to the progress page.
 
-![Image of main post view]()
+![Image of add post form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-post-2.PNG)
 
 #### 5.    Goal: As an authorised user, I should be able to edit posts in the progress blog.
 
@@ -914,7 +917,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** While on the progress page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Edit' option. The user will then be directed to the edit post page, where the current details of the post will be input. The user can then edit the fields and when they submit the form the post will be updated in the progress blog.
 
-![Image of main post view]()
+![Image of edit post form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-post.PNG)
 
 #### 6.    Goal: As an authorised user, I should be able to delete posts from the progress blog.
 
@@ -922,7 +925,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** While on the progress page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Delete' option. The product will then be deleted from the store and the user will be directed to the progress page.
 
-![Image of main post view]()
+![Image of delete post button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/delete-post.PNG)
 
 #### 7.    Goal: As an authorised user, I should be able to edit and delete comments on posts in the progress blog.
 
@@ -930,7 +933,9 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Result:** On the progress blog page, the user can open the comment section and either click edit or delete on any comment in the comment section. If they select the delete button the comment will be deleted, if they select the edit button. The comment will be replaced with a form textarea containing the current comment. If they then click the 'Save' button the page will reload and the comment will be updated.
 
-![Image of main post view]()
+![Image of edit comment button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-comment-1.PNG)
+
+![Image of edit comment form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-comment-2.PNG)
 
 ### Manual Functionality Testing
 
