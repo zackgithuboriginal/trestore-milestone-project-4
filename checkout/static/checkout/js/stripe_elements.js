@@ -1,3 +1,7 @@
+/**
+* Generates stripe card element using env variables generated in the template
+* Attaches stripe card element to target element in template
+*/
 var stripePublicKey = $("#id_stripe_public_key").text().slice(1, -1);
 var clientSecret = $("#id_client_secret").text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -24,6 +28,9 @@ card.mount('#card-element');
 
 
 card.addEventListener('change', function (event) {
+    /**
+     * Renders any card input errors as text below card element
+     */
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var html = `
@@ -39,7 +46,10 @@ card.addEventListener('change', function (event) {
 });
 
 
-// Funtion handles form submit
+/**
+ * Listens to payment form for submission event
+ * prevents initial submission and siables submit button and card element
+ */
 var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function (ev) {
@@ -51,6 +61,10 @@ form.addEventListener('submit', function (ev) {
     $('#payment-form').fadeToggle(100);
     $('#progress-spinner').fadeToggle(100);
 
+    /**
+     * Reads values from the form to send to the cache checkout data view
+     * including whether user wants to store delivery details
+     */
     var storeDetails = Boolean($('#id-store-details').prop('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -61,6 +75,11 @@ form.addEventListener('submit', function (ev) {
     var url = '/checkout/cache_checkout_data/';
 
 
+    /**
+     * Submits a confirm card payment method to stripe containing
+     * the delivery and payment details, if no error is received the checkout form is submitted,
+     * otherwise the checkout fails and, the user is informed of the error and the form is made active again
+     */
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {

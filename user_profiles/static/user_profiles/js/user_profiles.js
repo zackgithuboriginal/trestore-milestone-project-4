@@ -1,3 +1,7 @@
+/**
+ * Toggles between showing the user's delivery details or the
+ * delivery details input form, if a user clicks the edit button
+ */
 function toggleForm(event) {
     if (event.firstChild.className === 'fas fa-edit') {
         event.firstChild.className = 'fas fa-times';

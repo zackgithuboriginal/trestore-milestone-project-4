@@ -22,10 +22,16 @@ function clearDropdowns() {
     }
 }
 
+/**
+ * Automatically updates footer copyright date
+ */
 $(document).ready(function () {
     $("#date-target").text(new Date().getFullYear());
 })
 
+/**
+ * Displays any django messages to the user when the page loads
+ */
 $(document).ready(function() {
     $(".toast").toast('show');
 });
