@@ -329,7 +329,9 @@ h2.error-text {
     text-align: right;
 }
 
-.toast-basket-link {
+.toast-basket-link,
+.toast-basket-link:hover,
+.toast-basket-link:focus {
     margin-top: 1rem;
     font-size: 1.6rem;
     text-decoration: none;
