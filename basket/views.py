@@ -12,11 +12,21 @@ def view_basket(request):
     return render(request, 'basket/basket.html')
 
 
-def add_to_basket(request, item_id, location, sort='price_asc', filter='all', search=None):
+def add_to_basket(request,
+                  item_id, location,
+                  sort='price_asc',
+                  filter='all',
+                  search=None):
     """
     View to add a product to the request session basket object
 
-    Accepts an item id as argument to access the corre
+    Parameters accepted:
+    item id: to provide access the correct product
+
+    location: to allow for redirecting to the correct page
+
+    sort, filter, search: store search parameters to allow for the store page
+    to be rendered with the correct search results when the page is reloaded
     """
 
     product = get_object_or_404(Product, pk=item_id)
@@ -24,6 +34,10 @@ def add_to_basket(request, item_id, location, sort='price_asc', filter='all', se
 
     basket = request.session.get('basket', {})
 
+    """
+    If the product is already in basket, quantity will be updated
+    else new item will be added to basket
+    """
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
         messages.success(request,
@@ -37,6 +51,13 @@ def add_to_basket(request, item_id, location, sort='price_asc', filter='all', se
 
     request.session['basket'] = basket
 
+    """
+    Logic loop to redirect user to the origin page of the
+    add to basket request
+
+    if request origin is the products store, products filter,
+    sort and search parameters will be added to the redirect template
+    """
     if location == 'product_details':
         return redirect(location, product.id)
     elif location == 'products':
@@ -50,7 +71,8 @@ def add_to_basket(request, item_id, location, sort='price_asc', filter='all', se
             sort_arg = "product-sort=price_asc"
         if search is not None:
             search_arg = f"q={search}"
-            return redirect(f"{reverse(location)}?{filter_arg}&{sort_arg}&{search_arg}")
+            return redirect(f"{reverse(location)}"
+                            f"?{filter_arg}&{sort_arg}&{search_arg}")
         else:
             return redirect(f"{reverse(location)}?{filter_arg}&{sort_arg}")
     else:
@@ -67,6 +89,11 @@ def update_basket(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     basket = request.session.get('basket', {})
 
+    """
+    If new quantity of product is greater than one basket updated
+    and user sent feedback message
+    else product removed from basket and user sent feedback
+    """
     if quantity > 0:
         basket[item_id] = quantity
         messages.success(request,
@@ -84,7 +111,7 @@ def update_basket(request, item_id):
 
 def delete_from_basket(request, item_id):
     """
-    Remove the item from the shopping bag
+    View to handle removing the item from the shopping bag
     """
 
     try:

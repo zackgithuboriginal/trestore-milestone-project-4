@@ -23,8 +23,13 @@ def progress(request):
 def add_post(request):
     """
     View for either rendering the add posts template
-    or creating post objects if a POST request was made
-    accepts request object as argument
+    or creating a post object if a POST request was made
+
+    accepts request object as argument to provide access to
+    form and request.user
+
+    requires user to be logged in and authorised as superuser,
+    else they will be redirected
     """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, you need to be authorised to do that.')
@@ -56,7 +61,17 @@ def add_post(request):
 @login_required
 def edit_post(request, post_id):
     """
-    View for editing a post in the progress blog
+    View for either rendering the edit posts template
+    or updating a post object if a POST request was made
+
+    arguments:
+    request object: to provide access to
+        form and request.user
+    post_id: to allow view to access the correct post in db
+
+
+    requires user to be logged in and authorised as superuser,
+    else they will be redirected
     """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, you need to be authorised to do that.')
@@ -89,7 +104,14 @@ def edit_post(request, post_id):
 @login_required
 def delete_post(request, post_id):
     """
-    View for delete a post from the progress blog
+    View for deleting a post from the progress blog
+
+    arguments:
+    request object: to provide access to request.user
+    post_id: to allow view to access the correct post in db
+
+    requires user to be logged in and authorised as superuser,
+    else they will be redirected
     """
     if not request.user.is_superuser:
         messages.error(request, 'Oops, you need to be authorised to do that.')
@@ -108,6 +130,13 @@ def delete_post(request, post_id):
 def add_comment(request, post_id):
     """
     View for adding a comment to a post
+
+    arguments:
+    request object: to provide access to
+        form and request.user
+    post_id: to allow view to access the correct post in db
+
+    requires a user to be logged in, or else they will be redirected
     """
 
     if request.method == 'POST':
@@ -134,6 +163,12 @@ def add_comment(request, post_id):
 def delete_comment(request, comment_id):
     """
     View for deleting a comment from the database
+
+    arguments:
+    request object: to provide access to request.user
+    post_id: to allow view to access the correct post in db
+
+    requires a user to be logged in, or else they will be redirected
     """
 
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -150,7 +185,14 @@ def delete_comment(request, comment_id):
 @login_required
 def edit_comment(request, comment_id):
     """
-    View for adding a comment to a post
+    View for adding a comment to a post object
+
+    arguments:
+    request object: to provide access to form and request.user
+    post_id: to allow view to access the correct post in db
+
+    requires a user to be logged in, and either be the author
+    of the comment or authorised as superuser or else they will be redirected
     """
 
     checkComment = Comment.objects.get(id=comment_id)

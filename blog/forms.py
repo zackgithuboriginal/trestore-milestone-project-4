@@ -16,6 +16,10 @@ class AddPostForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        """
+        init method sets attributes and placeholders on
+        fields as required
+        """
 
         placeholders = {
             'post_title': 'Post Title',

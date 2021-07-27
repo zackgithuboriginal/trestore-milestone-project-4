@@ -14,6 +14,10 @@ def basket_contents(request):
     total = 0
     product_count = 0
     basket = request.session.get('basket', {})
+    """
+    Loops through each item in basket to calculate
+    basket total and item count
+    """
     for item_id, quantity in basket.items():
         try:
             product = get_object_or_404(Product, pk=item_id)
@@ -24,7 +28,12 @@ def basket_contents(request):
                 'quantity': quantity,
                 'product': product,
             })
+
         except Exception:
+            """
+            If product is removed from store while present in basket
+            product is removed from basket
+            """
             messages.error(request,
                            "Unfortunately a product in your basket is no"
                            " longer available.")

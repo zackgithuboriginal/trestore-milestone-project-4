@@ -4,9 +4,9 @@ from .models import ProgressPost, Comment
 
 class CommentsAdmin(admin.TabularInline):
     """
-    Admin config for Commens
-    Specifies that all but the post content are
-    readonly fields
+    Admin config for Comments
+    Specifies that all fields but the post content are
+    readonly
     """
     model = Comment
     readonly_fields = ('date', 'author', 'post',)

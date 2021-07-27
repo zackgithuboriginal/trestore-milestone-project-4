@@ -53,6 +53,7 @@ def user_profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """
     View to render the order details page for a specific order

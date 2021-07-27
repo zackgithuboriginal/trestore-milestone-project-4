@@ -37,7 +37,6 @@ class Order(models.Model):
     stripe_pid = models.CharField(max_length=254, null=False,
                                   blank=False, default='')
 
-
     def _generate_order_number(self):
         """
         Method to generate a unique order number for each order
@@ -48,8 +47,11 @@ class Order(models.Model):
         """
         Method to update the total order cost each time an item is added
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.delivery_cost = self.order_total * settings.DELIVERY_PERCENTAGE / 100
+        self.order_total = self.lineitems.aggregate(Sum(
+                                                    'lineitem_total'))[
+                                                    'lineitem_total__sum'] or 0
+        self.delivery_cost = self.order_total * (settings.DELIVERY_PERCENTAGE /
+                                                 100)
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
@@ -67,12 +69,26 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """ Sub model used to calculate subtotals and track quantities of each product"""
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
-
+    """
+    Sub model used to calculate subtotals and track quantities of each product
+    """
+    order = models.ForeignKey(Order,
+                              null=False,
+                              blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    product = models.ForeignKey(Product,
+                                null=False,
+                                blank=False,
+                                on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False,
+                                   blank=False,
+                                   default=0)
+    lineitem_total = models.DecimalField(max_digits=6,
+                                         decimal_places=2,
+                                         null=False,
+                                         blank=False,
+                                         editable=False)
 
     def save(self, *args, **kwargs):
         """

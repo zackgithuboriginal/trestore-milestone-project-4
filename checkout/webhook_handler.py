@@ -53,6 +53,9 @@ class StripeWH_Handler:
     def handle_payment_intent_succeeded(self, event):
         """
         Method handles a payment_intent_succeeded webhook from Stripe
+
+        Accepts event object as parameter, takes order information from
+        intent metadata
         """
 
         intent = event.data.object
@@ -89,6 +92,10 @@ class StripeWH_Handler:
         order_exists = False
         attempt = 1
         while attempt <= 5:
+            """
+            Checks to make sure that the order does not already exists,
+            if it does loop breaks and order_exists set to True
+            """
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
@@ -109,6 +116,12 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            """
+            If order exists sends a confirmation email and
+
+            If user is signed in, adds tree contribution total from order
+            to profile value
+            """
             self._send_confirmation_email(order)
             if username != 'AnonymousUser':
                 profile = UserProfile.objects.get(user__username=username)
@@ -124,6 +137,11 @@ class StripeWH_Handler:
                          ' SUCCESS: Verified order already in database'),
                 status=200)
         else:
+            """
+            If order does not exist
+            creates a new order using basket object from
+            payment intent metadata
+            """
             order = None
             try:
                 order = Order.objects.create(
@@ -155,6 +173,10 @@ class StripeWH_Handler:
                     status=500)
         self._send_confirmation_email(order)
         if username != 'AnonymousUser':
+            """
+            If user is signed in, add tree contribution total from order
+            to profile value
+            """
             profile = UserProfile.objects.get(user__username=username)
             profile.\
                 tree_planting_contribution = ((profile.
