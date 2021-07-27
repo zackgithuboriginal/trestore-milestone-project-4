@@ -1272,6 +1272,16 @@ td p {
     box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .1);
 }
 
+.basket-display-alt {
+    padding: .5rem;
+    font-size: 1.6rem;
+}
+
+.basket-display-alt a,
+.basket-display-alt a:hover {
+    color: #336857;
+}
+
 /* Checkout Styling */
 .checkout-content,
 .profile-content {
