@@ -176,7 +176,7 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 #### ProgressPost model
 
-The progresspost model
+The ProgressPost model is the model used to store details for posts in the progress blog. It stores the basic details of the post such as the title, the post content, the date posted and an image as well as having a ForeignKey field to store the author's userprofile object. This is for the purpose or providing an author's name to the post.
 
     class ProgressPost(models.Model):
 
@@ -189,7 +189,7 @@ The progresspost model
 
 #### Comment model
 
-The progresspost model
+The Comment model is used to store details of comments made on posts in the progress blog. It stores the basic details of the comment such as the comment content and date posted as well as two ForeignKey fields, the post that the comment is attached to and the author of the post which is related to the user's userprofile object. This is to provide an author's name to the comment.
 
     class Comment(models.Model):
 
@@ -204,6 +204,7 @@ The progresspost model
 
 #### User model
 
+The User model is inherited from the django.contrib.allauth module. It is used to authenticate users and provide the ability to register and sign in to the store and the session. It contains basic details such as the username and email address as well as a password field and boolean fields specifying whether or not the user is a superuser and whether or not they have verified the email.
 
     class User(models.Model):
     
@@ -216,29 +217,29 @@ The progresspost model
         error_messages={
             'unique': _("A user with that username already exists."),
         },
-    )
-    first_name = models.CharField(_('first name'), max_length=150, blank=True)
-    last_name = models.CharField(_('last name'), max_length=150, blank=True)
-    email = models.EmailField(_('email address'), blank=True)
-    is_staff = models.BooleanField(
-        _('staff status'),
-        default=False,
-        help_text=_('Designates whether the user can log into this admin site.'),
-    )
-    is_active = models.BooleanField(
-        _('active'),
-        default=True,
-        help_text=_(
-            'Designates whether this user should be treated as active. '
-            'Unselect this instead of deleting accounts.'
-        ),
-    )
+        )
+        first_name = models.CharField(_('first name'), max_length=150, blank=True)
+        last_name = models.CharField(_('last name'), max_length=150, blank=True)
+        email = models.EmailField(_('email address'), blank=True)
+        is_staff = models.BooleanField(
+            _('staff status'),
+            default=False,
+            help_text=_('Designates whether the user can log into this admin site.'),
+        )
+        is_active = models.BooleanField(
+            _('active'),
+            default=True,
+            help_text=_(
+                'Designates whether this user should be treated as active. '
+                'Unselect this instead of deleting accounts.'
+            ),
+        )
 
 
 
 #### UserProfile model
 
-The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+The UserProfile model is the model used to track the activity and details of a customer or user of the store. It has a one to one relationship with the User model to enable signing in and out of the session and providing access to personal details if authenticated. The model contains the user's delivery details if they have elected to store them for future, as well as the tree_planting_contribution field. Which tracks the total number of trees planted due to their orders.
 
     class UserProfile(models.Model):
 
@@ -263,7 +264,7 @@ The posts collection is where all of the posts made by users are stored in the d
 
 #### Orders model
 
-The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+The Order model is the model used to track orders made in the store. It contains all of the payment and delivery detais as well as a ForeignKey field containing the user's UserProfile object if they are signed in.
 
     class Order(models.Model):
 
@@ -292,7 +293,7 @@ The posts collection is where all of the posts made by users are stored in the d
 
 #### OrderLineItem model
 
-The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+The OrderLineItem model is used to store the product and quantity details of each order. For every product in the basket at the time of the checkout an OrderLineItem object is created containing the Product object and the quantity of that product in the basket as well as the Order object of the order it is attached to and the linitem_total or subtotal of the quantity of the producct.
 
     class OrderLineItem(models.Model):
 
@@ -316,7 +317,7 @@ The posts collection is where all of the posts made by users are stored in the d
 
 #### Product model
 
-The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+The product model is used to store details about each product in the store. It contains the basic details of the product such as name description price sku and image, as well as a ForeignKey field related to the Category model containing the category of the product.
 
     class Product(models.Model):
    
@@ -330,7 +331,7 @@ The posts collection is where all of the posts made by users are stored in the d
 
 #### Category model
 
-The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+The Category model is used to store the basic details regarding the categories of products offered in the store.
 
     class Category(models.Model):
 
