@@ -42,7 +42,7 @@
                 {% for item in basket_items %}
                     <div class="checkout-body row">
                         <div class="col-3 mb-1">
-                            <a href="{% url 'product_details' item.id %}">
+                            <a href="{% url 'product_details' item.item_id %}">
                                 {% if item.product.image %}
                                     <img class="checkout-basket-image" src="{{ item.product.image.url }}"
                                         alt="product image for {{ item.product_name }}">
