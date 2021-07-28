@@ -41,7 +41,7 @@
                             {% if item.image %}
                                 <img src="{{ item.image.url }}" alt="product image for {{ item.product_name }}">
                             {% else %}
-                                <div class="alt-product-image"></div>
+                                <img class="alt-product-image" alt="product image for {{ item.product_name }}" src="{{ MEDIA_URL }}placeholder.png">
                             {% endif %}
                         </a>
                         <div class="card-title">

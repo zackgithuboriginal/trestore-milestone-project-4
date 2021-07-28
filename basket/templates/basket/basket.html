@@ -34,9 +34,9 @@
                                 <div class="mobile-basket-product">
                                     <div class="basket-product-image">
                                         {% if item.product.image %}
-                                            <img class="mobile-product-image" alt="product image for {{ product.product_name }}" src="{{ item.product.image.url }}" alt="">
+                                            <img class="mobile-product-image" alt="product image for {{ item.product_name }}" src="{{ item.product.image.url }}" alt="">
                                         {% else %}
-                                            <img class="mobile-product-image" alt="product image for {{ product.product_name }}" src="{{ MEDIA_URL }}placeholder.png">
+                                            <img class="mobile-product-image" alt="product image for {{ item.product_name }}" src="{{ MEDIA_URL }}placeholder.png">
                                         {% endif %}
                                     </div>
                                     <div class="flex-col">
