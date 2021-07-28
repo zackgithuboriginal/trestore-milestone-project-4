@@ -127,8 +127,8 @@ form.addEventListener('submit', function (ev) {
                     form.submit();
                 }
             }
-        }).fail(function () {
-            location.reload();
         });
+    }).fail(function () {
+        location.reload();
     });
 });
