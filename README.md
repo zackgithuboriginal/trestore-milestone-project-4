@@ -347,7 +347,9 @@ The Category model is used to store the basic details regarding the categories o
 
 ![Image of responsive page mockups]()
 
-The home page has two major roles. 
+The intention of the design of the home page is to present the most important links and resources on the site to the user as well as to welcome them to the website and inform them of the visual and interaction language of the website.
+
+The layout itself is relatively simple consisting primarily of a banner element containing two cta buttons, one linking to to the products store and one linking to the sponsorship packages available. The page also features a large hero image illustration o a tree against a dark green background to help create in the user a sense of the relationship between the user and the website's environmental goals.
 
 #### Store Page
 
@@ -385,17 +387,27 @@ The add and edit post pages are relatively simple, they contain a form with an i
 
 #### Order Confirmation
 
-#### Login Register
+#### Login / Register Page
+
+The login and registration pages are very similar pages. They both contain a central form with a background image of a branch against the sky. The registration form contains a field for the user's username, two fields for the user's email address and two for the user's password. The login form contains just two fields, one for the user's username and one for the user's password.
 
 #### Product Details
 
+The product details page is primarily used for presenting all of the information about a product to the user in one place. The page contains all of the product details including product name, product description price, SKU, image, as well as edit and delete buttons if the user is authorised as a superuser. Additionally the page contains options to add the product to the basket with a quantity input field as well as a button to return to the store.
+
 #### Footer
+
+The Footer which is at the bottom of all pages is the same colour as the navbar to create a clear link between them and ensure the website has a cohesive well thought out feeling. The footer contains a number of social links as well as a copyright statement with a date that automatically updates with the year.
 
 #### Edit / Add Product Page
 
 #### Messages
 
+After a large number of actions, in particular ones that affect either the shopping basket or database interactions the website will display messages to the user to provide feedback on the success or otherwise status of the actions. For instance when a user add's a product to the basket a success message will be displayed specifying the product that has been added to the basket along with a small summary of all of the products currently in the basket and their quanities.
+
 #### Header Banner
+
+The header banner is present on all pages and it used to highlight one of the benefits of shopping in the store, 5% of all sales go directly to planting trees. It's intended to create a further incentive to encourage visitors to use the store and to buy sponsorship packages.
 
 ## Technologies Used
 
