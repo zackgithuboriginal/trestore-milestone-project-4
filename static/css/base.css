@@ -1679,13 +1679,13 @@ input[type="file"] {
 }
 
 .foot-options {
-    color: #1A342C;
-    font-size: 1.2rem;
     margin-bottom: .5rem;
 }
 
 .foot-options a {
     cursor: pointer;
+    color: #1A342C;
+    font-size: 1.2rem;
 }
 
 .foot-options a:not(:first-child) {
