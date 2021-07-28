@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_js %}
-{{ block.super }}
-    <script src="{% static 'blog/js/blog.js' %}"></script>
-{% endblock %}
-
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -65,8 +60,8 @@
                         <h2>{{ post.post_title }}</h2>
 
                         {% if request.user.is_superuser %}
-                            <button class="display-edit-dropdown"
-                            onclick="displayOptionsDropdown('{{ post.id }}')"><i
+                            <button class="display-edit-dropdown" id="display-dropdown-{{ post.id }}"
+                            ><i
                                 class="fas fa-ellipsis-v font-color-light"></i></button>
                             <div class="display-edit-options"
                             id="display-options-{{ post.id }}">
@@ -95,7 +90,7 @@
                     </div>
                     <div class="post-foot">
                         <div class="foot-options">
-                            <a onclick="displayComments(this, {{ post.id }})"><span>Show Comments </span>({{ post.comments.all.count }})</a>
+                            <a class="display-comments" id="display-comments-{{ post.id }}" ><span>Show Comments </span>({{ post.comments.all.count }})</a>
                         </div>
                         <div class="post-comment-container" id="comment-container-{{post.id}}">
                             <div {% if request.user.is_authenticated %} class="post-comment-add" {% else %} class="post-comment-add form-background" {% endif %}>
@@ -126,7 +121,7 @@
                                         {% if request.user.is_authenticated %}
                                             {% if request.user.is_superuser or request.user == comment.author.user %}
                                                 <div class="comment-options">
-                                                    <button class="comment-link" onclick="displayEditForm({{comment.id}})">Edit</button>
+                                                    <button class="comment-link comment-link-edit" id="comment-link-{{comment.id}}">Edit</button>
                                                     <a class="comment-link"  href="{% url 'delete_comment' comment.id %}">Delete</a>
                                                 </div>
                                             {% endif %}
@@ -137,8 +132,8 @@
                                     <form action="{% url 'edit_comment' comment.id %}" method="POST">
                                         {% csrf_token %}
                                         <textarea class="edit-comment-textarea" name="comment-content" id="comment-content-{{ comment.id }}" cols="30" rows="2" required>{{comment.comment_content}}</textarea>
-                                        <div class="form-buttons">   
-                                            <button class="comment-cancel" onclick="closeEdit({{comment.id}})" type="button">Cancel</button>
+                                        <div class="form-buttons">
+                                            <button class="comment-cancel" id="comment-cancel-{{ comment.id }}" type="button">Cancel</button>
                                             <button class="comment-save" type="submit">Save</button>                                    
                                         </div> 
                                     </form>

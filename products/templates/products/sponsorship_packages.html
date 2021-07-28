@@ -21,8 +21,7 @@
                 {% for item in sponsorship_packages %}
                     <div class="product-card">
                         {% if request.user.is_superuser %}
-                        <button class="display-edit-dropdown"
-                        onclick="displayOptionsDropdown('{{ item.id }}')"><i
+                        <button class="display-edit-dropdown"><i
                         class="fas fa-ellipsis-v font-color-dark"></i></button>
 
                         <div class="display-product-options"

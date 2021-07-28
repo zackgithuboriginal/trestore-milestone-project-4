@@ -44,7 +44,6 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -186,6 +185,7 @@
     </footer>
 
     {% block postloadjs %}
+    <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 </body>
 

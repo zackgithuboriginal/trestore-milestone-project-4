@@ -17,10 +17,10 @@
     </div>
     <div class="store-row row">
         <div class="display-options col-12 row">
-            <form method="GET" action="{% url 'products' %}">
+            <form class="product-filter-form" method="GET" action="{% url 'products' %}">
                 <div class="filter-row">
                     <label for="product-filter">Filter By:</label>
-                    <select onchange="this.form.submit()" class="product-filter-select" name="product-filter" id="product-filter">
+                    <select class="product-filter-select" name="product-filter" id="product-filter">
                         <option value="all" {% if current_category == None %} selected {% endif %}>All Products</option>
                         <option value="seeds" {% if current_category == 'seeds' %} selected {% endif %}>Seeds</option>
                         <option value="sapling_2_litre_pot" {% if current_category == 'sapling_2_litre_pot' %} selected {% endif %}>Saplings 2L Pot</option>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="filter-row">
                     <label for="product-sort">Sort By:</label>
-                    <select onchange="this.form.submit()" class="product-sort-select" name="product-sort" id="product-sort">
+                    <select class="product-sort-select" name="product-sort" id="product-sort">
                         <option value="price_asc" {% if current_sorting == 'price_asc' or current_sorting == None %} selected {% endif %}>Price Asc.</option>
                         <option value="price_desc" {% if current_sorting == 'price_desc' %} selected {% endif %}>Price Desc.</option>
                         {% if current_category == None %} 
@@ -57,8 +57,7 @@
                 {% for product in products %}
                     <div class="product-card">
                         {% if request.user.is_superuser %}
-                            <button class="display-edit-dropdown"
-                            onclick="displayOptionsDropdown('{{ product.id }}')"><i
+                            <button class="display-edit-dropdown" id="display-dropdown-{{ product.id }}"><i
                             class="fas fa-ellipsis-v font-color-dark"></i></button>
 
                             <div class="display-product-options"
@@ -140,4 +139,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'products/js/products.js' %}"></script>
 {% endblock %}

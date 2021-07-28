@@ -1,8 +1,10 @@
+
 /**
  * This function handles the display of the post edit options dropdown menu
  */
-function displayOptionsDropdown(id) {
-    let target = document.getElementById(`display-options-${id}`);
+ $('.display-edit-dropdown').click(function() {
+    let elementId = $(this).attr('id').split('display-dropdown-')[1]
+    let target = document.getElementById(`display-options-${elementId}`);
     if (target.style.display == "flex") {
         clearDropdowns();
         target.style.display = "none";
@@ -10,17 +12,22 @@ function displayOptionsDropdown(id) {
         clearDropdowns();
         target.style.display = "flex";
     }
-}
+})
 
 /**
  * This function clears all of the post edit option dropdowns to ensure no more than one displays at a time
  */
 function clearDropdowns() {
-    let allDropdowns = document.querySelectorAll(".display-product-options");
-    for (let i = 0; i < allDropdowns.length; i++) {
-        allDropdowns[i].style.display = "none";
+    let allProductDropdowns = document.querySelectorAll(".display-product-options");
+    let allPostDropdowns = document.querySelectorAll(".display-edit-options");
+    for (let i = 0; i < allPostDropdowns.length; i++) {
+        allPostDropdowns[i].style.display = "none";
+    }
+    for (let i = 0; i < allProductDropdowns.length; i++) {
+        allProductDropdowns[i].style.display = "none";
     }
 }
+
 
 /**
  * Automatically updates footer copyright date
