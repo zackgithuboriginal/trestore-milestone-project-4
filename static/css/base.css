@@ -492,7 +492,7 @@ h2.error-text {
 .tree-graphic {
     position: absolute;
     top: 0;
-    height: calc(100vh - 4rem);
+    height: calc(100vh);
     width: 100vw;
 }
 
@@ -2229,18 +2229,6 @@ footer p,
         width: auto;
         right: 0;
         bottom: 0;
-    }
-
-    .post-card {
-        margin-left: 15%;
-    }
-
-    .add-post-button {
-        margin-left: calc(15% + 62rem);
-    }
-
-    div.spacer {
-        display: none;
     }
 
     .product-details-content {
