@@ -5,9 +5,11 @@
 
 ## Website Description
 
-Trestore is a website that serves two purposes, the first, to facilitate the sale of native trees and seeds to customers and the second, to offer sponsorship packages to customers so that they can support the replanting of native Irish trees. In order to  During the design of the website I wanted to use a colour scheme and design that emphasised the green and environmental nature of the purpose of the website. 
+Trestore is a website that serves two purposes, the first, to facilitate the sale of native trees and seeds to customers, and the second, to offer sponsorship packages to customers so that they can support the replanting of native Irish trees. In the aims of creating an immersive website and encourage repeat visiting and shopping the website offers to dedicate a percentage of each sale directly to planting native trees and tracks the number of trees planted by each user in this manner on their profile creating an sense of achievement and satisfying feedback from each purchase. 
 
-In order to make the user experience as seamless and easy as possible the website also emphasises intuitive page and website interaction. With simple and clear CTA buttons from the home page and the most important page interactions highlighted with buttons styled with the website's primary branding colour.
+As well as this the website contains a progress blog where employees and administrators of the website can post updates including images of Trestore's replanting efforts and wider company news. Registered users are also able to comment on these posts, with the aim of creating a sense of engagement between the customers and the store and enhancing the sense of involvement that the customer feels with regards to the company's goal of planting native trees and woorlands. 
+
+While creating the design for the website I wanted to use a colour scheme and layout that emphasised the green and environmental nature of the purpose of the website. Additionally in order to make the user experience as seamless and easy as possible the website also emphasises intuitive page and website interaction. With simple and clear action buttons on the home page and the most important page interactions highlighted with buttons styled in line with the website's branding, the website has a cohesive and connected feeling throughout, attempting to elevate the user's experience of using the site.
 
 ## User Experience / UX
 ### User Stories
@@ -83,22 +85,29 @@ In order to make the user experience as seamless and easy as possible the websit
 
 ### Design
 
-#### Design Overview n b 
+#### Design Overview
 
-The main principles and ideas behind the design of this website were number 1 to strongly express the website's driving ideal of replanting native woodlands and enabling customers to grow their own native trees and number 2 to provide a clear and well laid out hierarchy of interactions and informain.
+There were 2 major ideas behind the design of this website which were present and helped to inform alnmost all design decisions. The first of these was to express the website's driving environmental goals through a cohesive and strongly branded design emphasising the green shades and colours of nature and woodlands. The second idea behind the website's design was to ensure at all points that the user was aware of the most important interactions, and provided with clear feedback as well as a clear information hierarchy.
 
 #### Colour Scheme
-![Image of responsive page mockups]()
+
+![Image of trestore colour scheme](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/trestore-colour-scheme.png)
+
 #### Primary Colours
 
-In the creation of the branding and design for the website I decided to draw on nature and the trees that the store would be selling for the colour scheme of the website. The primary brand colour for the website is #336857 a deep green colour chosen to evoke a sense of the relationship between the company and nature and the trees and woodlands that it supports through it's sales and sponsorship packages. The other two primary colours in Trestore's scheme are #F2F8F7 and #1A342C the first, #F2F8F7 is a light white colour with a slight green tone, the second #1A342C is a very dark shade of green. The two colours are used opposed to each other. Primarily as the background colour of the page and in the case of #F2F8F7 as the backgroudnd color of containers for infromation and forms in order to provide as clear and legible an environment for interacting with information as quickly as possible
+In the creation of the branding and design for the website I decided to draw on nature and the trees that the store would be selling for the colour scheme of the website. The primary brand colour for the website is #336857 a full green colour chosen to evoke a sense of the relationship between the company and nature and the trees and woodlands that it supports through it's sales and sponsorship packages. As the primary branding colour it is used as a background colour in the majority of the buttons and points of interaction on the site, as well as the text colour of a lot of the headings to ensure an easy to read, consistent cohesive experience throughout the design.
+
+The other two colours in Trestore's scheme are #F2F8F7 and #1A342C. The first, #F2F8F7 is a light white colour with a green tone, the second #1A342C is a very dark shade of green. These two secondary colours are used opposite each other in the website's design. They are used primarily as the background colour of the various pages of the site and in the case of #F2F8F7 it is used along with #FFFFFF, plain white, as the background color of a lot of the text pieces and information points on the website to ensure clarity and ease of comprehension.
 
 #### Typography
 
+There are two fonts in use in the design of the website, the first, Josefin Slab is a delicate and notable font, though still very readable. It is used as the font for the website's brand on the navbar as well as the font of the text on the home page banner. The second font used, Open Sans, is a very clean and readable font. It is used
 
 #### Imagery
 
-Imagery is used in a few places throughout the website.
+Imagery is used in a few places throughout the website. On the home page and the progress blog, there is a large svg icon of a tree which is used to create a visual representation of the website's relationship to nature and to woodlands. Along this sime line, the basket icon is an icon of a branch to represent the fact that the basket is going to be containing trees and seeds and to give a visual feeback of that to the user. Additionally in the login and register pages there is a large background image of a tree backlit by the sky. These images were all used alongside the colour design to create a sense of the brand of the website.
+
+The other images in use in the design are ones that can be uploaded with products or with progress posts. In order to create a more engaging experience when browsing and reading progres posts, site admins can upload images that will be at the top and center of the post card. Additionally with regards to products images can be uploaded to display to the user what the product will look like, and create a more comprehensive and informed shopping experience.
 
 ### Wireframes
 
@@ -162,19 +171,174 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 ### Database Design / Data Modelling
 
-![Image of data schema diagram]()
+![Image of data schema diagram](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/data-schema.png)
 
 
-#### Object model
+#### ProgressPost model
 
-![Image of post collection object]()
+The progresspost model
+
+    class ProgressPost(models.Model):
+
+    post_title = models.CharField(max_length=60, null=False, blank=False)
+    post_content = models.CharField(max_length=2000, null=False, blank=False)
+    image = models.ImageField(null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True, editable=False)
+    author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                               null=True, related_name='posts', editable=False)
+
+#### Comment model
+
+The progresspost model
+
+    class Comment(models.Model):
+
+    post = models.ForeignKey(ProgressPost, null=False, blank=False,
+                             on_delete=models.CASCADE, related_name='comments',
+                             editable=False)
+    comment_content = models.CharField(max_length=400, null=False, blank=False)
+    date = models.DateTimeField(auto_now_add=True, editable=False)
+    author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                               null=True, related_name='comments',
+                               editable=False)
+
+#### User model
+
+
+    class User(models.Model):
+    
+        username = models.CharField(
+        _('username'),
+        max_length=150,
+        unique=True,
+        help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        validators=[username_validator],
+        error_messages={
+            'unique': _("A user with that username already exists."),
+        },
+    )
+    first_name = models.CharField(_('first name'), max_length=150, blank=True)
+    last_name = models.CharField(_('last name'), max_length=150, blank=True)
+    email = models.EmailField(_('email address'), blank=True)
+    is_staff = models.BooleanField(
+        _('staff status'),
+        default=False,
+        help_text=_('Designates whether the user can log into this admin site.'),
+    )
+    is_active = models.BooleanField(
+        _('active'),
+        default=True,
+        help_text=_(
+            'Designates whether this user should be treated as active. '
+            'Unselect this instead of deleting accounts.'
+        ),
+    )
+
+
+
+#### UserProfile model
 
 The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
 
-    example_attribute:             string
+    class UserProfile(models.Model):
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_full_name = models.CharField(max_length=50,
+                                         null=True, blank=True)
+    default_street_address1 = models.CharField(max_length=80,
+                                               null=True, blank=True)
+    default_street_address2 = models.CharField(max_length=80,
+                                               null=True, blank=True)
+    default_town_or_city = models.CharField(max_length=40,
+                                            null=True, blank=True)
+    default_postcode = models.CharField(max_length=20,
+                                        null=True, blank=True)
+    default_county = models.CharField(max_length=80,
+                                      null=True, blank=True)
+    default_country = CountryField(blank_label="Country",
+                                   null=True, blank=True)
+    tree_planting_contribution = models.DecimalField(max_digits=10,
+                                                     decimal_places=2,
+                                                     default=0.00)
 
+#### Orders model
 
+The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+
+    class Order(models.Model):
+
+    order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='orders')
+    full_name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    country = CountryField(blank_label="Country *", null=False, blank=False)
+    postcode = models.CharField(max_length=20, null=True, blank=True)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    county = models.CharField(max_length=80, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
+                                        null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
+    basket = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
+
+#### OrderLineItem model
+
+The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+
+    class OrderLineItem(models.Model):
+
+    order = models.ForeignKey(Order,
+                              null=False,
+                              blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    product = models.ForeignKey(Product,
+                                null=False,
+                                blank=False,
+                                on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False,
+                                   blank=False,
+                                   default=0)
+    lineitem_total = models.DecimalField(max_digits=10,
+                                         decimal_places=2,
+                                         null=False,
+                                         blank=False,
+                                         editable=False)
+
+#### Product model
+
+The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+
+    class Product(models.Model):
+   
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
+    product_name = models.CharField(max_length=254)
+    sku = models.CharField(max_length=254, null=True, blank=True)
+    product_description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(null=True, blank=True)
+
+#### Category model
+
+The posts collection is where all of the posts made by users are stored in the database. It uses MongoDB's ObjectId value as a unique key and stores all other details necessary to the display and tracking of the post in its data fields.
+
+    class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
 ## Features
 
@@ -948,10 +1112,41 @@ Page | Action | Expected Result | Result
 EXAMPLE | EXAMPLE ACTION | EXAMPLE RESULT | Pass
 
 
-
 ### Bugs Discovered 
 
+1.
+The first bug that I will highlight is an issue that arose regarding the input of stored details for user's when checking out an order. The user's full name field would not be filled in along with the other saved data.
 
+![Image of name not being input issue](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/name-not-input-bug.PNG)
+
+After investigating the issue I figured out that the issue was being caused by the full_name field being input by a method of the user model called get_full_name(). The issue was arising because in the registration field there was no input field for the user to enter their name in the first place, therefore the method was calling on empty fields and returning nothing.
+
+    order_form = OrderForm(initial={
+        'full_name': profile.user.get_full_name(),
+
+I solved this issue by reworking the code to use the same method for supplying the name as the other fields in the form. By taking them from the stored value of the userprofile object.
+
+    order_form = OrderForm(initial={
+        'full_name': profile.default_full_name,
+
+This solved the issue immediately and was a very simple solution to the issue.
+
+![Image of name not being input solution](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/name-not-input-bug-resolve.PNG)
+
+2.
+The second bug was a relatively minor one relating to the rendering of an email field to the order confirmatiom page. In the order confirmation page, instead of the user's email address being rendered as was intended, the django template expression was rendered in raw format.
+
+![Image of email not being rendered](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/template-bug.PNG)
+
+A quick investigation of the html for that template revealed that the expression had been split across multiple lines by a html formatted that I had used on the html file. 
+
+![Image of email not being rendered code](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/template-bug-code.PNG)
+
+By tweaking the html slightly and putting the expression back on one line, the problem was solved and the email was rendered correctly.
+
+![Image of email not being rendered solution](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/template-bug-resolved.PNG)
+
+ 
 
 ## Deployment
 
