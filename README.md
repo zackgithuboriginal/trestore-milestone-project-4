@@ -1,15 +1,15 @@
 
 # Trestore - Milestone Project 4
 
-![Image of responsive page mockups](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/multi-device.PNG)
+![Image of responsive page mockups](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/multi-device.png)
 
 ## Website Description
 
-Trestore is a website that serves two purposes, the first, to facilitate the sale of native trees and seeds to customers, and the second, to offer sponsorship packages to customers so that they can support the replanting of native Irish trees. In the aims of creating an immersive website and encourage repeat visiting and shopping the website offers to dedicate a percentage of each sale directly to planting native trees and tracks the number of trees planted by each user in this manner on their profile creating an sense of achievement and satisfying feedback from each purchase. 
+Trestore is a website that serves two purposes, the first, to facilitate the sale of native trees and seeds to customers, and the second, to offer sponsorship packages to customers so that they can support the replanting of native Irish trees. In the aims of creating an immersive website and encourage repeat visiting and shopping the website offers to dedicate a percentage of each sale directly to planting native trees and tracks the number of trees planted by each user in this manner on their profile creating a sense of achievement and satisfying feedback from each purchase. 
 
-As well as this the website contains a progress blog where employees and administrators of the website can post updates including images of Trestore's replanting efforts and wider company news. Registered users are also able to comment on these posts, with the aim of creating a sense of engagement between the customers and the store and enhancing the sense of involvement that the customer feels with regards to the company's goal of planting native trees and woorlands. 
+As well as this the website contains a progress blog where employees and administrators of the website can post updates including images of Trestore's replanting efforts and wider company news. Registered users are also able to comment on these posts, intending to create a sense of engagement between the customers and the store and enhancing the sense of involvement that the customer feels with regards to the company's goal of planting native trees and woodlands. 
 
-While creating the design for the website I wanted to use a colour scheme and layout that emphasised the green and environmental nature of the purpose of the website. Additionally in order to make the user experience as seamless and easy as possible the website also emphasises intuitive page and website interaction. With simple and clear action buttons on the home page and the most important page interactions highlighted with buttons styled in line with the website's branding, the website has a cohesive and connected feeling throughout, attempting to elevate the user's experience of using the site.
+While creating the design for the website I wanted to use a colour scheme and layout that emphasised the green and environmental nature of the purpose of the website. Additionally, to make the user experience as seamless and easy as possible the website also emphasises intuitive page and website interaction. With simple and clear action buttons on the home page and the most important page interactions highlighted with buttons styled in line with the website's branding, the website has a cohesive and connected feeling throughout, attempting to elevate the user's experience of using the site.
 
 ## User Experience / UX
 ### User Stories
@@ -29,15 +29,15 @@ While creating the design for the website I wanted to use a colour scheme and la
 
   3. **As a customer, I should be able to sort products by category.**
  
-  5. **As a customer, I should be alter the criteria under which the displayed products are ordered.**
+  5. **As a customer, I should be able to alter the criteria under which the displayed products are ordered.**
   
-  7. **As a customer, I should be able to search products directly by key words.**
+  7. **As a customer, I should be able to search products directly by keywords.**
 
   3. **As a customer, I should be able to view details about a specific product.**
 
   3. **As a customer, I should be able to add a product to the basket.**
   
-  5. **As a customer, I should be able to edit the quantity of an item the basket.**
+  5. **As a customer, I should be able to edit the quantity of an item in the basket.**
   
   7. **As a customer, I should be able to remove an item from the basket.**
 
@@ -50,9 +50,9 @@ While creating the design for the website I wanted to use a colour scheme and la
   3. **As a customer, I want to be able to store my delivery details for future use.**
 
 ### Registered user
-  1. **As a registered user, I should be able to login.**
+  1. **As a registered user, I should be able to log in.**
 
-  3. **As a registered user, I should be able to logout.**
+  3. **As a registered user, I should be able to log out.**
 
   3. **As a registered user, I should be able to view my order history.**
 
@@ -69,35 +69,35 @@ While creating the design for the website I wanted to use a colour scheme and la
   3. **As a registered user, I should be able to change my password.**
    
 ### Site administrators
-  1. **As a authorised user, I should be able to add products to the store.**
+  1. **As an authorised user, I should be able to add products to the store.**
 
-  3. **As a authorised user, I should be able to edit products in the store.**
+  3. **As an authorised user, I should be able to edit products in the store.**
 
-  3. **As a authorised user, I should be able to delete products from the store.**
+  3. **As an authorised user, I should be able to delete products from the store.**
 
-  5. **As a authorised user, I should be able to add posts to the progress blog.**
+  5. **As an authorised user, I should be able to add posts to the progress blog.**
 
-  3. **As a authorised user, I should be able to edit posts in the progress blog.**
+  3. **As an authorised user, I should be able to edit posts in the progress blog.**
 
-  3. **As a authorised user, I should be able to delete posts from the progress blog.**
+  3. **As an authorised user, I should be able to delete posts from the progress blog.**
  
-  1. **As a authorised user, I should be able to edit comments on posts in the progress blog.**
+  1. **As an authorised user, I should be able to edit comments on posts in the progress blog.**
 
 ### Design
 
 #### Design Overview
 
-There were 2 major ideas behind the design of this website which were present and helped to inform alnmost all design decisions. The first of these was to express the website's driving environmental goals through a cohesive and strongly branded design emphasising the green shades and colours of nature and woodlands. The second idea behind the website's design was to ensure at all points that the user was aware of the most important interactions, and provided with clear feedback as well as a clear information hierarchy.
+There were 2 major ideas behind the design of this website which were present and helped to inform almost all design decisions. The first of these was to express the website's driving environmental goals through a cohesive and strongly branded design emphasising the green shades and colours of nature and woodlands. The second idea behind the website's design was to ensure at all points that the user was aware of the most important interactions, and provided with clear feedback as well as a clear information hierarchy.
 
 #### Colour Scheme
 
-![Image of trestore colour scheme](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/trestore-colour-scheme.png)
+![Image of Trestore colour scheme](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/trestore-colour-scheme.png)
 
 #### Primary Colours
 
-In the creation of the branding and design for the website I decided to draw on nature and the trees that the store would be selling for the colour scheme of the website. The primary brand colour for the website is #336857 a full green colour chosen to evoke a sense of the relationship between the company and nature and the trees and woodlands that it supports through it's sales and sponsorship packages. As the primary branding colour it is used as a background colour in the majority of the buttons and points of interaction on the site, as well as the text colour of a lot of the headings to ensure an easy to read, consistent cohesive experience throughout the design.
+In the creation of the branding and design for the website, I decided to draw on nature and the trees that the store would be selling for the colour scheme of the website. The primary brand colour for the website is #336857 a full green colour chosen to evoke a sense of the relationship between the company and nature and the trees and woodlands that it supports through its sales and sponsorship packages. As the primary branding colour, it is used as a background colour in the majority of the buttons and points of interaction on the site, as well as the text colour of a lot of the headings to ensure an easy to read, consistent cohesive experience throughout the design.
 
-The other two colours in Trestore's scheme are #F2F8F7 and #1A342C. The first, #F2F8F7 is a light white colour with a green tone, the second #1A342C is a very dark shade of green. These two secondary colours are used opposite each other in the website's design. They are used primarily as the background colour of the various pages of the site and in the case of #F2F8F7 it is used along with #FFFFFF, plain white, as the background color of a lot of the text pieces and information points on the website to ensure clarity and ease of comprehension.
+The other two colours in Trestore's scheme are #F2F8F7 and #1A342C. The first, #F2F8F7 is a light white colour with a green tone, the second #1A342C is a very dark shade of green. These two secondary colours are used opposite each other in the website's design. They are used primarily as the background colour of the various pages of the site and in the case of #F2F8F7, it is used along with #FFFFFF, plain white, as the background colour of a lot of the text pieces and information points on the website to ensure clarity and ease of comprehension.
 
 #### Typography
 
@@ -105,9 +105,9 @@ There are two fonts in use in the design of the website, the first, Josefin Slab
 
 #### Imagery
 
-Imagery is used in a few places throughout the website. On the home page and the progress blog, there is a large svg icon of a tree which is used to create a visual representation of the website's relationship to nature and to woodlands. Along this sime line, the basket icon is an icon of a branch to represent the fact that the basket is going to be containing trees and seeds and to give a visual feeback of that to the user. Additionally in the login and register pages there is a large background image of a tree backlit by the sky. These images were all used alongside the colour design to create a sense of the brand of the website.
+Imagery is used in a few places throughout the website. On the home page and the progress blog, there is a large SVG icon of a tree which is used to create a visual representation of the website's relationship to nature and woodlands. Along this same line, the basket icon is an icon of a branch to represent the fact that the basket is going to be containing trees and seeds and to give visual feedback of that to the user. Additionally in the login and register pages, there is a large background image of a tree backlit by the sky. These images were all used alongside the colour design to create a sense of the brand of the website.
 
-The other images in use in the design are ones that can be uploaded with products or with progress posts. In order to create a more engaging experience when browsing and reading progres posts, site admins can upload images that will be at the top and center of the post card. Additionally with regards to products images can be uploaded to display to the user what the product will look like, and create a more comprehensive and informed shopping experience.
+The other images in use in the design are ones that can be uploaded with products or with progress posts. To create a more engaging experience when browsing and reading progress posts, site admins can upload images that will be at the top and centre of the postcard. Additionally with regards to products images can be uploaded to display to the user what the product will look like, and create a more comprehensive and informed shopping experience.
 
 ### Wireframes
 
@@ -176,7 +176,7 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 #### ProgressPost model
 
-The ProgressPost model is the model used to store details for posts in the progress blog. It stores the basic details of the post such as the title, the post content, the date posted and an image as well as having a ForeignKey field to store the author's userprofile object. This is for the purpose or providing an author's name to the post.
+The ProgressPost model is the model used to store details for posts in the progress blog. It stores the basic details of the post such as the title, the post content, the date posted and an image as well as having a ForeignKey field to store the author's userprofile object. This is to provide an author's name to the post.
 
     class ProgressPost(models.Model):
 
@@ -204,7 +204,7 @@ The Comment model is used to store details of comments made on posts in the prog
 
 #### User model
 
-The User model is inherited from the django.contrib.allauth module. It is used to authenticate users and provide the ability to register and sign in to the store and the session. It contains basic details such as the username and email address as well as a password field and boolean fields specifying whether or not the user is a superuser and whether or not they have verified the email.
+The User model is inherited from the Django.contrib.allauth module. It is used to authenticate users and provide the ability to register and sign in to the store and the session. It contains basic details such as the username and email address as well as a password field and boolean fields specifying whether or not the user is a superuser and whether or not they have verified the email.
 
     class User(models.Model):
     
@@ -239,7 +239,7 @@ The User model is inherited from the django.contrib.allauth module. It is used t
 
 #### UserProfile model
 
-The UserProfile model is the model used to track the activity and details of a customer or user of the store. It has a one to one relationship with the User model to enable signing in and out of the session and providing access to personal details if authenticated. The model contains the user's delivery details if they have elected to store them for future, as well as the tree_planting_contribution field. Which tracks the total number of trees planted due to their orders.
+The UserProfile model is the model used to track the activity and details of a customer or user of the store. It has a one to one relationship with the User model to enable signing in and out of the session and providing access to personal details if authenticated. The model contains the user's delivery details if they have elected to store them for the future, as well as the tree_planting_contribution field. Which tracks the total number of trees planted due to their orders.
 
     class UserProfile(models.Model):
 
@@ -264,7 +264,7 @@ The UserProfile model is the model used to track the activity and details of a c
 
 #### Orders model
 
-The Order model is the model used to track orders made in the store. It contains all of the payment and delivery detais as well as a ForeignKey field containing the user's UserProfile object if they are signed in.
+The Order model is the model used to track orders made in the store. It contains all of the payment and delivery details as well as a ForeignKey field containing the user's UserProfile object if they are signed in.
 
     class Order(models.Model):
 
@@ -293,7 +293,7 @@ The Order model is the model used to track orders made in the store. It contains
 
 #### OrderLineItem model
 
-The OrderLineItem model is used to store the product and quantity details of each order. For every product in the basket at the time of the checkout an OrderLineItem object is created containing the Product object and the quantity of that product in the basket as well as the Order object of the order it is attached to and the linitem_total or subtotal of the quantity of the producct.
+The OrderLineItem model is used to store the product and quantity details of each order. For every product in the basket at the time of the checkout, an OrderLineItem object is created containing the Product object and the quantity of that product in the basket as well as the Order object of the order it is attached to and the linitem_total or subtotal of the quantity of the product.
 
     class OrderLineItem(models.Model):
 
@@ -317,7 +317,7 @@ The OrderLineItem model is used to store the product and quantity details of eac
 
 #### Product model
 
-The product model is used to store details about each product in the store. It contains the basic details of the product such as name description price sku and image, as well as a ForeignKey field related to the Category model containing the category of the product.
+The product model is used to store details about each product in the store. It contains the basic details of the product such as name description price SKU and image, as well as a ForeignKey field related to the Category model containing the category of the product.
 
     class Product(models.Model):
    
@@ -347,28 +347,33 @@ The Category model is used to store the basic details regarding the categories o
 
 ![Image of responsive page mockups]()
 
-The home page has two major roles. Firstly, its role is to introduce the user to the website and enable them to understand its purpose and functionality. Secondly, the home page is the primary means of exploring user’s posts and discovering new ideas and discussions.
-
-To achieve the first goal I aimed to make the purpose of the home page as simple and clear as possible. Upon loading the page the user is presented with a column of posts down the centre of the page with a toolbar just above them with options to filter and sort. The user upon interacting with the scrollable list of posts will get an idea of the purpose of the site and will understand that this is an environment for creating and sharing posts.
-
-The second goal of the home page to be the primary post navigation screen is achieved by utilising several smaller features to make the functionality of viewing and exploring posts as convenient and intuitive as possible.
+The home page has two major roles. 
 
 #### Store Page
 
-The store page is a simply designed page, prioritising above all a clean and clear user experience and access to information and products. The page has two sections, the first of these two sections is the product sort filtering and search section. This section provides users three options to customise the display of products in the store, offering the ability to filter by category, sort by either price ascending, price descending or by category and finally to filter results by search terms. By sumitting these parameters the products displayed on the page will change to suit the needs and intersests of the customer and create a positive user experience when browsing.
+The store page is simply designed, prioritising above all a clean and clear user experience and access to information and products. The page has two sections, the first of these two sections is the product sort filtering and search section. This section provides users three options to customise the display of products in the store, offering the ability to filter by a category, sort by either price ascending, price descending or by category and finally to filter results by search terms. By submitting these parameters the products displayed on the page will change to suit the needs and interests of the customer and create a positive user experience when browsing.
 
 The second section is the product container wherein products are displayed on card elements in a responsive grid to provide a satisfying and easy browsing experience.
-The product card contains a number of features including a product image, the product name, price and SKU value, a link to the product details page for that product and a quantity input field with a button to add the product to the basket.
+The product card contains several features including a product image, the product name, price and SKU value, a link to the product details page for that product and a quantity input field with a button to add the product to the basket.
 
 #### Navbar
 
-The navbar is fixed at the top of the base template so that it appears on all pages of the site. It comtains links to all of the primary pages as well as a dropdown list providing links related to profile actions and certain restricted actions such as adding products to the store.
+The navbar is fixed at the top of the base template so that it appears on all pages of the site. It contains links to all of the primary pages as well as a dropdown list providing links related to profile actions and certain restricted actions such as adding products to the store.
 
-The colour of the navbar is the primary branding colour of the website in order to create a cohesive environment across all of the pages and applications of the site.
+The colour of the navbar is the primary branding colour of the website to create a cohesive environment across all of the pages and applications of the site.
 
 #### Progress Blog
 
+The progress blog is the page that visitors can go to to learn about the company and see updates and news from the company about its various tree-planting efforts. The page contains a primary container for the posts themselves as well as the background image of the SVG tree that is also used on the home page. 
+The Post container has two main components, an add post button, that will display if the active user is authorised and the post display.
+
+The post display consists of a series of post cards displayed vertically with the newest post at the top. The post card itself has several elements. If the user is authorised there is an options menu dropdown button on the head of the post, with an image below and the content of the post just above the base. Along the base of the post, there is the date that the post was published, the author of the post and finally, a show comments button.
+
+When the show comment button is pressed the comments section will open, containing the add comment form and the comments that are already attached to the post.
+
 #### Add / Edit Post Page
+
+The add and edit post pages are relatively simple, they contain a form with an input field for each of the fields of the post model. In the case of the image field, a custom Django widget is used, which allows for the display of the image if one is already in use.
 
 #### Sponsorship Page
 
@@ -388,8 +393,11 @@ The colour of the navbar is the primary branding colour of the website in order 
 
 #### Edit / Add Product Page
 
-## Technologies Used
+#### Messages
 
+#### Header Banner
+
+## Technologies Used
 
 ### Languages Used
 
@@ -404,11 +412,72 @@ The colour of the navbar is the primary branding colour of the website in order 
 1. [Bootstrap 5.0:](https://getbootstrap.com/)
   - Bootstrap was used to create the initial base template of the design that was then built on top of and customised further using CSS.
 
+2. [Django:](https://www.djangoproject.com/)
+  - Django is the python web framework used to implement the 
+
+3. [Jquery:](https://jquery.com/)
+  - Jquery is used throughout the JavaScript in the project to create simpler and more concise code.
+
+4. [FontAwesome:](https://fontawesome.com//)
+  - FontAwesome is used in the website to display icons for buttons and visual effects.
+
+5. [favicon.io:](https://favicon.io/)
+  - Favicon.io was used to generate the website's favicon.
+
+6. [Django:](https://www.djangoproject.com/)
+  - Django is the python web framework used to implement the website's MVC structure.
+ 
+7. [Google Fonts:](https://fonts.google.com/)
+  - Google fonts was used to import the fonts that were used as the primary typography on the website.
+ 
+8. [Font Awesome:](https://fontawesome.com/)
+  - Font Awesome's icon library was used to reinforce sections and information points throughout the website.
+ 
+9. [Git:](https://git-scm.com/)
+  - Git was used as the primary version control software for the project. It was operated using the Gitpod terminal.
+ 
+10. [GitHub:](https://github.com/)
+  - GitHub is where the project is stored. It was also used to view version control changes.
+ 
+11. [Gitpod:](https://gitpod.io/)
+  - Gitpod was the IDE used to program the website.
+ 
+12. [Coolors:](https://coolors.co/)
+  - Coolors was used to generate colours for a scheme that was harmonious and evoked the desired aesthetic.
+ 
+13. [Figma:](https://www.figma.com/)
+  - Figma was used to generate the initial wireframes and mockups that were used to inform the programming of the website.
+
+14. [Responsive Viewer:](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en)
+  - This chrome web extension was used as it allows for multiple views of a website at multiple scales and device sizes at once. It was used for testing responsive design.
+ 
+15. [Chrome DevTools:](https://developers.google.com/web/tools/chrome-devtools)
+ - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
+
+16. [Hover.css:](https://ianlunn.github.io/Hover/)
+
+17. [Heroku:](https://dashboard.heroku.com/apps)
+- Heroku is the cloud platform where the live version of this project is hosted
+
+18. [Chrome Lighthouse:](https://developers.google.com/web/tools/lighthouse)
+- Chrome Lighthouse was used to analyse and test page load speeds and page performance.
+
+19. [Multi Device Website Mockup Generator:](https://techsini.com/multi-mockup/index.php)
+- This website was used to generate the image at the top of the readme.MD file.
+
+20. [Amazon AWS:](https://aws.amazon.com/)
+- Amazon's AWS servers are used for the hosting of static and media files for the deployed project.
+
+21. [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/)
+- Django Allauth is used in the project to implement login/registration and authentication features for user profiles.
+
+22. [Stripe:](https://stripe.com/ie)
+- Stripe's API was used to implement a payment system to enable the store functionality.
 
 ### Testing
 
 ### Browser and Device Size Testing
-The website was tested thoroughly across all major browsers and all screen and devices sizes down to 360px. 
+The website was tested thoroughly across all major browsers and all screen and device size down to 360px. 
 
 - [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/)
 
@@ -833,7 +902,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 #### 1.    Goal: As a first-time user, I should be able to understand the purpose and function of the website.
 
-**Expected:** When the user accesses the website they should be presented with a landing page that presents the main ideals behind the website as well as highlghts the most important links.
+**Expected:** When the user accesses the website they should be presented with a landing page that presents the main ideas behind the website as well as highlight the most important links.
 
 **Result:** Upon reaching the landing page the user is presented with a banner element containing two CTA buttons linking to the store and the sponsorship page. As well as this, the banner contains an information text piece briefly explaining the goals of the company.
 
@@ -841,9 +910,9 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 #### 2.    Goal: As a first-time user, I should be able to understand the navigation structure and how to interact with the website.
 
-**Expected:** When the user accesses the website there should be a clearly visibile navigation structure abd a consistent UX design.
+**Expected:** When the user accesses the website there should be a visible navigation structure and a consistent UX design.
 
-**Result:** The navbar is fixed to the top of the screen so that the main navigation options are always available to the user, and the primary interactions on each page are hightlighted with a consistent and eye catching CTA button design indicating to the user at a very quick glance what the primary interactions are.
+**Result:** The navbar is fixed to the top of the screen so that the main navigation options are always available to the user, and the primary interactions on each page are highlighted with a consistent and eye-catching CTA button design indicating to the user at a very quick glance what the primary interactions are.
 
 ![Image of navbar](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/navbar.PNG)
 
@@ -851,7 +920,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** The user should be able to click on the Progress link to be presented with information about the company and the progress of their tree planting efforts.
 
-**Result:** The user can click on the progress link present in the navbar to be navigated to the Progress page. When on the progress page the user is presented with a series of posts in horizontal display. These posts contain information about the company's progress and actions.
+**Result:** The user can click on the progress link present in the navbar to be navigated to the Progress page. When on the progress page the user is presented with a series of posts in the horizontal display. These posts contain information about the company's progress and actions.
 
 ![Image of progress blog page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/progress.PNG)
 
@@ -881,7 +950,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 ![Image of sponsorship page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/sponsor.PNG)
 
-#### 3.    Goal: As a customer, I should be able to silter products by category.
+#### 3.    Goal: As a customer, I should be able to filter products by category.
 
 **Expected:** The user should be able to select from a series of options to filter the display of products on the page.
 
@@ -889,27 +958,27 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 ![Image of product filter option](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/filter.PNG)
 
-#### 4.    Goal: As a customer, I should be alter the criteria under which the displayed products are ordered.
+#### 4.    Goal: As a customer, I should be able to alter the criteria under which the displayed products are ordered.
 
 **Expected:** The user should be able to select from a series of options to adjust the displayed order of products in the store.
 
-**Result:** When on the product store page, the user can click the select element labelled Sort By: and then select one of the dropdown options representing a number of different criteria. When the user selects one of these options the products displayed will adjust and become ordered by the manner chosen. 
+**Result:** When on the product store page, the user can click the select element labelled Sort By: and then select one of the dropdown options representing several different criteria. When the user selects one of these options the products displayed will adjust and become ordered by the manner chosen. 
 
 ![Image of sort field](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/sort.PNG)
 
-#### 5.    Goal: As a customer, I should be able to search products directly by key words.
+#### 5.    Goal: As a customer, I should be able to search products directly by keywords.
 
 **Expected:** The user should be able to search for products using a search box.
 
 **Result:** When on the product store page, the user can enter search terms in the input field at the top of the page. When the user enters their query and clicks the submit button, the page will reload with only products referencing that query displayed.
 
-![Image of key word search input](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/search.PNG)
+![Image of keyword search input](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/search.PNG)
 
 #### 6.    Goal: As a customer, I should be able to view details about a specific product.
 
-**Expected:** The user should be able to click on a product card to be brought to the product details page, where more deatils about the product will be available.
+**Expected:** The user should be able to click on a product card to be brought to the product details page, where more details about the product will be available.
 
-**Result:** From the store or sponsorship page the user can either select the button labelled Details on any of the product display cards or on the image of the product. When the user does this they will be navigated to the product details page where they can find out more about the product.
+**Result:** From the store or sponsorship page the user can either select the button labelled Details on any of the product display cards or the image of the product. When the user does this they will be navigated to the product details page where they can find out more about the product.
 
 ![Image of product details page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/product-details.PNG)
 
@@ -917,7 +986,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** The user should be able to select an 'Add to basket' button wherever the product is visible to add it to the page.
 
-**Result:** Whether on the store or sponsorship page, or in the product details page of a specific product the user is able to select a quantity from the number input field and then select the add to basket button to add the product to their basket.
+**Result:** Whether on the store or sponsorship page or in the product details page of a specific product the user can select a quantity from the number input field and then select the add to basket button to add the product to their basket.
 
 ![Image of add to basket button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-to-basket.PNG)
 
@@ -925,7 +994,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** The user should be able to view the contents of their basket.
 
-**Result:** The user can select the branch icon in the top right of the page above the current basket total display to be navigated to the basket page. On the basket page the user will then be presented with a table displaying each of the products in the basket along with the quantity of each item and the subtotal.
+**Result:** The user can select the branch icon in the top right of the page above the current basket total display to be navigated to the basket page. On the basket page, the user will then be presented with a table displaying each of the products in the basket along with the quantity of each item and the subtotal.
 
 ![Image of basket contents](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/basket.PNG)
 
@@ -955,9 +1024,9 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 #### 12.    Goal: As a customer, I should be able to checkout easily.
 
-**Expected:** The user should be presented with a clear interaction path to checkout, to ensure an easy and satisying user experience.
+**Expected:** The user should be presented with a clear interaction path to checkout, to ensure an easy and satisfying user experience.
 
-**Result:** Upon adding an item to the basket, a notification will appear at the top of the page presenting an option to 'View contents and checkout'. If the user selects this option they will be navigated to the basket page, where they will be presented with a summary of items in the basket and a price breakdown presenting the total price of the order. Under the price breakdown there is a link to 'Checkout Securely'. If the user selects this button they will be navigated to the checkout page, containing a delivery and card details form and a 'Complete order' button.
+**Result:** Upon adding an item to the basket, a notification will appear at the top of the page presenting an option to 'View contents and checkout'. If the user selects this option they will be navigated to the basket page, where they will be presented with a summary of items in the basket and a price breakdown presenting the total price of the order. Under the price breakdown, there is a link to 'Checkout Securely'. If the user selects this button they will be navigated to the checkout page, containing a delivery and card details form and a 'Complete order' button.
 
 ![Image of checkout button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/checkout-1.PNG)
 
@@ -965,7 +1034,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 #### 13.    Goal: As a customer, I want to be able to store my delivery details for future use.
 
-**Expected:** After inputting their delivery details the user should be able to select an option to store their details to allow for a faster checkout in the future.
+**Expected:** After inputting their delivery details the user should be able to select an option to store their details to allow for faster checkout in the future.
 
 **Result:** From the checkout screen, if a user is signed in, they will be presented with a checkbox labelled 'Store these details'. If a user selects this checkbox before checking out, the details will be adding to their profile and will automatically populate the form in future checkouts.
 
@@ -975,17 +1044,17 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 #### 1.    Goal: As a registered user, I should be able to sign in.
 
-**Expected:** The user should be able to select a sign in link on the navbar to be brought to a sign in page.
+**Expected:** The user should be able to select a sign-in link on the navbar to be brought to a sign-in page.
 
-**Result:** From the navbar the user can select the sign in link from the profile dropdown. When selected the user will be navigated to the sign in page from where they can enter their details and sign in to the website.
+**Result:** From the navbar the user can select the sign-in link from the profile dropdown. When selected the user will be navigated to the sign-in page from where they can enter their details and sign in to the website.
 
-![Image of image of sign in button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/login.PNG)
+![Image of sign-in button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/login.PNG)
 
 #### 2.    Goal: As a registered user, I should be able to sign out.
 
-**Expected:** While signed in the user should be able to select a sign out page from the navbar to be signed out of the website.
+**Expected:** While signed in the user should be able to select a sign-out page from the navbar to be signed out of the website.
 
-**Result:** From the navbar the user can select the sign out link from the profile dropdown. When selected the user will be navigated to the sign out page where they will be asked to confirm taht they wish to sign out and when confirmed be redirected to the home page and signed out.
+**Result:** From the navbar the user can select the sign-out link from the profile dropdown. When selected the user will be navigated to the sign out page where they will be asked to confirm that they wish to sign out and when confirmed be redirected to the home page and signed out.
 
 ![Image of sign out button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/logout.PNG)
 
@@ -1001,7 +1070,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** The user should be able to open a page to view the details of one of their previous orders.
 
-**Result:** From the profile page a user can select the 'Details' link of an order in the order history table. THis will navigate them to the order details page for that order, where the information about the order will be displyaed. 
+**Result:** From the profile page a user can select the 'Details' link of an order in the order history table. This will navigate them to the order details page for that order, where the information about the order will be displayed. 
 
 ![Image of order details page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/order-details.PNG)
 
@@ -1017,7 +1086,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** The user should be able to select an option to edit their stored delivery details.
 
-**Result:** On the profile page, above the 'Delivery details' section there is an edit icon. When the user selects this icon the delivery details will be replaced with a form, containing the existing stored details. If a user changes any of the values in the fields and submits the form the stored details on their profile will be updated.
+**Result:** On the profile page, above the 'Delivery details' section, there is an edit icon. When the user selects this icon the delivery details will be replaced with a form, containing the existing stored details. If a user changes any of the values in the fields and submits the form the stored details on their profile will be updated.
 
 ![Image of edit details form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-details.PNG)
 
@@ -1025,7 +1094,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** From the progress blog, the user should be able to engage and comment on any of the posts.
 
-**Result:** From the progress blog page, the user can select the 'Show comments' link on the bottom of each post to bring up the comment section. At the top of the comment section there is a textarea input field with a clear and submit button. If the user enters a comment in the field and selects the submit button the page will reload and the comment will be added to the comment section of the post.
+**Result:** From the progress blog page, the user can select the 'Show comments' link on the bottom of each post to bring up the comment section. At the top of the comment section there is a Textarea input field with a clear and submit button. If the user enters a comment in the field and selects the submit button the page will reload and the comment will be added to the comment section of the post.
 
 ![Image of add comment](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-comment.PNG)
 
@@ -1041,7 +1110,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** The user should be able to select an option to change their stored password.
 
-**Result:** From the profile page user can select the 'Change Password' link alongside their current email address. Upon clicking this link the user will be redirected to the password admin page. From there they can then enter a new password and repeat it in the form and click sumbit. The password will then be updated.
+**Result:** From the profile page user can select the 'Change Password' link alongside their current email address. Upon clicking this link the user will be redirected to the password admin page. From there they can then enter a new password and repeat it in the form and click submit. The password will then be updated.
 
 ![Image of password admin form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/password-admin.PNG)
 
@@ -1051,7 +1120,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** While signed in as an authorised user, the user should be able to add a product to the store.
 
-**Result:** The user can select the Product Management link from the navbar. The user will then be directed to the Add Product page, from where they can fill in the form with the details of the new product. When the user then selects the 'Add Product' button the user will be redirected to the store page and the product will be added to store.
+**Result:** The user can select the Product Management link from the navbar. The user will then be directed to the Add Product page, from where they can fill in the form with the details of the new product. When the user then selects the 'Add Product' button the user will be redirected to the store page and the product will be added to the store.
 
 ![Image of add product form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-product.PNG)
 
@@ -1059,7 +1128,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** While signed in as an authorised user, the user should be able to edit a product in the store.
 
-**Result:** While on the product, store or product details page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Edit' option. The user will then be directed to the edit product page, where the current details of the product will be input. The user can then edit the fields and when they submit the form the product will be updated in the store.
+**Result:** While on the product, store or product details page the user can click the three-dot icon button. From the dropdown menu that appears, the user can select the 'Edit' option. The user will then be directed to the edit product page, where the current details of the product will be input. The user can then edit the fields and when they submit the form the product will be updated in the store.
 
 ![Image of edit product form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-product.PNG)
 
@@ -1067,7 +1136,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** While signed in as an authorised user, the user should be able to delete a product in the store.
 
-**Result:** While on the product, store or product details page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Delete' option. The product will then be deleted from the store and the user will be directed to the store page.
+**Result:** While on the product, store or product details page the user can click the three-dot icon button. From the dropdown menu that appears, the user can select the 'Delete' option. The product will then be deleted from the store and the user will be directed to the store page.
 
 ![Image of add post button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/add-post.PNG)
 
@@ -1084,7 +1153,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** While signed in as an authorised user, the user should be able to edit a product in the store.
 
-**Result:** While on the progress page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Edit' option. The user will then be directed to the edit post page, where the current details of the post will be input. The user can then edit the fields and when they submit the form the post will be updated in the progress blog.
+**Result:** While on the progress page the user can click the three-dot icon button. From the dropdown menu that appears, the user can select the 'Edit' option. The user will then be directed to the edit post page, where the current details of the post will be input. The user can then edit the fields and when they submit the form the post will be updated in the progress blog.
 
 ![Image of edit post form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-post.PNG)
 
@@ -1092,7 +1161,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** While signed in as an authorised user, the user should be able to delete a product in the store.
 
-**Result:** While on the progress page the user can click the three dot icon button. From the dropdown menu that appears, the user can select the 'Delete' option. The product will then be deleted from the store and the user will be directed to the progress page.
+**Result:** While on the progress page the user can click the three-dot icon button. From the dropdown menu that appears, the user can select the 'Delete' option. The product will then be deleted from the store and the user will be directed to the progress page.
 
 ![Image of delete post button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/delete-post.PNG)
 
@@ -1100,7 +1169,7 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 **Expected:** While signed in as an authorised user, the user should be able to edit and delete any comment on the blog.
 
-**Result:** On the progress blog page, the user can open the comment section and either click edit or delete on any comment in the comment section. If they select the delete button the comment will be deleted, if they select the edit button. The comment will be replaced with a form textarea containing the current comment. If they then click the 'Save' button the page will reload and the comment will be updated.
+**Result:** On the progress blog page, the user can open the comment section and either click edit or delete on any comment in the comment section. If they select the delete button the comment will be deleted if they select the edit button. The comment will be replaced with a form Textarea containing the current comment. If they then click the 'Save' button the page will reload and the comment will be updated.
 
 ![Image of edit comment button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/edit-comment-1.PNG)
 
@@ -1120,7 +1189,7 @@ The first bug that I will highlight is an issue that arose regarding the input o
 
 ![Image of name not being input issue](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/name-not-input-bug.PNG)
 
-After investigating the issue I figured out that the issue was being caused by the full_name field being input by a method of the user model called get_full_name(). The issue was arising because in the registration field there was no input field for the user to enter their name in the first place, therefore the method was calling on empty fields and returning nothing.
+After investigating the issue I figured out that the issue was being caused by the full_name field being input by a method of the user model called get_full_name(). The issue was arising because in the registration field there was no input field for the user to enter their name in the first place, therefore the method was called on empty fields and returning nothing.
 
     order_form = OrderForm(initial={
         'full_name': profile.user.get_full_name(),
@@ -1135,15 +1204,15 @@ This solved the issue immediately and was a very simple solution to the issue.
 ![Image of name not being input solution](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/name-not-input-bug-resolve.PNG)
 
 2.
-The second bug was a relatively minor one relating to the rendering of an email field to the order confirmatiom page. In the order confirmation page, instead of the user's email address being rendered as was intended, the django template expression was rendered in raw format.
+The second bug was a relatively minor one relating to the rendering of an email field to the order confirmation page. In the order confirmation page, instead of the user's email address being rendered as was intended, the Django template expression was rendered in raw format.
 
 ![Image of email not being rendered](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/template-bug.PNG)
 
-A quick investigation of the html for that template revealed that the expression had been split across multiple lines by a html formatted that I had used on the html file. 
+A quick investigation of the HTML for that template revealed that the expression had been split across multiple lines by an HTML formatted that I had used on the HTML file. 
 
 ![Image of email not being rendered code](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/template-bug-code.PNG)
 
-By tweaking the html slightly and putting the expression back on one line, the problem was solved and the email was rendered correctly.
+By tweaking the HTML slightly and putting the expression back on one line, the problem was solved and the email was rendered correctly.
 
 ![Image of email not being rendered solution](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/template-bug-resolved.PNG)
 
@@ -1152,37 +1221,37 @@ By tweaking the html slightly and putting the expression back on one line, the p
 ## Deployment
 
 ### To Publish to Heroku
-1. Create a heroku app, choose appropriate region.
+1. Create a Heroku app, choose the appropriate region.
 
 ![Deploy step 1](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_01.PNG)
 
 ![Deploy step 2](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_02.PNG)
 
-2. Go to Resources tab
+2. Go to the Resources tab
 
 ![Deploy step 3](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_4.PNG)
 
-3. Add Heroku Postgres in Add-Ons section
+3. Add Heroku Postgres in the Add-Ons section
 
 ![Deploy step 4](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_5.PNG)
 
-4. In project terminal install dj_database_url and psychopg2-binary update requirements.txt
+4. In the project terminal install dj_database_url and psychopg2-binary update requirements.txt
 
 ![Deploy step 5](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_9.PNG)
 
 ![Deploy step 6](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_10.PNG)
 
-5. In settings.py import dj_databse_url add heroku url to allowed hosts setting
+5. In settings.py import dj_databse_url add Heroku URL to allowed hosts setting
 
 ![Deploy step 7](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_7settings.PNG)
 
-6. Temporarily replace databse config and set it to the heroku postgres database
+6. Temporarily replace database config and set it to the Heroku Postgres database
 
-7. Run migrations to update database with models needed for project, and create a superuser for the postgres deployed project
+7. Run migrations to update the database with models needed for the project, and create a superuser for the Postgres deployed project
 
 ![Deploy step 8](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_11.PNG)
 
-8. Update Databases configuration to check for 'DATABASE_URL' in env, if it is, connect the project to the postgres database, otherwise uses local sqlite database.
+8. Update Databases configuration to check for 'DATABASE_URL' in env, if it is, connect the project to the Postgres database, otherwise uses local SQLite database.
 
 ![Deploy step 9](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_8.PNG)
 
@@ -1194,21 +1263,21 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
         web: gunicorn ms4_trestore.wsgi:application
 
-11. Login to heroku through the terminal 
+11. Login to Heroku through the terminal 
 
 ![Deploy step 11](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_13.PNG)
 
-12. Then in heroku set DISABLE_COLLECTSTATIC = 1 in config vars
+12. Then in Heroku set DISABLE_COLLECTSTATIC = 1 in config vars
 
 ![Deploy step 12](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_6.PNG)
 
-13. Then commit and push to github
+13. Then commit and push to GitHub
 
-14. Then setup heroku remote and push to heroku master
+14. Then setup Heroku remote and push to Heroku master
 
 ![Deploy step 13](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_14.PNG)
 
-15. In heroku Deploy tab connect to the github repo and enable automatic deploys
+15. In Heroku Deploy tab connect to the GitHub repo and enable automatic deploys
 
 ![Deploy step 14](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_2.PNG)
 
@@ -1227,19 +1296,19 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 16](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_15.PNG)
 
-3. Create a new bucket and set nanme and region then disable Block all public access setting
+3. Create a new bucket and set name and region then disable Block all public access setting
 
 ![Deploy step 17](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_18.PNG)
 
 ![Deploy step 18](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_19.PNG)
 
-4. Create bucket and navigate to properties tab, then turn on static website hosting
+4. Create a bucket and navigate to the properties tab, then turn on static website hosting
 
 5. Set bucket to host a website and fill in default values
 
 ![Deploy step 19](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_22.PNG)
 
-6. Navigate to permissions tab and input the CORS configuration from the image below
+6. Navigate to the permissions tab and input the CORS configuration from the image below
 
 ![Deploy step 21](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_24.PNG)
 
@@ -1275,7 +1344,7 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 29](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_35.PNG)
 
-3. Navigate to Policies tab and select Create Policy button
+3. Navigate to the Policies tab and select Create Policy button
 
 ![Deploy step 30](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_37.PNG)
 
@@ -1291,7 +1360,7 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 32](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_40.PNG)
 
-7. Continue through to Review policy tab and import values as seen below with a name and description and Create the Policy
+7. Continue through to the Review policy tab and import values as seen below with a name and description and Create the Policy
 
 ![Deploy step 33](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_42.PNG)
 
@@ -1311,7 +1380,7 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 37](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_47.PNG)
 
-12. Click through to the end and create user
+12. Click through to the end and create a user
 
 13. Then download the .csv file containing that user's access credentials
 
@@ -1320,7 +1389,7 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ### Connect your project to the S3 bucket
 
-1. Open your project and install boto3 and django storages, updating requirements.txt after doing so
+1. Open your project and install boto3 and Django storages, updating requirements.txt after doing so
 
 ![Deploy step 39](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_49.PNG)
 
@@ -1332,11 +1401,11 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 41](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_55.PNG)
 
-4. Then add the user access credentials to the heroku config vars as in the image below and set USE_AWS to True
+4. Then add the user access credentials to the Heroku config vars as in the image below and set USE_AWS to True
 
 ![Deploy step 42](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_54_LI.jpg)
 
-5. In project directory create custom_storages.py and set it up as seen in the image below to configurate the project storing files using AWS
+5. In the project directory create custom_storages.py and set it up as seen in the image below to configure the project storing files using AWS
 
 ![Deploy step 43](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_61.PNG)
 
@@ -1344,7 +1413,7 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 44](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_56.PNG)
 
-7. When project is deployed on heroku static files will automatically be collected and uploaded to AWS bucket static/ folder
+7. When the project is deployed on Heroku static files will automatically be collected and uploaded to AWS bucket static/ folder
 
 ![Deploy step 45](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_57.PNG)
 
@@ -1356,13 +1425,13 @@ By tweaking the html slightly and putting the expression back on one line, the p
 
 ![Deploy step 47](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_58.PNG)
 
-10. Return to your deployed project on heroku and through the /admin/ portal verify the superuser's email address to grant them full access to the site
+10. Return to your deployed project on Heroku and through the /admin/ portal verify the superuser's email address to grant them full access to the site
 
-11. To finalise deploying the project, add the stripe access variables to the heroku config vars as seen below
+11. To finalise deploying the project, add the stripe access variables to the Heroku config vars as seen below
 
 ![Deploy step 48](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_60.PNG)
 
-12. Then create a new stripe webhook endpoint for the deployed url and copy the webhook signing secret to the config vars
+12. Then create a new stripe webhook endpoint for the deployed URL and copy the webhook signing secret to the config vars
 
 ![Deploy step 49](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/deploy_59.PNG)
 
@@ -1402,7 +1471,7 @@ By tweaking the html slightly and putting the expression back on one line, the p
 To run the project locally there are several things that you need to do. 
 Firstly open the project in your IDE of choice and ensure that all of the dependencies listed in Requirements.txt are installed.
 
-Then you either need to export the projects necessary config vars through the terminal or create an env.py file containing the config vars as these will be necessary for the full functionality of the website.
+Then you either need to export the project's necessary config vars through the terminal or create an env.py file containing the config vars as these will be necessary for the full functionality of the website.
 After adding all of the necessary settings to the env.py the project will run locally and you can host locally by using the following command.
 
     python3 manage.py runserver
