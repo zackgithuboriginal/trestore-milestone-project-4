@@ -94,7 +94,7 @@
                                 {{ order.date }}
                             </td>
                             <td>
-                                {{ order.grand_total }}
+                                €{{ order.grand_total }}
                             </td>
                             <td>
                                 <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number}}">Order details</a>
