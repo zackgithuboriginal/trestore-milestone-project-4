@@ -1310,6 +1310,12 @@ td p {
 }
 
 .checkout-card .row {
+    padding: 0 1rem 0 1rem;
+    margin: 1rem 0 0 0;
+}
+
+
+.checkout-card .row:last-child {
     padding: 0 1rem 1rem 1rem;
     margin: 1rem 0 0 0;
 }
