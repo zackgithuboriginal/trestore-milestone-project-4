@@ -40,14 +40,25 @@ def add_to_basket(request,
     """
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
-        messages.success(request,
-                         f'Quantity of {product.product_name} in'
-                         ' basket has been updated.', extra_tags='checkout')
+        if product.category.name != 'sponsorship' :
+            messages.success(request,
+                            f'Quantity of {product.product_name} in your'
+                            ' basket has been updated.', extra_tags='checkout')
+        else:
+            messages.success(request,
+                            f'Quantity of the {product.product_name} package'
+                            ' in your basket has been updated.', extra_tags='checkout')
+
     else:
         basket[item_id] = quantity
-        messages.success(request,
-                         f'{product.product_name} has been addded'
-                         ' to your basket!', extra_tags='checkout')
+        if product.category.name != 'sponsorship' :
+            messages.success(request,
+                            f'{product.product_name} has been added'
+                            ' to your basket!', extra_tags='checkout')
+        else:
+            messages.success(request,
+                            f'Package for {product.product_name} has been added'
+                            ' to your basket!', extra_tags='checkout')
 
     request.session['basket'] = basket
 
