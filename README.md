@@ -172,9 +172,13 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 #### Sponsorship packages rework
 
-Unfortunately due to time constraints I dedicided to endeavor for a minimum viable design with regards to the functionality of the sponsorship packages section of the project. Ideally if there had been time there are a number of changes I would implement to this and in future updates to the project I intend to rework the functionality and feature list of the sponsorship aspect of the website.
+Unfortunately, due to time constraints, I decided to endeavour for a minimum viable design for the functionality of the sponsorship section of the project. Ideally, if there had been time there are a number of changes I would implement to this and in future updates to the project I intend to rework the functionality and feature list of the sponsorship aspect of the website.
 
-The most significant change to the project that I intend to update is creating a new app to handle the sponsorship functionality. This app would enable a user to directly donate money to the cause of planting trees without having to add the package to the basket and proceed through the the same checkout flow as the store and products. In doing so I would redesign the sponsorship page to be more dynamic to provide a more streamlined experienced tailored to that manner of direct donation.
+The most significant change to the project that I intend to update is creating a new Django app to handle the sponsorship functionality. This app would enable a user to directly donate money to the store for the planting of trees without having to add the package to the basket and proceed through the same checkout flow as the store and typical products. In doing so I would also redesign the sponsorship page to be more dynamic and to provide a more streamlined experienced tailored to a direct donation form of payment.
+
+#### Allauth social accounts
+
+In future updates to this project, I intend to implement the ability to sign in and create store accounts using your social media accounts using Django allauth's social accounts authentication package. This would enable user's to sign up for the store in a much more straightforward manner and would encourage user's to make accounts and use the store.
 
 ### Database Design / Data Modelling
 
@@ -218,75 +222,158 @@ The Category model is used to store the basic details regarding the categories o
 
 #### Home Page
 
-![Image of responsive page mockups]()
+![Image of home page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-home.PNG)
 
-The intention of the design of the home page is to present the most important links and resources on the site to the user as well as to welcome them to the website and inform them of the visual and interaction language of the website.
+The idea behind the design of the home page is to present the most important links and resources on the site to the user as well as to welcome them to the website and inform them of the visual and interaction language of the website.
 
-The layout itself is relatively simple consisting primarily of a banner element containing two cta buttons, one linking to to the products store and one linking to the sponsorship packages available. The page also features a large hero image illustration o a tree against a dark green background to help create in the user a sense of the relationship between the user and the website's environmental goals.
+The layout itself is relatively simple consisting primarily of a banner element containing two CTA buttons, one linking to the products store and one linking to the sponsorship packages. The page also features a large hero image illustration o a tree against a dark green background to help create in the user a sense of the relationship between the user and the website's environmental goals.
 
 #### Store Page
 
-The store page is simply designed, prioritising above all a clean and clear user experience and access to information and products. The page has two sections, the first of these two sections is the product sort filtering and search section. This section provides users three options to customise the display of products in the store, offering the ability to filter by a category, sort by either price ascending, price descending or by category and finally to filter results by search terms. By submitting these parameters the products displayed on the page will change to suit the needs and interests of the customer and create a positive user experience when browsing.
+![Image of store page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-store.PNG)
 
-The second section is the product container wherein products are displayed on card elements in a responsive grid to provide a satisfying and easy browsing experience.
-The product card contains several features including a product image, the product name, price and SKU value, a link to the product details page for that product and a quantity input field with a button to add the product to the basket.
+The store page is simply designed, prioritising above all a clean and clear user experience and access to information and products. The page has two sections, the first of these as seen in the image below is the product sort, filtering and search section. This section provides users three options to customise the display of products in the store, offering the ability to filter by a category, sort by either price ascending, price descending or by category and finally to filter results by search terms. By submitting these parameters the products displayed on the page will change to suit the needs and interests of the customer and create a positive user experience when browsing.
+
+![Image of store page filter options](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-store-filter.PNG)
+
+The second section is the product container wherein products are displayed on card elements in a responsive grid to provide a satisfying and easy browsing experience across all devices sizes. The product card contains several features including a product image, the product name, price and SKU value, a link to the product details page for that product and a quantity input field with a button to add the product to the basket.
+
+![Image of store page product card](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-store-card.PNG)
+
+Each product card also has a product options dropdown that can be activated to provide links to the edit and delete options for the product by clicking the three dots icon if the user is authorised as a superuser.
+
+![Image of store page product card edit options](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-store-card-options.PNG)
 
 #### Navbar
 
-The navbar is fixed at the top of the base template so that it appears on all pages of the site. It contains links to all of the primary pages as well as a dropdown list providing links related to profile actions and certain restricted actions such as adding products to the store.
+![Image of navbar](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-navbar.PNG)
 
-The colour of the navbar is the primary branding colour of the website to create a cohesive environment across all of the pages and applications of the site.
+The navbar is fixed at the top of the base template so that it appears on all pages of the site. The colour of the navbar is the primary branding colour of the website to create a cohesive design scheme across all of the pages and applications of the site. It contains links to all of the primary pages as well as a dropdown list providing links related to profile actions and certain restricted actions such as adding products to the store.
+
+![Image of navbar profile dropdown options](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-navbar-profile-open.PNG)
+
+On the right-hand side of the navbar, there is a branch icon representing a link to the basket page along with a number display below which displays the total price of all items currently present in the basket. This branch icon can be clicked on to navigate the user to the basket page containing all of the products and quantities in their basket currently.
+
+![Image of navbar basket icon](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-navbar-basket.PNG)
 
 #### Progress Blog
 
-The progress blog is the page that visitors can go to to learn about the company and see updates and news from the company about its various tree-planting efforts. The page contains a primary container for the posts themselves as well as the background image of the SVG tree that is also used on the home page. 
+![Image of progress blog page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-progress.PNG)
+
+The progress blog is the page that visitors can go to to learn about the company and see updates and news from the company about its various environmental efforts. The page contains a primary container for the posts themselves as well as the background image of the tree that is also used on the home page. 
 The Post container has two main components, an add post button, that will display if the active user is authorised and the post display.
+
+![Image of progress blog add post button](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-progress-button.PNG)
 
 The post display consists of a series of post cards displayed vertically with the newest post at the top. The post card itself has several elements. If the user is authorised there is an options menu dropdown button on the head of the post, with an image below and the content of the post just above the base. Along the base of the post, there is the date that the post was published, the author of the post and finally, a show comments button.
 
-When the show comment button is pressed the comments section will open, containing the add comment form and the comments that are already attached to the post.
+![Image of progress post](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-progress-card.PNG)
+
+![Image of progress post card options](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-progress-card-options.PNG)
+
+When the show comment button is pressed the comments section will display, containing the add comment form and the comments that are already attached to the post.
+
+![Image of progress post comment section](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-progress-card-comment-section.PNG)
+
+Comments can be added to the post using this form, and existing comments can either be edited or deleted by the author or by an authorised user. Comments can be edited by selecting the Edit option at the bottom of the comment which will hide the comment and replace it with a form with the comment's content prefilled. If a user changes the content of the form and saves it, then the page will reload the comment will contain its new content.
+
+![Image of progress post comment section edit comment form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-progress-card-comment-section-edit.PNG)
 
 #### Add / Edit Post Page
+
+![Image of add post page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-add-post.PNG)
+
+![Image of edit post page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-edit-post.PNG)
 
 The add and edit post pages are relatively simple, they contain a form with an input field for each of the fields of the post model. In the case of the image field, a custom Django widget is used, which allows for the display of the image if one is already in use.
 
 #### Sponsorship Page
 
-The sponsorship page is the display page for sponsorship packages that the website offers. These packages are intended to be used as gifts and potentially as a target to funraise towards. The page contains a central display of product cards similar to the product store. The cards in the store offer customers the opportunity to directly sponsor the planting of trees in different quantities. Each of the cards, similar to the products store, contains a title, an image, a description and a view details and add to basket button. 
+![Image of sponsorship packages page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-sponsorship.PNG)
 
-Unfortunately due to time constraints I was unable to implement a number of the features that I would have liked to include with regards to this part of the project. As covered in more detail above in the planned features section ideally I would implement a rework of the feature entirely to create an django app dinstinct from that of the products module.
+The sponsorship page is the display page for sponsorship packages that the website offers. These packages are intended to be used as gifts and potentially as a target to fundraise towards. The page contains a central display of product cards similar to the product store. The cards in the store offer customers the opportunity to directly sponsor the planting of trees in different quantities. Each of the cards, similar to the products store, contains a title, an image, a description as well as view details and add to basket buttons. 
+
+Unfortunately, due to time constraints, I was unable to implement a number of the features that I would have liked to include in this part of the project. As covered in more detail above in the planned features section ideally I would implement a rework of the feature entirely to create a Django app distinct from that of the products module.
 
 #### Profile Page
 
-The profile page is the centralised location for a lot of the user's interactions with their own account and history with the site. 
+![Image of profile page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-profile.PNG)
+
+The profile page is the centralised location for a lot of the user's interactions with their account details and as well as where they can find a record of their history with the site. On the top of the page, there is a display of the number of trees that have been planted due to the tree planting contribution of each of the user's orders and purchases. I believe that this could be a point of pride for customers, and provide them with further encouragement to use the store and make repeat purchases to improve their environmental contribution.
+
+![Image of profile page tree planted number](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-profile-trees.PNG)
+
+The other two sections on the page are the user's contact and delivery details, which can be updated. In the case of the email and password settings the user can update them by clicking the highlighted links alongside the current value which will redirect them to forms that can be used to change their details, and in the case of the delivery details the user can click the edit icon in the top right of the form to convert the text display to a form with input elements for each field as can be seen in the image below.
+
+![Image of profile page edit stored details form](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-profile-edit-details.PNG)
+
+The final section of the profile page is the order history section which is a table element containing a display of each of the user's previous orders. The table contains columns for the order number of the order as well as the date that the order was placed and the total cost of the order. It also contains a link labelled Order Details for each order which when clicked will navigate the user to the order details page containing more extensive details of the order in question.
 
 #### Basket Page
 
+![Image of basketpage](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-basket.PNG)
+
+The basket page is where the user can go to see and edit the contents of their basket, as well as view the total cost of the items in the basket. The quantities of the items in the basket can be adjusted by using the number input field below the quantity as seen in the image below. Next to each item is also a delete button to remove the item from the basket.
+
+![Image of basket contents update quantity input](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-basket-update.PNG)
+
+The price summary section contains the total of the items in the basket as well as the delivery total and the percentage of the total that will be put directly towards planting trees. At the bottom of this section, there are two links, one that will return the user to the basket and another that will submit the checkout and payment request.
+
+![Image of basket price summary](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-basket-summary.PNG)
+
 #### Checkout Page
 
-#### Order Confirmation
+![Image of checkout page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-checkout.png)
+
+The checkout page contains two main elements. The first, the checkout form, contains input fields for all of the user's necessary order details including name, email, address details and a stripe generated card input field. Just below the delivery details section of the form is the payment details including a list of all items in the basket, along with their quantities, and subtotals with the totals and delivery costs below that.
+
+![Image of checkout page store details option](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-checkout-store-details.PNG)
+
+#### Order Confirmation / Order Details
+
+![Image of order confirmation page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-order-confirmation.PNG)
+
+The order confirmation and order detail pages are both rendered from the same template with only a few changes to the heading and text content being the difference between them. The page itself contains a page heading and message at the top thanking the customer for their purchase and informing them that they have been emailed the order details as well. Below that there is a box containing all of the order details including the delivery and payment details as well as the contents of the order.
+
+Below the order details box, there is a link back to either the home page or the user's profile, depending on whether or not the page is displaying the order confirmation or order details from the profile.
 
 #### Login / Register Page
+
+![Image of sign-in page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-sign-in.PNG)
+
+![Image of registration page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-sign-up.PNG)
 
 The login and registration pages are very similar pages. They both contain a central form with a background image of a branch against the sky. The registration form contains a field for the user's username, two fields for the user's email address and two for the user's password. The login form contains just two fields, one for the user's username and one for the user's password.
 
 #### Product Details
 
-The product details page is primarily used for presenting all of the information about a product to the user in one place. The page contains all of the product details including product name, product description price, SKU, image, as well as edit and delete buttons if the user is authorised as a superuser. Additionally the page contains options to add the product to the basket with a quantity input field as well as a button to return to the store.
+![Image of product details page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-product-details.PNG)
+
+The product details page is primarily used for presenting all of the information about a product to the user in one place. The page contains all of the product details including product name, product description price, SKU, image, as well as edit and delete buttons if the user is authorised as a superuser. Additionally, the page contains options to add the product to the basket with a quantity input field as well as a button to return to the store.
 
 #### Footer
 
-The Footer which is at the bottom of all pages is the same colour as the navbar to create a clear link between them and ensure the website has a cohesive well thought out feeling. The footer contains a number of social links as well as a copyright statement with a date that automatically updates with the year.
+The Footer which is at the bottom of all pages is the same colour as the navbar to create a clear link between them and ensure the website has a cohesive well thought out design. The footer contains social links as well as a copyright statement with a date that automatically updates with the year.
+
+![Image of footer](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-footer.PNG)
 
 #### Edit / Add Product Page
 
+![Image of add product page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-add-product.PNG)
+
+![Image of edit product page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-edit-product.PNG)
+
+The add and edit product pages, similar to those of the add and edit post pages primarily consists of a central form containing input elements for every field of the product model. In the case of the image field as can be seen above a custom file input widget is used to display a preview of the image that is currently in use and to display the file name of the image that the user has chosen to add.
+
 #### Messages
 
-After a large number of actions, in particular ones that affect either the shopping basket or database interactions the website will display messages to the user to provide feedback on the success or otherwise status of the actions. For instance when a user add's a product to the basket a success message will be displayed specifying the product that has been added to the basket along with a small summary of all of the products currently in the basket and their quanities.
+![Image of the message](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-message-info.PNG)
+
+After a large number of actions, in particular, ones that affect either the shopping basket or database interactions the website will display messages to the user to provide feedback on the success or otherwise status of the actions. For instance, when a user adds a product to the basket a success message will be displayed specifying the product that has been added to the basket along with a small summary of all of the products currently in the basket and their quantities.
 
 #### Header Banner
 
-The header banner is present on all pages and it used to highlight one of the benefits of shopping in the store, 5% of all sales go directly to planting trees. It's intended to create a further incentive to encourage visitors to use the store and to buy sponsorship packages.
+The header banner is present on all pages and it is used to highlight one of the benefits of shopping in the store, 5% of all sales go directly to planting trees. It's intended to create a further incentive to encourage visitors to use the store and to buy sponsorship packages.
 
 ## Technologies Used
 
