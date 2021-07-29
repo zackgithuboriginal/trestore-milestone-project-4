@@ -1,4 +1,3 @@
-
 # Trestore - Milestone Project 4
 
 ![Image of responsive page mockups](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/multi-device.png)
@@ -169,6 +168,14 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
  -   #### Progress Blog Page - Mobile Wireframe - [View](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/progress-mobile.png)
 
 
+### Planned Features
+
+#### Sponsorship packages rework
+
+Unfortunately due to time constraints I dedicided to endeavor for a minimum viable design with regards to the functionality of the sponsorship packages section of the project. Ideally if there had been time there are a number of changes I would implement to this and in future updates to the project I intend to rework the functionality and feature list of the sponsorship aspect of the website.
+
+The most significant change to the project that I intend to update is creating a new app to handle the sponsorship functionality. This app would enable a user to directly donate money to the cause of planting trees without having to add the package to the basket and proceed through the the same checkout flow as the store and products. In doing so I would redesign the sponsorship page to be more dynamic to provide a more streamlined experienced tailored to that manner of direct donation.
+
 ### Database Design / Data Modelling
 
 ![Image of data schema diagram](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/data-schema.png)
@@ -178,168 +185,34 @@ The wireframes for the website were developed using [Figma](https://www.figma.co
 
 The ProgressPost model is the model used to store details for posts in the progress blog. It stores the basic details of the post such as the title, the post content, the date posted and an image as well as having a ForeignKey field to store the author's userprofile object. This is to provide an author's name to the post.
 
-    class ProgressPost(models.Model):
-
-    post_title = models.CharField(max_length=60, null=False, blank=False)
-    post_content = models.CharField(max_length=2000, null=False, blank=False)
-    image = models.ImageField(null=True, blank=True)
-    date = models.DateTimeField(auto_now_add=True, editable=False)
-    author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                               null=True, related_name='posts', editable=False)
-
 #### Comment model
 
 The Comment model is used to store details of comments made on posts in the progress blog. It stores the basic details of the comment such as the comment content and date posted as well as two ForeignKey fields, the post that the comment is attached to and the author of the post which is related to the user's userprofile object. This is to provide an author's name to the comment.
 
-    class Comment(models.Model):
-
-    post = models.ForeignKey(ProgressPost, null=False, blank=False,
-                             on_delete=models.CASCADE, related_name='comments',
-                             editable=False)
-    comment_content = models.CharField(max_length=400, null=False, blank=False)
-    date = models.DateTimeField(auto_now_add=True, editable=False)
-    author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                               null=True, related_name='comments',
-                               editable=False)
-
 #### User model
 
 The User model is inherited from the Django.contrib.allauth module. It is used to authenticate users and provide the ability to register and sign in to the store and the session. It contains basic details such as the username and email address as well as a password field and boolean fields specifying whether or not the user is a superuser and whether or not they have verified the email.
-
-    class User(models.Model):
-    
-        username = models.CharField(
-        _('username'),
-        max_length=150,
-        unique=True,
-        help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
-        validators=[username_validator],
-        error_messages={
-            'unique': _("A user with that username already exists."),
-        },
-        )
-        first_name = models.CharField(_('first name'), max_length=150, blank=True)
-        last_name = models.CharField(_('last name'), max_length=150, blank=True)
-        email = models.EmailField(_('email address'), blank=True)
-        is_staff = models.BooleanField(
-            _('staff status'),
-            default=False,
-            help_text=_('Designates whether the user can log into this admin site.'),
-        )
-        is_active = models.BooleanField(
-            _('active'),
-            default=True,
-            help_text=_(
-                'Designates whether this user should be treated as active. '
-                'Unselect this instead of deleting accounts.'
-            ),
-        )
-
 
 
 #### UserProfile model
 
 The UserProfile model is the model used to track the activity and details of a customer or user of the store. It has a one to one relationship with the User model to enable signing in and out of the session and providing access to personal details if authenticated. The model contains the user's delivery details if they have elected to store them for the future, as well as the tree_planting_contribution field. Which tracks the total number of trees planted due to their orders.
 
-    class UserProfile(models.Model):
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    default_full_name = models.CharField(max_length=50,
-                                         null=True, blank=True)
-    default_street_address1 = models.CharField(max_length=80,
-                                               null=True, blank=True)
-    default_street_address2 = models.CharField(max_length=80,
-                                               null=True, blank=True)
-    default_town_or_city = models.CharField(max_length=40,
-                                            null=True, blank=True)
-    default_postcode = models.CharField(max_length=20,
-                                        null=True, blank=True)
-    default_county = models.CharField(max_length=80,
-                                      null=True, blank=True)
-    default_country = CountryField(blank_label="Country",
-                                   null=True, blank=True)
-    tree_planting_contribution = models.DecimalField(max_digits=10,
-                                                     decimal_places=2,
-                                                     default=0.00)
-
 #### Orders model
 
 The Order model is the model used to track orders made in the store. It contains all of the payment and delivery details as well as a ForeignKey field containing the user's UserProfile object if they are signed in.
-
-    class Order(models.Model):
-
-    order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True,
-                                     related_name='orders')
-    full_name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(max_length=254, null=False, blank=False)
-    country = CountryField(blank_label="Country *", null=False, blank=False)
-    postcode = models.CharField(max_length=20, null=True, blank=True)
-    town_or_city = models.CharField(max_length=40, null=False, blank=False)
-    street_address1 = models.CharField(max_length=80, null=False, blank=False)
-    street_address2 = models.CharField(max_length=80, null=True, blank=True)
-    county = models.CharField(max_length=80, null=True, blank=True)
-    date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
-                                        null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2,
-                                      null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
-                                      null=False, default=0)
-    basket = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False,
-                                  blank=False, default='')
 
 #### OrderLineItem model
 
 The OrderLineItem model is used to store the product and quantity details of each order. For every product in the basket at the time of the checkout, an OrderLineItem object is created containing the Product object and the quantity of that product in the basket as well as the Order object of the order it is attached to and the linitem_total or subtotal of the quantity of the product.
 
-    class OrderLineItem(models.Model):
-
-    order = models.ForeignKey(Order,
-                              null=False,
-                              blank=False,
-                              on_delete=models.CASCADE,
-                              related_name='lineitems')
-    product = models.ForeignKey(Product,
-                                null=False,
-                                blank=False,
-                                on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=False,
-                                   blank=False,
-                                   default=0)
-    lineitem_total = models.DecimalField(max_digits=10,
-                                         decimal_places=2,
-                                         null=False,
-                                         blank=False,
-                                         editable=False)
-
 #### Product model
 
 The product model is used to store details about each product in the store. It contains the basic details of the product such as name description price SKU and image, as well as a ForeignKey field related to the Category model containing the category of the product.
 
-    class Product(models.Model):
-   
-    category = models.ForeignKey('Category', null=True, blank=True,
-                                 on_delete=models.SET_NULL)
-    product_name = models.CharField(max_length=254)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    product_description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(null=True, blank=True)
-
 #### Category model
 
-The Category model is used to store the basic details regarding the categories of products offered in the store.
-
-    class Category(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Categories'
-
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+The Category model is used to store the basic details regarding the categories of products offered in the store. It contains two fields, the category name and the friendly_name which is used for display purposes.
 
 ## Features
 
@@ -379,7 +252,13 @@ The add and edit post pages are relatively simple, they contain a form with an i
 
 #### Sponsorship Page
 
+The sponsorship page is the display page for sponsorship packages that the website offers. These packages are intended to be used as gifts and potentially as a target to funraise towards. The page contains a central display of product cards similar to the product store. The cards in the store offer customers the opportunity to directly sponsor the planting of trees in different quantities. Each of the cards, similar to the products store, contains a title, an image, a description and a view details and add to basket button. 
+
+Unfortunately due to time constraints I was unable to implement a number of the features that I would have liked to include with regards to this part of the project. As covered in more detail above in the planned features section ideally I would implement a rework of the feature entirely to create an django app dinstinct from that of the products module.
+
 #### Profile Page
+
+The profile page is the centralised location for a lot of the user's interactions with their own account and history with the site. 
 
 #### Basket Page
 
