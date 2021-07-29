@@ -1157,8 +1157,48 @@ To ensure that the website performed well and loaded all pages quickly I tested 
 
 Page | Action | Expected Result | Result
 -------- | ------------- | ------------- | ---------
-EXAMPLE | EXAMPLE ACTION | EXAMPLE RESULT | Pass
+Home Page | Click the brand link in the navbar  | Page Reloads  | Pass
+Home Page | click the View Store button  | Website navigates to the store page  | Pass
+Home Page | Click the Sponsor a Tree button  | Website navigates to the sponsorship packages page  | Pass
 
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Store Page | Select 'Seeds' from the Filter options | The page should reload and only display products with a category of Seeds. Product query statement below the input fields should reflect the change and filter options input should have Seeds selected | Pass
+Store Page | Select Category from the Sort options  | The page should reload with all products displayed in alphetical order of their category. Product query statement below the input fields should reflect the change and sort options input should show Category selected  | Pass
+Store Page | Enter 'Ash' in the Search box and submit  | The page should reload with only products with Ash in either the name or description should be displayed. Product query statement below the input fields should reflect the change and search input field should display 'ash' | Pass
+Store Page | Enter 'Ash' in the Search box and submit, then select 'Seeds' from the filter options  | The page should reload with only products with Ash in either the name or description should be displayed, then the page will reload and only products that match the keyword 'Ash' and have a category of 'seeds' will be displayed. The query statement below should reflect both criteria. And both input fields should show the correct values | Pass
+Store Page | Select 'Seeds from the Filter options and then select 'Category' from the sort options | The page should reload and only display products with a category of Seeds and the query statement and filter input should reflect the change but the option to sort by 'Category' should not be visible or selectable | Pass
+Store Page | Select 'Seeds' from the Filter options and then select 'Price Desc' from the Sort options  | The page should reload and only display products with a category of Seeds and the page should reload with only seeds displayed in descending order of price. Both the query statement and the input fields should reflect the changes  | Pass
+Store Page | Select 'Seeds' from the Filter options and then select 'Price Desc' from the Sort options, then click the reset link next to the product query statement  | The page should reload and only display Seeds and then the page should reload with seeds displayed in descending order of price. Both the query statement and the input fields should reflect the changes. When the reset link is clicked the page should reload with all products displayed in the default order and the inputs and query statement should display their default values. | Pass
+Store Page | Click the Details button on one of the product cards | The page should redirect to the product details page with the details of that product displayed | Pass
+Store Page | Click the add to basket button on one of the product cards | The page should reload, the website should display a message informing the user that the product has been added to the basket and the basket total display in the navbar should display the correct total | Pass
+Store Page | Change the number value in the quantity input field and then click the add to basket button on one of the product cards | The page should reload, the website should display a message informing the user that the the correct quantity of the product has been added to the basket and the basket total display in the navbar should display the correct total | Pass
+Store Page | Change the sort and filter options, then add a product to the basket | The page should reload to display the correct products in the correct order, inputs and query statement should reflect the parameters. When the add to basket button is clicked the page should reload and should display a message informing the user that the product has been added to the basket. The products displayed on the page should be the correct catagory and in the correct order, with the query statement and inputs still showing the correct values. | Pass
+Store Page | While signed in as a superuser click the three dot icon on the product card. | A dropdown menu should appear below the button with edit and delete options. | Pass
+Store Page | While signed in as a superuser click the three dot icon on the product card and then click the edit product link. | The website should navigate to the edit product page with the product details prefilled in the form | Pass
+Store Page | While signed in as a superuser click the three dot icon on the product card and then click the delete product link. | The page should reload and display a message informing the user that the product has been successfully deleted, the product should no longer appear in the store. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Sponsorship Page | Click the details button on one of the sponsorship cards  | The website should navigate to the product details page for the details for the sponsorship package  | Pass
+Sponsorship Page | Click the add to basket button on one of the sponsorship cards  | The page should reload, the website should display a message informing the user that the sponsorship package has been added to the basket and the basket total display in the navbar should display the correct total | Pass
+Sponsorship Page | While signed in as a superuser click the three dot icon on the sponsorship card. | A dropdown menu should appear below the button with edit and delete options. | Pass
+Sponsorship Page | While signed in as a superuser click the three dot icon on the sponsorship card and then click the edit package link. | The website should navigate to the edit product page with the details prefilled in the form | Pass
+Sponsorship Page | While signed in as a superuser click the three dot icon on the sponsorship card and then click the delete product link. | The page should reload and display a message informing the user that the package has been successfully deleted, the package should no longer appear in the store. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Progress Page | While not signed in click the show comments button on a post | The comment section for that post will appear at the bottom of the post card and the show comment link text will change to hide comments. The add comment form will inform the user that they need to be signed in to comment. | Pass
+Progress Page | While signed in click the show comments button on a post | The comment section for that post will appear at the bottom of the post card and the show comment link text will change to hide comments. The add comment form will be enabled. | Pass
+Progress Page | While signed in write a comment in the add comment form and click submit | The page should reload and display a message confirming that the comment has been successfully added. The comment should be displayed below the post in the comment section. | Pass
+Progress Page | While signed in click the edit button below a comment that you have authored | The comment should be replaced by a input field and submit button. The input field should be prefilled with the comment's text | Pass
+Progress Page | While signed in click the edit button below a comment that you have authored and then click the cancel button | The comment will be replaced with input field, then when the cancel button is clicked, the form will replaced with the comment again. | Pass
+Progress Page | While signed in click the edit button below a comment that you have authored, change the text in the field and click submit. | The page will reload and display a comment informing the user that the comment has been edited successfully. The comment's content should have updated with the new value. | Pass
+Progress Page | While signed in click the delete button below a comment that you have authored. | The page will reload and display a comment informing the user that the comment has been deleted successfully. The comment should no longer appear below the post. | Pass
+Progress Page | While authorised click the Add New Post button. | The website should navigate to the add post page. | Pass
+Progress Page | While authorised click the three dots button on the top of one of the posts. | A dropdown menu should display below the button showing edit and delete options. | Pass
+Progress Page | While authorised click the three dots button on one of the posts and the click the edit post button. | A dropdown menu should display below the button and when the edit post button is clicked the website should navigate to the edit post page, with the fields prefilled with the posts's current values. | Pass
+Progress Page | While authorised click the three dots button on one of the posts and the click the delete post button. | A dropdown menu should display below the button and when the delete post button is clicked the page should reload with a message displayed informing the user that the post has been deleted and the post should no longer display on the page. | Pass
 
 ### Bugs Discovered 
 
