@@ -98,9 +98,9 @@
                                     class="dropdown-item" {% endif %} href="{% url 'account_logout' %}">Logout</a>
                             {% else %}
                                 <a {% if 'signup/' in request.get_full_path %} class="dropdown-item active-link" {% else %}
-                                    class="dropdown-item" {% endif %} href="{% url 'account_signup' %}">Register</a>
+                                    class="dropdown-item" {% endif %} href="{% url 'account_signup' %}">Sign Up</a>
                                 <a {% if 'login/' in request.get_full_path %} class="dropdown-item active-link" {% else %}
-                                    class="dropdown-item" {% endif %} href="{% url 'account_login' %}">Login</a>
+                                    class="dropdown-item" {% endif %} href="{% url 'account_login' %}">Sign In</a>
                             {% endif %}
                         </div>
                     </li>
@@ -121,8 +121,8 @@
                             <a class="dropdown-item" href="{% url 'user_profile' %}">My Profile</a>
                             <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                         {% else %}
-                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                            <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a>
                         {% endif %}
                     </div>
                 </div>
