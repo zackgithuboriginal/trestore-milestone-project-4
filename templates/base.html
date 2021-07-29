@@ -68,7 +68,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'products' %}"
-                            {% if request.get_full_path == '/products/' or 'product_details/' in request.get_full_path  %}
+                            {% if '/products/' in request.get_full_path and 'sponsorship_packages/' not in request.get_full_path or 'product_details/' in request.get_full_path  %}
                             class="nav-link active-link" {% else %} class="nav-link" {% endif %}>Store</a>
                     </li>
                     <li class="nav-item">
