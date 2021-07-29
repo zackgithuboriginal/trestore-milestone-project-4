@@ -107,9 +107,14 @@ def update_basket(request, item_id):
     """
     if quantity > 0:
         basket[item_id] = quantity
-        messages.success(request,
-                         f'Quantity of {product.product_name} in basket'
-                         ' has been updated.', extra_tags='checkout')
+        if product.category.name != 'sponsorship' :
+            messages.success(request,
+                            f'Quantity of {product.product_name} in your'
+                            ' basket has been updated.', extra_tags='checkout')
+        else:
+            messages.success(request,
+                            f'Quantity of the {product.product_name} package'
+                            ' in your basket has been updated.', extra_tags='checkout')
     else:
         basket.pop(item_id)
         messages.success(request,
