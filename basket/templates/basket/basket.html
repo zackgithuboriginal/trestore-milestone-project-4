@@ -114,7 +114,7 @@
                                     <td>
                                         <p class="m-0 text-end">€{{ item.product.price | calculate_subtotal:item.quantity }}</p>
                                     </td>
-                                    <td>
+                                    <td class="delete-cell">
                                         <a data-csrf="{{csrf_token}}" class="basket-product-delete basket-product-delete-tb" id="delete_{{ item.item_id }}"><i
                                                 class="fa fa-times"></i></a>
                                     </td>

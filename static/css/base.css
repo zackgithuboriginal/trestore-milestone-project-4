@@ -26,6 +26,10 @@ header {
     color: #336857;
 }
 
+select {
+    cursor: pointer;
+}
+
 .link-red,
 .link-red:hover,
 .link-red:active {
@@ -615,6 +619,14 @@ h2.error-text {
     color: #1A342C;
 }
 
+.display-product-options a {
+    border-bottom: .4rem solid #F2F8F7;
+}
+
+.display-product-options a:hover {
+    border-color: #336857;
+}
+
 .display-product-options h4,
 .display-product-options i {
     margin: 0;
@@ -728,6 +740,7 @@ h2.error-text {
 .product-filter-select,
 .product-sort-select {
     margin-right: 2rem;
+    cursor: pointer;
 }
 
 .display-options form {
@@ -1033,6 +1046,10 @@ td p {
     text-decoration: none;
     cursor: pointer;
     font-size: 1.2rem;
+}
+
+.delete-cell {
+    text-align: center;
 }
 
 .basket-product-update,
@@ -1500,6 +1517,14 @@ td p {
     background-color: #336857;
 }
 
+.display-edit-options a {
+    border-bottom: .4rem solid #336857;
+}
+
+.display-edit-options a:hover {
+    border-color: #ffffff;;
+}
+
 .display-edit-dropdown {
     position: absolute;
     background: none;
@@ -1523,7 +1548,6 @@ td p {
 .display-edit-options button {
     -webkit-appearance: none;
     -moz-appearance: none;
-    border: none;
     background: none;
     font-size: 2rem;
     padding: .25rem 0;
