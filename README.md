@@ -719,7 +719,13 @@ After adding all of the necessary settings to the env.py the project will run lo
 
 ### Code
 
+Code Institute Boutique Ado Project Lessons by ckz8780 used as the foundation for some of the functionality of the django application
 
+[Bootstrap library ver. 5](https://getbootstrap.com/) is used throughout the project to make the site responsive and provide the base components/ structure.
+
+[Style html file input button](https://www.w3docs.com/snippets/css/how-to-style-html-file-input-button-with-css.html)
+
+[Style html checkbox](https://www.w3docs.com/snippets/css/how-to-style-a-checkbox-with-css.html)
 
 
 ### Content
@@ -733,13 +739,16 @@ The [Tree Council of Ireland:](https://www.treecouncil.ie/native-irish-trees) wa
 Media files used in this project are all royalty-free images from the following websites.
 
 [Unspash:](https://www.djangoproject.com/)
+
 [Dreamstime:](https://www.dreamstime.com)
+
 [ShutterStock:](https://www.shutterstock.com/home)
 
 #### Icons
 
 [Tree Icon by Freepik](https://www.flaticon.com/free-icon/sapling_4148093?term=sapling&page=1&position=1&page=1&position=1&related_id=4148093&origin=search)
-[Fontawesome](https://fontawesome.com/)
+
+[Fontawesome](https://fontawesome.com/) was the source for a lot of the icons in website that are utilised as buttons and elements.
 
 #### Original creators and links to images
 
@@ -750,21 +759,31 @@ Background Images
 Product Images
 
 [Hazel Tree by Maksym Bondarchuk](https://www.shutterstock.com/image-illustration/common-hazel-tree-isolated-on-white-255109507)
+
 [Hazelnuts by Aprescindere](https://www.dreamstime.com/royalty-free-stock-photos-hazelnuts-image381091287)
+
 [Birch Tree by Fotofermer](https://www.dreamstime.com/stock-images-young-birch-tree-isolated-white-image30451624)
+
 [Birch Seeds by domnitsky](https://www.shutterstock.com/image-photo/green-birch-buds-leaves-isolated-on-1202247244)
+
 [Ash Tree by Zerbor](https://www.dreamstime.com/stock-photo-narrow-leafed-ash-tree-white-background-isolated-image54595601)
+
 [Ash Seeds by vvoe](https://www.shutterstock.com/image-photo/helicopter-seeds-ash-tree-isolated-on-150420431)
+
 [Alder Tree by Iaroslav Horbunov](https://www.dreamstime.com/stock-photo-alder-isolated-white-background-image54010883)
+
 [Alder Seeds by Richpav](https://www.dreamstime.com/stock-photo-alder-seeds-twig-isolated-white-background-image53238577)
 
 [Image by Jonathan Kemper](https://unsplash.com/photos/4z3lnwEvZQw)
+
 [Image by Noah Buscher](https://unsplash.com/photos/x8ZStukS2PM)
+
 [Image by Jed Owen](https://unsplash.com/photos/1JgUGDdcWnM)
 
 Post Images
 
 [Image by Daniel Fox](https://unsplash.com/photos/clRk-m48zDw)
+
 [Image by Pascal Debrunner](https://unsplash.com/photos/vnctiZKHhW8)
 
 ### Acknowledgements
