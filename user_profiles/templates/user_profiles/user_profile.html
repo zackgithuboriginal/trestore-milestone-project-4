@@ -47,20 +47,20 @@
                 <div  class="basket-sub-title">
                     <div class="profile-heading">
                         <div class="flex">Delivery Details</div>
-                        <div class="edit-button flex" onclick="toggleForm(this)"  id="toggle-delviery-details"><i class="fas fa-edit"></i></div>
+                        <div class="edit-button flex" id="toggle-delivery-details"><i class="fas fa-edit"></i></div>
                     </div>
                     <hr>
                 </div>
-                <div class="profile-default-details profile-delivery-details">
+                <div id="details-display" class="profile-default-details profile-delivery-details">
                     {% if profile.default_full_name %}<p>{{ profile.default_full_name }}</p>{% endif %}
                     {% if profile.default_street_address1 %}<p>{{ profile.default_street_address1 }}</p>{% endif %}
                     {% if profile.default_street_address2 %}<p>{{ profile.default_street_address2 }}</p>{% endif %}
                     {% if profile.default_town_or_city %}<p>{{ profile.default_town_or_city }}</p>{% endif %}
-                    {% if profile.default_post_code %}<p>{{ profile.default_post_code }}</p>{% endif %}
+                    {% if profile.default_postcode %}<p>{{ profile.default_postcode }}</p>{% endif %}
                     {% if profile.default_county %}<p>{{ profile.default_county }}</p>{% endif %}
                     {% if profile.default_country %}<p>{{ profile.default_country.name }}</p>{% endif %}
                 </div>
-                <form class="form-profile-details" action="{% url 'user_profile' %}" method="POST">
+                <form id="details-form" class="form-profile-details" action="{% url 'user_profile' %}" method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div>
