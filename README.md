@@ -820,7 +820,6 @@ At the end of the project, the code was put through CSS, HTML, JS and Pep8 Pytho
 
 To ensure that the website performed well and loaded all pages quickly I tested each page using [Lighthouse](https://developers.google.com/web/tools/lighthouse) where all pages received positive results
 
-
 #### Home Page 
 ![Image of Home Page Lighthouse Testing](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/home-lighthouse.PNG)
 
@@ -1199,6 +1198,126 @@ Progress Page | While authorised click the Add New Post button. | The website sh
 Progress Page | While authorised click the three dots button on the top of one of the posts. | A dropdown menu should display below the button showing edit and delete options. | Pass
 Progress Page | While authorised click the three dots button on one of the posts and the click the edit post button. | A dropdown menu should display below the button and when the edit post button is clicked the website should navigate to the edit post page, with the fields prefilled with the posts's current values. | Pass
 Progress Page | While authorised click the three dots button on one of the posts and the click the delete post button. | A dropdown menu should display below the button and when the delete post button is clicked the page should reload with a message displayed informing the user that the post has been deleted and the post should no longer display on the page. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Add Product Page | Without being signed in, from the home page add /products/add/ to the url and submit | The website should navigate to the Sign In page | Pass
+Add Product Page | While signed in, but not authorised, from the home page add /products/add/ to the url and submit | The website should navigate to the Home page and inform the user that they need to be authorised to perform that action. | Pass
+Add Product Page | Without filling in any fields click the add product button | Nothing should happen, the top input field on the form should show a message informing the user that it is required.  | Pass
+Add Product Page | Fill in all required fields, add a text value into the price field and submit | Nothing should happen, the price input field should show a message informing the user that the value input needs to be a number | Pass
+Add Product Page | Fill in all fields except for the SKU field and image input and submit | The website should navigate to the product details page for the new product and the page should display a message informing the user that the product has been added successfully. The product details should not display a SKU value and there should be a placeholder image informing the user that there was no image available. | Pass
+Add Product Page | From the home page add /products/add/ to the url and submit | The website should navigate to the Sign In page | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Edit Product Page | Without changing any of the prefilled data, submit the form.  | The Page should navigate to the product details page for that product, a message should display informing the user that it has updated successfully but the details displayed should not have changed. | Pass
+Edit Produdct Page | Delete the text from one of the required fields and submit the form.  | Nothing should happen, the field that was cleared should display a message informing the user that it is required. | Pass
+Edit Product Page | Click the select new image button and upload an image  | The filename for that image should be displayed below the image input  | Pass
+Edit Product Page Page | Click the brand link in the navbar  | Page Reloads  | Pass
+Edit Product Page | Click the delete image checkbox below the image and submit the form. | The page should navigate to the product details page, the image displayed should be the placeholder image informing the user that no image was available. | Pass
+Edit Product Page | Click delete image checkbox and add a new image using the select image button, then submit the form.  | The page should reload, the image filename displayed below the image field should be cleared and the checkbox should also be cleared. There should be a message displayed informing the user that the product could not be updated.  | Pass
+Edit Product Page | Change the values in each of the fields and then click the cancel button | The page should navigate to the the product details page for the product. There should be no changes in the content and there should be no message should be displayed to the user. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Add Post Page | Without being signed in, from the home page add /progress/add_products/ to the url and submit | The website should navigate to the Sign In page | Pass
+Add Post Page | While signed in, but not authorised, from the home page add /progress/add_products/ to the url and submit | The website should navigate to the Home page and inform the user that they need to be authorised to perform that action. | Pass
+Add Post Page | Without filling in any fields click the add post button | Nothing should happen, the top input field on the form should show a message informing the user that it is required. | Pass
+Add Post Page | Fill in all fields except for the image input and submit | The website should navigate to the progress page and the page should display a message informing the user that the post was been added successfully. The post should not have any image attached to it. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Edit Post Page | Without changing any of the prefilled data, submit the form. | The Page should navigate to the progress post a message should display informing the user that it has updated successfully but the post's content should not have changed. | Pass
+Edit Post Page | Delete the text from one of the required fields and submit the form.  | Nothing should happen, the field that was cleared should display a message informing the user that it is required. | Pass
+Edit Post Page | Click the select new image button and upload an image  | The filename for that image should be displayed below the image input | Pass
+Edit Post Page | Click the delete image checkbox below the image and submit the form.  |  The website should navigate to the progress page, there should no longer be any image attached to the post. | Pass
+Edit Post Page | Click delete image checkbox and add a new image using the select image button, then submit the form.  |  The page should reload, the image filename displayed below the image field should be cleared and the checkbox should also be cleared. There should be a message displayed informing the user that the post could not be updated. | Pass
+Edit Post Page | Change the values in each of the fields and then click the cancel button | The page should navigate to the the progress page for the product. There should be no changes in the content and there should be no message should be displayed to the user. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Basket Page | Navigate to the basket page without any products in your basket  | The page should display a message informing the user that there is no items in the basket. The message should also include a link to return the user to the store.  | Pass
+Basket Page | With products in the basket, navigate to the basket  | The page should display both a table containing the product details and quantities of each of the products in the basket as well as a card outlining the price breakdown for the products in the basket.  | Pass
+Basket Page | Change the number in the quantity input field and then click the save button next to the field | The page should reload and present a message to the user informing them that the quantity of the item in the basket has been updated. The quantity of the item in the basket should have updated along with the subtotal and the totals in the price breakdown. | Pass
+Basket Page | Change the number in the quantity input field to be equal to or below 0 and click the save button next to the field. | The page should reload and present a message to the user informing them that the product has been removed from the basket. The product should no longer be visible in the basket display and and the Order summary payment breakdown should have updated to reflect the current items in the basket. | Pass
+Basket Page | Click the 'x' button on one of the items in the basket | The page should reload and present a message to the user informing them that the product has been removed from the basket. The product should no longer be visible in the basket display and and the Order summary payment breakdown should have updated to reflect the current items in the basket. | Pass
+Basket Page | Click the return to store button in the order summary section | The website should navigate to the store page. | Pass
+Basket Page | Click the Checkout Securely button in the order summary section | The website should navigate to the checkout page, the order summary section of the page should contain all of the products that were in the basket. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Checkout Page | While not signed in, open the checkout page.  | The page should open with all of the user's products in the order summary and the grand totals correct. Below the delivery details form there should be a message linking the user to both the sign up and sign in pages informing them that they sign in to store their details for the future.  | Pass
+Checkout Page | While signed in, open the checkout page.  | The page should open with all of the user's products in the order summary and the grand totals correct. Below the delivery details form there should be a checkbox asking the user if they want to store their delivery details to their account to use in future checkout. | Pass
+Checkout Page | Having previously stored delivery details, open the checkout page.  | The delivery details form should have the user's store details prefilled | Pass
+Checkout Page | Fill out the delivery details form then add an incorrect card number | Adding an invalid card number will immediatebly bring up a verification error informing the user that the card is not valid, if the user tries to submit he form with an invalid number, the form will not submit and the form will remain filled in. | Pass
+Checkout Page | Fill out the delivery details form then add a correct card number and submit | The page will display a spinning indicator to inform the user that the transaction is processing, then the page will redirect to checkout confirmation page where the user's order details will be displayed. The user will be display a message informing them that the checkout was succesful and that the details have also been sent to their email. | Pass
+Checkout Page | While signed in, fill out the form correctly, select the store details checkbox and submit the form | The transaction will complete as normal and redirect the user to the checkout confirmation page, if they then go to the profile page their delivery details will be displayed. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Profile Page | While not signed in, from the home page add /profile/ to the url and submit  | The website will redirect to the sign in page | Pass
+Profile Page | Click the link in the trees planted section | The website will redirect to the progress blog page | Pass
+Profile Page | Click the edit icon alongside the Delivery details section | The stored delivery details should be replaced with a form containing input fields prefilled with the store details | Pass
+Profile Page | Click the edit icon alongside the Delivery details section and then click the x icon | The stored delivery details should be replaced with a form containing input fields prefilled with the store details, then when the x icon is clicked the form will be replaced with the stored details once again. | Pass
+Profile Page | Open the edit details form, change the values of one of the fields and click the x button | The form should close and be replaced by the details, the values that were changed in the form should not have been saved | Pass
+Profile Page | Open the edit details form, change the values of one of the fields and click the x button | The form should close and be replaced by the details, the values that were changed in the form should not have been saved | Pass
+Profile Page | Open the edit details form, change the values of one or more of the fields and click the update details button | The page should reload, display a message informing the user that their details have been updated and the displayed delivery details should now contain the new details. | Pass
+Profile Page | Clcik the order details link on one of the orders in the order history table | The website should navigate to the order history page for that order, containing all of the relevant details | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Order History Page | While not signed in, from the home page add /profile/order_history/ with a correct order number at the end to the url and submit  | The website will redirect to the sign in page | Pass
+Order History Page | On the checkout confirmation page, click the Profile button at the bottom of the page | The website will redirect to profile page | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Sign In Page | While already signed in, from the home page, add /accounts/login/ to the url and submit  | The website will redirect to the home page | Pass
+Sign In Page | Click the sign up link  | The website will redirect to sign up page | Pass
+Sign In Page | Clcik the Forgot password button | The website will redirect to the password reset page | Pass
+Sign In Page | Enter the correct username but incorrect password | Page will reload user should be informed that the sign in details were incorrect | Pass
+Sign In Page | Enter the correct password but incorrect username | Page will reload user should be informed that the sign in details were incorrect | Pass
+Sign In Page | Enter the correct username and correct password | The website will navigate to the home page and display a message informing the user that they have successfully signed in. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Sign Up Page | While already signed in, from the home page, add /accounts/signup/ to the url and submit  | The website will redirect to the home page | Pass
+Sign Up Page | Click the sign in link  | The website will redirect to sign in page | Pass
+Sign Up Page | Submit the form with mismatched values in the email inputs  | The form will not submit, the email field will display a message informing the user that the values need to match | Pass
+Sign Up Page | Submit the form with mismatched values in the password inputs  | The form will not submit, the password field will display a message informing the user that the values need to match | Pass
+Sign Up Page | Submit the form with an email address already in use by another account  | The form will not submit, the email field will display a message informing the user that the email address is already in use | Pass
+Sign Up Page | Submit the form with a username already in use by another account  | The form will not submit, the username field will display a message informing the user that the username is already in use by another account | Pass
+Sign Up Page | Submit the form with no errors and with valid details  | The website should redirect to the verify your email address page, informing the user that an email has been sent to their adress. When the link in the email is clicked, the user should be redirected to the confirm email address page, and if they click the confirm button they will be redirecte to the sign in page and a message will be displayed informing the user that theyr're email addresss has been confirmed. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Sign Out Page | While not signed in, from the home page add /accounts/logout/ to the url and submit  | The user should simply be redirected to the home page | Pass
+Sign Out Page | While signed in, navigate to the sign out page and click the sign out button  | The website should redirect to the home page and display a message to the user informing them that they have been succesfully signed out. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Email Address Admin Page | While not signed in, from the home page add /accounts/email/ to the url and submit  | The user is redirected to the account sign in page | Pass
+Email Address Admin Page | While the primary email address is selected, click the remove button below  | The page reloads and displays an error message informing the user that they cannot remove their primary address, the email address should still be displayed on the page. | Pass
+Email Address Admin Page | Enter a valid email addresss in the add email address form and click the add email button | The page will reload, present the user with a message informing them that the email address has been sent a verification email, and the new email address will be displayed with a message alongside it saying it is unverified | Pass
+Email Address Admin Page | After adding a new email address, from the email address's inbox, click the verification link and then select the confirm email button. | After clicking the link in the email the user will be navigated to the confirm email address page, when they then click the confirm email button they will be redirected to the home page and will be displayed a message informing them that the email address has been confimed. | Pass
+Email Address Admin Page | Click on a verified email address that is not the primary address and click the Make Primary button. | The page should reload and display a message confirming that the email address has been set as the primary email address the new email address should say Primary next to it. | Pass
+Email Address Admin Page | Click on a unverified email address that is not the primary address and click the Make Primary button. | The page should reload and display a error message informing the user that the Primary email address must be verified, the original email should still say Primary next to it. | Pass
+Email Address Admin Page | While a non primary email address is selected, click the remove button below  | The page reloads and displays a message informing the user that the email address has been removed. The email address will no longer be displayed on the page.| Pass
+
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Update Password Page | Without filling in any of the fields click the change password button | Nothing happens, top field displays a message informing user it is required | Pass
+Update Password Page | Fill in top field but enter different values in the new password fields and submit | The page reloads and the fields are cleared, the user is informed that the two new password fields must have matching values | Pass
+Update Password Page | Fill in all three fields with valid inputs and submit | The page sumbits, reloads and displays a message informing the user that their password has been changed successfully. | Pass
+
+Page | Action | Expected Result | Result
+-------- | ------------- | ------------- | ---------
+Password Reset Page | Enter a non email address input into the input field, submit | Nothing should happen, the input field should display a message informing the user that an email address is required in the field. | Pass
+Password Reset Page | Enter a valid email and click the Reset My Password button. | The page will navigate and display a page informing the user that they have been sent an email with instructions. The email address input into the field should receive an email with a link to reset the password. | Pass
+Password Reset Page | Enter a valid email and click the Reset My Password button. Then click the link received in the email | The page will navigate and display a page informing the user that they have been sent an email with instructions. When the link in the email is clicked, the user will be navigated to the new password form. | Pass
+Password Reset Page | In the new password form input two different values in the password fields. | The page will reload and the fields will be cleared, the field will display a message informing the user that the passwords must match. | Pass
+Password Reset Page | In the new password form input a valid password and repeat it in the second password field. | The page will navigate to a message informing the user that they have succesfully changed their password and providing a link to the sign in page. | Pass
+
 
 ### Bugs Discovered 
 
