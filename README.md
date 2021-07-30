@@ -100,13 +100,13 @@ The other two colours in Trestore's scheme are #F2F8F7 and #1A342C. The first, #
 
 #### Typography
 
-There are two fonts in use in the design of the website, the first, Josefin Slab is a delicate and notable font, though still very readable. It is used as the font for the website's brand on the navbar as well as the font of the text on the home page banner. The second font used, Open Sans, is a very clean and readable font. It is used
+There are two fonts in use in the design of the website, the first, Josefin Slab is a delicate and notable font, though still very readable. It is used as the font for the website's brand on the navbar as well as the font of the text on the home page banner and on headinsg thoughout the site. The second font used, Open Sans, is a very clean and readable font. It is used for the majority of text content in the project to create an easy reading and browsing experience.
 
 #### Imagery
 
 Imagery is used in a few places throughout the website. On the home page and the progress blog, there is a large SVG icon of a tree which is used to create a visual representation of the website's relationship to nature and woodlands. Along this same line, the basket icon is an icon of a branch to represent the fact that the basket is going to be containing trees and seeds and to give visual feedback of that to the user. Additionally in the login and register pages, there is a large background image of a tree backlit by the sky. These images were all used alongside the colour design to create a sense of the brand of the website.
 
-The other images in use in the design are ones that can be uploaded with products or with progress posts. To create a more engaging experience when browsing and reading progress posts, site admins can upload images that will be at the top and centre of the postcard. Additionally with regards to products images can be uploaded to display to the user what the product will look like, and create a more comprehensive and informed shopping experience.
+The other images in use in the design are ones that can be uploaded with products or with progress posts. To create a more engaging experience when browsing and reading progress posts, site admins can upload images that will be at the top and centre of the postcard. Additionally with regards to products, images can be uploaded to display to the user what the product will look like, and create a more comprehensive and informed shopping experience.
 
 ### Wireframes
 
@@ -384,7 +384,6 @@ The header banner is present on all pages and it is used to highlight one of the
 -   [JavaScript](https://www.javascript.com/)
 -   [Python](https://www.python.org/)
 
-
 ### Frameworks, Libraries & Programs Used
 
 1. [Bootstrap 5.0:](https://getbootstrap.com/)
@@ -432,7 +431,8 @@ The header banner is present on all pages and it is used to highlight one of the
 15. [Chrome DevTools:](https://developers.google.com/web/tools/chrome-devtools)
  - DevTools was used for analysing the code and design of the practice during development. Also used to test changes in real-time.
 
-16. [Hover.css:](https://ianlunn.github.io/Hover/)
+16. [Optimizilla:](https://imagecompressor.com/)
+- Used for compressing image files for use as product and post images
 
 17. [Heroku:](https://dashboard.heroku.com/apps)
 - Heroku is the cloud platform where the live version of this project is hosted
@@ -452,7 +452,7 @@ The header banner is present on all pages and it is used to highlight one of the
 22. [Stripe:](https://stripe.com/ie)
 - Stripe's API was used to implement a payment system to enable the store functionality.
 
-### Testing
+## Testing
 
 The testing section can be found [Here](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/TESTING.md)
 
@@ -721,16 +721,53 @@ After adding all of the necessary settings to the env.py the project will run lo
 
 
 
+
 ### Content
 
+### Text Content
 
+The [Tree Council of Ireland:](https://www.treecouncil.ie/native-irish-trees) was the source for a lot of text content used in the product descriptions.
 
 ### Media
 
+Media files used in this project are all royalty-free images from the following websites.
 
+[Unspash:](https://www.djangoproject.com/)
+[Dreamstime:](https://www.dreamstime.com)
+[ShutterStock:](https://www.shutterstock.com/home)
+
+#### Icons
+
+[Tree Icon by Freepik](https://www.flaticon.com/free-icon/sapling_4148093?term=sapling&page=1&position=1&page=1&position=1&related_id=4148093&origin=search)
+[Fontawesome](https://fontawesome.com/)
 
 #### Original creators and links to images
 
+Background Images
 
+[Image by Ravi Roshan](https://unsplash.com/photos/6V149DcMaG4)
+
+Product Images
+
+[Hazel Tree by Maksym Bondarchuk](https://www.shutterstock.com/image-illustration/common-hazel-tree-isolated-on-white-255109507)
+[Hazelnuts by Aprescindere](https://www.dreamstime.com/royalty-free-stock-photos-hazelnuts-image381091287)
+[Birch Tree by Fotofermer](https://www.dreamstime.com/stock-images-young-birch-tree-isolated-white-image30451624)
+[Birch Seeds by domnitsky](https://www.shutterstock.com/image-photo/green-birch-buds-leaves-isolated-on-1202247244)
+[Ash Tree by Zerbor](https://www.dreamstime.com/stock-photo-narrow-leafed-ash-tree-white-background-isolated-image54595601)
+[Ash Seeds by vvoe](https://www.shutterstock.com/image-photo/helicopter-seeds-ash-tree-isolated-on-150420431)
+[Alder Tree by Iaroslav Horbunov](https://www.dreamstime.com/stock-photo-alder-isolated-white-background-image54010883)
+[Alder Seeds by Richpav](https://www.dreamstime.com/stock-photo-alder-seeds-twig-isolated-white-background-image53238577)
+
+[Image by Jonathan Kemper](https://unsplash.com/photos/4z3lnwEvZQw)
+[Image by Noah Buscher](https://unsplash.com/photos/x8ZStukS2PM)
+[Image by Jed Owen](https://unsplash.com/photos/1JgUGDdcWnM)
+
+Post Images
+
+[Image by Daniel Fox](https://unsplash.com/photos/clRk-m48zDw)
+[Image by Pascal Debrunner](https://unsplash.com/photos/vnctiZKHhW8)
 
 ### Acknowledgements
+
+- My mentor Oluwafemi for his assistance and guidance.
+- My girlfriend Heather for her support and help throughout
