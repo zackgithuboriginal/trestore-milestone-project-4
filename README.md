@@ -297,7 +297,6 @@ Unfortunately, due to time constraints, I was unable to implement a number of th
 
 #### Profile Page
 
-![Image of profile page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-profile.PNG)
 
 The profile page is the centralised location for a lot of the user's interactions with their account details and as well as where they can find a record of their history with the site. On the top of the page, there is a display of the number of trees that have been planted due to the tree planting contribution of each of the user's orders and purchases. I believe that this could be a point of pride for customers, and provide them with further encouragement to use the store and make repeat purchases to improve their environmental contribution.
 
@@ -323,7 +322,6 @@ The price summary section contains the total of the items in the basket as well 
 
 #### Checkout Page
 
-![Image of checkout page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-checkout.png)
 
 The checkout page contains two main elements. The first, the checkout form, contains input fields for all of the user's necessary order details including name, email, address details and a stripe generated card input field. Just below the delivery details section of the form is the payment details including a list of all items in the basket, along with their quantities, and subtotals with the totals and delivery costs below that.
 
@@ -331,7 +329,6 @@ The checkout page contains two main elements. The first, the checkout form, cont
 
 #### Order Confirmation / Order Details
 
-![Image of order confirmation page](https://github.com/zackgithuboriginal/trestore-milestone-project-4/blob/master/docs/features-order-confirmation.PNG)
 
 The order confirmation and order detail pages are both rendered from the same template with only a few changes to the heading and text content being the difference between them. The page itself contains a page heading and message at the top thanking the customer for their purchase and informing them that they have been emailed the order details as well. Below that there is a box containing all of the order details including the delivery and payment details as well as the contents of the order.
 
